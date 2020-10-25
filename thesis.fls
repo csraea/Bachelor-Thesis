@@ -355,6 +355,10 @@ OUTPUT thesis.lot
 OUTPUT chapters/introduction.aux
 INPUT chapters/introduction.tex
 INPUT chapters/introduction.tex
+INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ec-qplr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/tex-gyre/ec-qplr.tfm
 OUTPUT chapters/analysis.aux
 INPUT chapters/analysis.tex
 INPUT chapters/analysis.tex
@@ -406,6 +410,7 @@ INPUT appendixes/prilohaa.aux
 INPUT appendixes/prilohaa.aux
 INPUT ./thesis.out
 INPUT ./thesis.out
+INPUT thesis.run.xml
 OUTPUT thesis.run.xml
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc
