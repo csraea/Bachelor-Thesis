@@ -406,7 +406,6 @@ INPUT appendixes/prilohaa.aux
 INPUT appendixes/prilohaa.aux
 INPUT ./thesis.out
 INPUT ./thesis.out
-INPUT thesis.run.xml
 OUTPUT thesis.run.xml
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc
