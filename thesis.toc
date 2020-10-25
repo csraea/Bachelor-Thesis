@@ -18,7 +18,3 @@
 \contentsline {chapter}{\numberline {3}Vyhodnotenie}{11}{chapter.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Záver}{12}{chapter.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Zoznam príloh}{14}{chapter*.10}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Karel Language Reference}{15}{appendix.A}%
