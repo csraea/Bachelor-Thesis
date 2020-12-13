@@ -1,12 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.21)  26 OCT 2020 00:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.21)  13 DEC 2020 23:04
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/csraea/Desktop/thesis/thesis/thesis.tex
-(/home/csraea/Desktop/thesis/thesis/thesis.tex
+**thesis.tex
+(./thesis.tex
 LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14> (/home/csraea/Desktop/thesis/thesis/kithesis.cls
+L3 programming layer <2020-02-14> (./kithesis.cls
 Document Class: kithesis 2020/09/25 KPI Thesis Class, v2020.1
 
 ***********************************************
@@ -34,11 +33,14 @@ File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-) (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
- (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
 \calc@Acount=\count176
 \calc@Bcount=\count177
@@ -50,26 +52,35 @@ LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count178
 \calc@Cskip=\skip51
-) (/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
- (/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
 Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
-)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -81,13 +92,17 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-)) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
@@ -97,7 +112,8 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 )
 \AM@pagewidth=\dimen139
 \AM@pageheight=\dimen140
- (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 )
 \AM@pagebox=\box45
@@ -106,7 +122,8 @@ File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 \AM@toc@title=\toks16
 \c@AM@survey=\count180
 \AM@templatesizebox=\box46
-) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box47
 \beforetitleunit=\skip52
@@ -117,9 +134,11 @@ Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \titlewidth=\dimen143
 \titlewidthlast=\dimen144
 \titlewidthfirst=\dimen145
-) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count181
@@ -134,19 +153,24 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen152
 \Gm@layoutvoffset=\dimen153
 \Gm@dimlist=\toks18
-) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
-) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
-) (/usr/share/texlive/texmf-dist/tex/latex/caption/totalcount.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/totalcount.sty
 Package: totalcount 2018/01/21 v1.0a Total values of counters (AR)
 \c@totalcount@figure=\count184
 \c@totalcount@table=\count185
-) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
- (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count186
 )
@@ -157,30 +181,40 @@ Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
 \csq@maxlvl=\count191
 \csq@tshold=\count192
 \csq@ltx@everypar=\toks21
- (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2019-12-06 v5.2j csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
- (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
-)) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count193
- (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -241,12 +275,14 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count303
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'iso-numeric.dbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.dbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.dbx
 File: iso-numeric.dbx 2017/04/25 v0.3.2 biblatex data model extension
 )
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -337,12 +373,14 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip75
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 \c@textcitecount=\count374
 \c@textcitetotal=\count375
@@ -360,11 +398,13 @@ File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'iso-numeric'...
 Package biblatex Info: ... file 'iso-numeric.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.bbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso-numeric.bbx
 File: iso-numeric.bbx 2017/04/25 v0.3.2 biblatex bibliography style
 Package biblatex Info: Trying to load bibliography style 'iso'...
 Package biblatex Info: ... file 'iso.bbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso.bbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso.bbx
 File: iso.bbx 2017/04/25 v0.3.2 biblatex bibliography style
 
 Space colon enabled: false
@@ -375,7 +415,8 @@ Showing URL field enabled: true
 Showing ISBN field enabled: true
 Showing DOI field enabled: true
 Showing eprint field enabled: true
-Package biblatex Info: Delimiter 'editortypedelim' in context '' already defined, overwriting.
+Package biblatex Info: Delimiter 'editortypedelim' in context '' already define
+d, overwriting.
 ))
 Package biblatex Info: Trying to load citation style 'iso-numeric'...
 Package biblatex Info: ... file 'iso-numeric.cbx' found.
@@ -383,7 +424,8 @@ Package biblatex Info: ... file 'iso-numeric.cbx' found.
 File: iso-numeric.cbx 2017/04/25 v0.3.2 biblatex citation style
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -399,43 +441,55 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load citation style 'iso-fullcite'...
 Package biblatex Info: ... file 'iso-fullcite.cbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso-fullcite.cbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/iso-fullcite.cbx
 Package biblatex Info: Redefining '\fullcite'.
 Package biblatex Info: Redefining '\footfullcite'.
 ))
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
-)) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
- (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
 \@linkdim=\dimen154
 \Hy@linkcounter=\count383
 \Hy@pagecounter=\count384
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count385
 \pdfmajorversion=\count386
 Package hyperref Info: Option `unicode' set `true' on input line 4421.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -444,7 +498,8 @@ Package hyperref Info: Option `pdfusetitle' set `true' on input line 4421.
 Package hyperref Info: Option `pdftoolbar' set `true' on input line 4421.
 Package hyperref Info: Option `pdfmenubar' set `true' on input line 4421.
 Package hyperref Info: Option `pdfwindowui' set `true' on input line 4421.
-Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4421.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 4421
+.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 4421.
 Package hyperref Info: Option `colorlinks' set `false' on input line 4421.
 Package hyperref Info: Hyper figures OFF on input line 4547.
@@ -457,10 +512,13 @@ Package hyperref Info: Bookmarks ON on input line 4800.
 \c@Hy@tempcnt=\count387
 LaTeX Info: Redefining \url on input line 5159.
 \XeTeXLinkMargin=\dimen155
- (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count388
 \Field@Width=\dimen156
@@ -479,24 +537,31 @@ LaTeX Info: Redefining \pageref on input line 6504.
 \c@Hfootnote=\count391
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
- (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
 \Fld@listcount=\count392
 \c@bookmark@seq@number=\count393
- (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
- (/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
 )
 \Hy@SectionHShift=\skip76
-) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
- (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
 \captionmargin=\dimen158
@@ -511,8 +576,10 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count394
 \c@continuedfloat=\count395
 Package caption Info: hyperref package is loaded.
-) (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
 \f@nch@headwidth=\skip77
 \f@nch@O@elh=\skip78
 \f@nch@O@erh=\skip79
@@ -522,41 +589,53 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@O@erf=\skip83
 \f@nch@O@olf=\skip84
 \f@nch@O@orf=\skip85
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2020/02/13 v4.45 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks22
 \XKV@tempa@toks=\toks23
 )
 \XKV@depth=\count396
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2017/11/14 v2.06 (NLCT)
 \@glsmfirst=\toks24
 \@glsmrest=\toks25
-) (/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty
 Package: textcase 2019/09/14 v1.00 Text only upper/lower case changing (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty
 Package: xfor 2009/02/05 v1.05 (NLCT)
-) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
 Package: datatool-base 2019/09/27 v2.32 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip86
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks26
 \ex@=\dimen165
-)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen166
-) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count397
@@ -596,17 +675,23 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks30
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
-) (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
 \c@su@anzahl=\count409
-) (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2019/09/27 v2.32 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
- `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
 \actioncount=\count410
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
 \FP@xs=\count411
 \FP@xia=\count412
@@ -617,24 +702,33 @@ Package: fp-basic 1996/05/13
 \FP@regb=\count417
 \FP@regs=\count418
 \FP@times=\count419
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty
 Package: fp-snap 1995/04/05
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty
 Package: fp-exp 1995/04/03
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty
 Package: fp-trigo 1995/04/14
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty
 Package: fp-pas 1994/08/29
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
 \FPseed=\count420
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty
 Package: fp-upn 1996/10/21
-) (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks31
@@ -646,7 +740,9 @@ Package: fp-eval 1995/04/03
 \dtl@codeA=\count425
 \dtl@codeB=\count426
 \@dtl@foreach@level=\count427
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-307.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty
 Package: glossaries-compatible-307 2020/02/13 v4.45 (NLCT)
 )
 \gls@level=\count428
@@ -656,14 +752,17 @@ Package: glossaries-compatible-307 2020/02/13 v4.45 (NLCT)
 \glslabeltok=\toks34
 \glsshorttok=\toks35
 \glslongtok=\toks36
- (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y
 Package: glossary-hypernav 2020/02/13 v4.45 (NLCT)
 ) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
 Package: glossary-list 2020/02/13 v4.45 (NLCT)
 \glslistdottedwidth=\skip91
 ) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
 Package: glossary-long 2020/02/13 v4.45 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip92
 \LTright=\skip93
@@ -683,9 +782,11 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 )
 \glsdescwidth=\skip96
 \glspagelistwidth=\skip97
-) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
 Package: glossary-super 2020/02/13 v4.45 (NLCT)
- (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \c@tracingst=\count434
 \ST@wd=\dimen175
@@ -702,10 +803,12 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 \ST@toadd=\dimen183
 \ST@dimen=\dimen184
 \ST@pbox=\box54
-)) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2020/02/13 v4.45 (NLCT)
 \glstreeindent=\skip101
-)) (/home/csraea/Desktop/thesis/thesis/glossary.tex)
+))
+(./glossary.tex)
 \glswrite=\write4
 \glo@main@file=\write5
 \openout5 = `thesis.glo'.
@@ -717,19 +820,25 @@ Package glossaries Info: Writing glossary file thesis.glo on input line 164.
 Package glossaries Info: Writing glossary file thesis.acn on input line 164.
  (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
-) (/usr/share/texmf/tex/latex/tex-gyre/tgpagella.sty
+)
+(/usr/share/texmf/tex/latex/tex-gyre/tgpagella.sty
 Package: tgpagella 2009/09/27 v1.2 TeX Gyre Pagella as default roman family
-)) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/02/14 3.40 The Babel package
- (/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2020/02/14 3.40 Babel switching mechanism
-) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
- (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
 \babel@savecnt=\count435
 \U@D=\dimen185
- (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read3
 \bbl@dirlevel=\count436
 )
@@ -739,14 +848,16 @@ Package babel Info: \l@australian = using hyphenrules for ukenglish
 (babel)             (\language9) on input line 105.
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language9) on input line 108.
-) (/usr/share/texlive/texmf-dist/tex/generic/babel-slovak/slovak.ldf
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-slovak/slovak.ldf
 Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 Package babel Info: Making ^ an active character on input line 123.
 Package babel Info: Making " an active character on input line 126.
 Package babel Info: Making ' an active character on input line 129.
 \cs@wordlen=\count437
 Package babel Info: Making - an active character on input line 294.
-)) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count438
 \lst@gtempboxa=\box55
 \lst@token=\toks38
@@ -759,32 +870,47 @@ Package babel Info: Making - an active character on input line 294.
 \lst@newlines=\count442
 \lst@lineno=\count443
 \lst@maxwidth=\dimen189
- (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 \c@lstnumber=\count444
 \lst@skipnumbers=\count445
 \lst@framebox=\box56
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
 Package: listings 2019/09/10 1.8c (Carsten Heinz)
- (/home/csraea/Desktop/thesis/thesis/acronyms.tex)
+
+(./acronyms.tex)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'slovak'.
- (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count446
 \l__pdf_internal_box=\box57
-) (/home/csraea/Desktop/thesis/thesis/thesis.aux (/home/csraea/Desktop/thesis/thesis/chapters/introduction.aux) (/home/csraea/Desktop/thesis/thesis/chapters/analysis.aux
+)
+(./thesis.aux (./chapters/introduction.aux) (./chapters/analysis.aux
 
 LaTeX Warning: Label `o:latex_friendly_zone' multiply defined.
 
 
 LaTeX Warning: Label `o:latex_friendly_zone' multiply defined.
 
-) (/home/csraea/Desktop/thesis/thesis/chapters/synthesis.aux) (/home/csraea/Desktop/thesis/thesis/chapters/evaluation.aux) (/home/csraea/Desktop/thesis/thesis/chapters/summary.aux))
+
+LaTeX Warning: Label `o:latex_friendly_zone' multiply defined.
+
+
+LaTeX Warning: Label `o:latex_friendly_zone' multiply defined.
+
+
+LaTeX Warning: Label `o:latex_friendly_zone' multiply defined.
+
+) (./chapters/synthesis.aux) (./chapters/evaluation.aux)
+(./chapters/summary.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
@@ -805,12 +931,14 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
 LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Trying to load font information for T1+qpl on input line 82.
+LaTeX Font Info:    Trying to load font information for T1+qpl on input line 82
+.
  (/usr/share/texmf/tex/latex/tex-gyre/t1qpl.fd
 File: t1qpl.fd 2009/09/25 v1.2 font definition file for T1/qpl
 )
 \AtBeginShipoutBox=\box58
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count447
 \scratchdimen=\dimen190
@@ -825,12 +953,17 @@ File: t1qpl.fd 2009/09/25 v1.2 font definition file for T1/qpl
 \everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-)) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
@@ -876,26 +1009,31 @@ Package biblatex Info: ... file 'slovak-iso.lbx' found.
 File: slovak-iso.lbx 2017/04/25 v0.3.2 biblatex localization
 Package biblatex Info: Trying to load language 'slovak'...
 Package biblatex Info: ... file 'slovak.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
 File: slovak.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'slovak'...
 Package biblatex Info: ... file 'slovak.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/slovak.lbx
 File: slovak.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Trying to load language 'english' -> 'english-iso'...
 Package biblatex Info: ... file 'english-iso.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/english-iso.lbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/english-iso.lbx
 File: english-iso.lbx 2017/04/25 v0.3.2 biblatex localization
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 ))
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -905,15 +1043,18 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
- (/home/csraea/Desktop/thesis/thesis/thesis.bbl)
+
+(./thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 82.
 Package biblatex Info: Reference segment=0 on input line 82.
 Package hyperref Info: Link coloring OFF on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
- (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count453
@@ -921,7 +1062,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 82.
 LaTeX Info: Redefining \pageref on input line 82.
 LaTeX Info: Redefining \nameref on input line 82.
- (/home/csraea/Desktop/thesis/thesis/thesis.out) (/home/csraea/Desktop/thesis/thesis/thesis.out)
+
+(./thesis.out) (./thesis.out)
 \@outlinefile=\write7
 \openout7 = `thesis.out'.
 
@@ -953,22 +1095,30 @@ Overfull \hbox (1.03851pt too wide) in paragraph at lines 84--84
 LaTeX Warning: Reference `theend' on page iii undefined on input line 84.
 
 [3]
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 84.
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 8
+4.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
-) [4] [5] [6] (/home/csraea/Desktop/thesis/thesis/thesis.toc)
+) [4] [5]
+[6] (./thesis.toc)
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
 
  [7
 
-] (/home/csraea/Desktop/thesis/thesis/thesis.lof)
+] (./thesis.lof
+LaTeX Font Info:    Trying to load font information for TS1+qpl on input line 1
+6.
+
+(/usr/share/texmf/tex/latex/tex-gyre/ts1qpl.fd
+File: ts1qpl.fd 2009/09/25 v1.2 font definition file for TS1/qpl
+))
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
  [8
 
-] (/home/csraea/Desktop/thesis/thesis/thesis.lot)
+] (./thesis.lot)
 \tf@lot=\write10
 \openout10 = `thesis.lot'.
 
@@ -977,88 +1127,112 @@ File: t1txtt.fd 2000/12/15 v3.1
 ]
 \openout2 = `chapters/introduction.aux'.
 
- (/home/csraea/Desktop/thesis/thesis/chapters/introduction.tex [1
+
+(./chapters/introduction.tex [1
 
 
 ]) [2]
 \openout2 = `chapters/analysis.aux'.
 
- (/home/csraea/Desktop/thesis/thesis/chapters/analysis.tex
+ (./chapters/analysis.tex
 Kapitola 1.
 
-Overfull \hbox (9.4326pt too wide) in paragraph at lines 5--6
-\T1/qpl/m/n/12 near double-stranded DNA (de-oxy-ri-bo-nuc-leic acid) mo-le-cu-les or a cir-cu-lar double-
+Overfull \hbox (9.4326pt too wide) in paragraph at lines 5--10
+\T1/qpl/m/n/12 near double-stranded DNA (de-oxy-ri-bo-nuc-leic acid) mo-le-cu-l
+es or a cir-cu-lar double-
  []
 
-<figures/bases.png, id=117, 564.1075pt x 818.05624pt>
+<figures/bases.png, id=134, 564.1075pt x 818.05624pt>
 File: figures/bases.png Graphic file (type png)
 <use figures/bases.png>
-Package pdftex.def Info: figures/bases.png  used on input line 12.
+Package pdftex.def Info: figures/bases.png  used on input line 21.
 (pdftex.def)             Requested size: 381.54889pt x 553.32501pt.
 [3
 
 
 
-] [4 </home/csraea/Desktop/thesis/thesis/figures/bases.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 37--37
+] [4 <./figures/bases.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 56--56
 []\T1/qpl/m/n/12 Distance bet-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--39
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 []\T1/qpl/m/n/12 Distance per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 39--39
+Underfull \hbox (badness 10000) in paragraph at lines 58--58
 \T1/qpl/m/n/12 com-plete turn
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--45
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
 []\T1/qpl/m/n/12 Narrow, shal-
  []
 
 [5]
-<figures/nucleoDetailed.png, id=132, 302.12875pt x 433.62pt>
+<figures/nucleoDetailed.png, id=149, 302.12875pt x 433.62pt>
 File: figures/nucleoDetailed.png Graphic file (type png)
 <use figures/nucleoDetailed.png>
-Package pdftex.def Info: figures/nucleoDetailed.png  used on input line 59.
+Package pdftex.def Info: figures/nucleoDetailed.png  used on input line 85.
 (pdftex.def)             Requested size: 211.97304pt x 304.22665pt.
- [6 </home/csraea/Desktop/thesis/thesis/figures/nucleoDetailed.png>]
-<figures/nucleosome1.jpg, id=142, 1606.0pt x 1700.3525pt>
+ [6 <./figures/nucleoDetailed.png>]
+<figures/nucleosome1.jpg, id=154, 1606.0pt x 1700.3525pt>
 File: figures/nucleosome1.jpg Graphic file (type jpg)
 <use figures/nucleosome1.jpg>
-Package pdftex.def Info: figures/nucleosome1.jpg  used on input line 85.
+Package pdftex.def Info: figures/nucleosome1.jpg  used on input line 105.
 (pdftex.def)             Requested size: 381.54889pt x 403.96764pt.
-) [7] [8 </home/csraea/Desktop/thesis/thesis/figures/nucleosome1.jpg>] [9]
+ [7] [8 <./figures/nucleosome1.jpg>]
+<figures/ORF1.png, id=163, 320.19624pt x 175.65625pt>
+File: figures/ORF1.png Graphic file (type png)
+<use figures/ORF1.png>
+Package pdftex.def Info: figures/ORF1.png  used on input line 143.
+(pdftex.def)             Requested size: 381.54889pt x 209.31763pt.
+
+[9]
+<figures/ORF2.png, id=168, 330.23375pt x 201.75375pt>
+File: figures/ORF2.png Graphic file (type png)
+<use figures/ORF2.png>
+Package pdftex.def Info: figures/ORF2.png  used on input line 171.
+(pdftex.def)             Requested size: 381.54889pt x 233.11403pt.
+ [10 <./figures/ORF1.png>] [11 <./figures/ORF2.png>] [12]
+<figures/rna.png, id=182, 298.11375pt x 259.97125pt>
+File: figures/rna.png Graphic file (type png)
+<use figures/rna.png>
+Package pdftex.def Info: figures/rna.png  used on input line 233.
+(pdftex.def)             Requested size: 381.54889pt x 332.75015pt.
+ [13 <./figures/rna.png>] [14]) [15]
 \openout2 = `chapters/synthesis.aux'.
 
- (/home/csraea/Desktop/thesis/thesis/chapters/synthesis.tex
+ (./chapters/synthesis.tex
 Kapitola 2.
-) [10
+) [16
 
 
 
 ]
 \openout2 = `chapters/evaluation.aux'.
 
- (/home/csraea/Desktop/thesis/thesis/chapters/evaluation.tex
+ (./chapters/evaluation.tex
 Kapitola 3.
-) [11
+) [17
 
 
 
 ]
 \openout2 = `chapters/summary.aux'.
 
- (/home/csraea/Desktop/thesis/thesis/chapters/summary.tex
+ (./chapters/summary.tex
 Kapitola 4.
-) [12
+) [18
 
 
 
 ]
+
+LaTeX Warning: Empty bibliography on input line 103.
+
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -1066,11 +1240,13 @@ This document will not have a glossary.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 126.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 126.
-(/home/csraea/Desktop/thesis/thesis/thesis.aux (/home/csraea/Desktop/thesis/thesis/chapters/introduction.aux) (/home/csraea/Desktop/thesis/thesis/chapters/analysis.aux) (/home/csraea/Desktop/thesis/thesis/chapters/synthesis.aux) (/home/csraea/Desktop/thesis/thesis/chapters/evaluation.aux) (/home/csraea/Desktop/thesis/thesis/chapters/summary.aux))
+(./thesis.aux (./chapters/introduction.aux) (./chapters/analysis.aux)
+(./chapters/synthesis.aux) (./chapters/evaluation.aux) (./chapters/summary.aux)
+)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 126.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 126.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 25DBCE3298FD7E961F239EA5C7012487;1177.
+(rerunfilecheck)             Checksum: 64DB6D620C42E231F43A650AA0BF5DF6;1832.
 
 
 LaTeX Warning: There were undefined references.
@@ -1083,18 +1259,23 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25701 strings out of 482368
- 413318 string characters out of 5941917
- 1165888 words of memory out of 5000000
- 40304 multiletter control sequences out of 15000+600000
- 583755 words of font info for 56 fonts, out of 8000000 for 9000
+ 25741 strings out of 482368
+ 411978 string characters out of 5941917
+ 1162880 words of memory out of 5000000
+ 40337 multiletter control sequences out of 15000+600000
+ 578141 words of font info for 54 fonts, out of 8000000 for 9000
  428 hyphenation exceptions out of 8191
- 59i,11n,81p,1079b,1783s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on /home/csraea/Desktop/thesis/thesis/thesis.pdf (21 pages, 897297 bytes).
+ 59i,11n,81p,1012b,1783s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf/fonts/
+enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb></u
+sr/share/texmf/fonts/type1/public/tex-gyre/qplr.pfb></usr/share/texmf/fonts/typ
+e1/public/tex-gyre/qplri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+txfonts/t1xtt.pfb>
+Output written on thesis.pdf (27 pages, 926304 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 244 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 
