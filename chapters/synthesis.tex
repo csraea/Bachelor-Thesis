@@ -1,4 +1,123 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Syntetická časť}
+\section{Existing Genome Browsers}
+There are multiple genome browsers available. Some of them are
+mentioned here:
+\subsection{The UCSC Genome Browser}
+It is one of the big players in genomic data visualization. The browser (Kent
+et al. 2002) represents annotations as a series of horizontal tracks laid over
+genome. Every track can be viewed in different modes such as dense, or
+fully expanded or can be hidden. The user can go deeper on the dense track
+25
+to open it in full mode. There are many scales possible for the track display.
+The lowest is a single chromosome and the highest scale is the sequence of
+base pairs.
+\subsection{The Galaxy Track Browser}
+Visual Analytics is the science of using interactive visualizations in order
+to support analytic reasoning. The Galaxy Track browser (J. Goecks et al.
+2011) overcomes some of the shortcomings of other genomic browser by
+using the concept of Visual Analytics. One of them is that the genome
+browsers and their analysis tools are not integrated, this makes it tough
+to change the parameter value of a tool so as to observe how the change
+impacts the tool output in the browser. This can be done multiple times
+to tune a tools parameter to obtain a desired output while staying in the
+browser.
+The Galaxy Track Browser gives freedom to the user to repeatedly change
+the parameter’s value and rerun the tool multiple times. Morever, this can
+be done interactively because the tool runs on the subset of the data that is
+visible to the user. This is useful because users can receive feedback by manipulating data in real time. It provides a multi-resolution support model,
+as well using the Galaxy framework provides visualization analysis easy
+sharing of the results, all in just a web browser.
+\subsection{Trackster}
+Trackster (Jeremy Goecks et al. 2012) is another visual analysis environment
+based on the Galaxy platform. It is targeted at analyzing the next generation sequencing data subsets by enabling the user to try different analysis
+settings. All the outputs can be then visualized together interactively hence
+making it easier to compare and inspect for the setting which works the
+best. This also reduces the computational time by a large margin. It allows
+dynamic integration of tools which are incorporated in the Galaxy framework. The firm coupling of tool settings and visualization enables rapid
+tool parameter space exploration and dynamic data filtering.
+
+\section{Parallel coordinates}
+Parallel coordinate plots, in the context of gene expression data usually called profile
+plots, are a method for visualizing high dimensional data. A point p ∈ R n is drawn on
+n parallel axes by placing i-th vertex of a polyline on the position of the i-th axis that
+represents the value of p i . A large number of points can be jointly visualized in parallel
+coordinates. For interpreting the parallel coordinate plot, the order of the of the parallel
+axes must be known. Parallel coordinate are used for a discrete number of dimensions,
+like in discrete time series data. For this data, parallel coordinates are especially useful,
+as the slope of the polylines is proportional to the difference between two adjacent time
+points. The coordinates can also be spaced proportional to the distance between two
+time points. Figure 3.3 shows an example of a parallel coordinate plot for time series
+data.
+Parallel coordinates were introduced in 1959 by Alfred Inselberg (a previous de-
+scription of this concept was published by d’Ocagne in 1885) [83]. Since then, par-
+allel coordinates have been used in a multitude of applications. An influential paper
+of Wegmann [204] demonstrated several use cases and interpretations. it included high-
+dimensional geometric objects and cluster visualization, which is one of the most common
+applications of parallel coordinates. For this purpose, color is used to indicate cluster
+membership. Parallel coordinate plots can be extended by adding additional dimensions,
+for example showing statistical properties of the points.
+Plotting many points in parallel coordinates can lead to overplotting. To address
+this problem, a number of dimension reduction methods have been suggested, e.g. [89].
+Alternatively, clusters can be represented by centroids, leaving out all other points.
+Using semitransparent lines gives a better overview of the density of lines in a plot. The
+number of dimensions in a parallel coordinate plot is not generally limited. However, a
+large number of dimensions might lead to tightly spaced coordinates, which can be hard
+to read. For time series, an aspect ratio that causes the average slope of a line segment
+to be 45° is considered optimal [74]. This might lead to a trade-off between size and
+readability.
+
+\section{Visual Analytics}
+While the roots of exploratory data analysis were based on manual calculations and
+hand drawn graphics, possibly enhanced by desk calculators, modern methods greatly
+increased the speed and handling of visualization and exploratory statistics. Interactivity
+28
+3.2. Visualization Plots
+is a further important aspect made feasible by computer-based visualization. In the same
+time, however, the size and complexity of datasets increased even faster then the analysis
+tools were improved [95]. New concepts for making sense of large, noisy and heterogenous
+datasets are required. Visual analytics makes use of interactive visualization to support
+human cognition to analyze and interpret data. The focus lies on the optimal support
+of human cognition, which is considered a powerful tool. For this purpose, methods and
+results from various scientific disciplines are integrated, including computer graphics,
+psychology, cognitive sciences and design.
+The overall process of visual analytics can be summarized by the visual analytics
+mantra: “Analyse First - Show the Important - Zoom, Filter and Analyse Further - Details on Demand” [95]. It names some of the tools and strategies used in visual analytics.
+Analysis methods are used to prepare and filter the data to first visualize concentrating on important features [95]. Visualizations are optimally maximizing data density and
+should allow to easily identify patterns and relationships. Commonly tools used for EDA
+are applied [27]. Based on an existing visualization, refinements are interactively made:
+zooming to get a view that is more coarse or fine, filtering to remove irrelevant items and
+further analyses. Details on objects are shown interactively on demand. This process is
+iteratively repeated. Each iteration is aimed at providing a useful visual representation
+that allows the viewer to make more sense of the data.
+As visual analytics is concerned with extremely large datasets, several challenges exist.
+The limited space on visual media, especially screens calls for scalable visualizations (and
+larger screens) [96]. Analyzing high-throughput stream data can address data storage
+problems. Another challenge is the analysis of heterogenous datasets, which arise in
+many fields, including systems biology. Automatization of processes, decision support
+and evaluation of existing processes are also fields of research in visual analytics.
+
 \label{methodology}
+
+\begin{thebibliography}{9}
+    \bibitem{latexcompanion} 
+    Stephan Symons, Christian Zipplies, Florian Battke, and Kay Nieselt.
+    \textit{tephan Symons, Christian Zipplies, Florian Battke, and Kay Nieselt. Integrative
+    Systems Biology Visualization with Mayday. Journal of Integrative Bioinformatics
+    2010, 7:3}. 
+    Addison-Wesley, Reading, Massachusetts, 1993.
+    
+    \bibitem{einstein} 
+    Matthias Zschunke, Katrin Deubel, Stephan Symons, Janko Dietzsch, and Kay Nieselt. FAGE and VEGA
+    \textit{A versatile algorithm and software for resequencing microarrays}. (German) 
+    [\textit{On the electrodynamics of moving bodies}]. 
+    Annalen der Physik, 322(10):891–921, 1905.
+
+    \bibitem{einstein} 
+    Florian Battke, Stephan Symons, Michael Piechotta, Philipp Bruns, Karin Zimmermann, and Kay Nieselt.
+    \textit{Integrated    Expression Analysis}. (German) 
+    [\textit{On the electrodynamics of moving bodies}]. 
+    Annalen der Physik, 322(10):891–921, 1905.
+    
+    
