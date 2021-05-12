@@ -19,7 +19,7 @@
 % Additional packages
 \usepackage[main=slovak,english]{babel}
 
-\usepackage{listings}  % for source code
+\usepackage{listings}
 % Listings settings
 % See for details: https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
 \lstset{
@@ -36,7 +36,7 @@
 %\author{Janko Hraško}
 \author[Bc.]{Oleksandr}{Korotetskyi}[]
 \supervisor{Jan Genci} %veduci prace
-\consultant{Donald E. Knuth} %konzultant
+\consultant{} %konzultant
 %\college{University of Žilina}{Žilinská univerzita} %univerzita
 %\faculty{Faculty of Electrical Engineering and informatics}{Fakulta elektrotechniky a informatiky} %fakulta
 %\department{Department of Computers and Informatics}{Katedra počítačov a informatiky} %katedra
@@ -46,22 +46,26 @@
 %\fieldofstudy{9.2.1 Informatika}
 %\studyprogramme{Informatika}
 %\city{Košice} %mesto
-\keywords{\LaTeX, programming, typesetting}{\LaTeX, programovanie, sadzba textu}
+\keywords{Programming, bioinformatics, data visualization, genome, covid-19}{Programovanie, bioinformatika, vizualizácia údajov, genóm, covid-19}
 %\declaration{som nepodvadzal}
 
 \abstract{%
-    % english 
-	\blindtext
+    In this bachelor thesis I analyze the general genome structure of different organisms (eukaryotes, prokaryotes and viruses) in order to understand the differences and come up with possible solutions for their visualization.
+    Also, in order to understand the current state of a problematic, I describe and compare some of popular existing programs that are capable of visualizing genome properties.% english   
+	As the next step, I perform 2D visualization and analysis of SARS-CoV-2 genome using some existing techniques and one developed by me.
+    Later, the results achieved during the visualization are verified and the scripts that were used to obtain them being composed into a stand-alone application.
 }{%
-    % slovak 
-	\blindtext
+    V tejto bakalárskej práci analyzujem všeobecnú štruktúru genómu rôznych organizmov (eukaryoty, prokaryoty a vírusy) s cieľom porozumieť rozdielom a navrhnúť možné riešenia ich vizualizácie.
+    Aby som pochopil súčasný stav problému, popisujem a porovnávam niektoré populárne existujúce programy, ktoré sú schopné vizualizovať vlastnosti genómu.% English
+    V ďalšom kroku vykonávam 2D vizualizáciu a analýzu genómu SARS-CoV-2 pomocou niektorých existujúcich a mnou vyvinutých techník.
+    Potom sa výsledky dosiahnuté počas vizualizácie overia a skripty, ktoré som na ich získanie použil, sa skomponujú do samostatnej aplikácie.
 }
 
 \acknowledgment{Na tomto mieste by som rád poďakoval svojmu vedúcemu práce za jeho čas a odborné vedenie počas riešenia mojej záverečnej práce.
 
-Rovnako by som sa rád poďakoval svojim rodičom a priateľom za ich podporu a povzbudzovanie počas celého môjho štúdia.
+Rovnako by som sa rád poďakoval svojim rodičom a priateľom, najmä \textit{Adamovi Galuškovi}, \textit{Nikite Solomatinovi} a \textit{Sultanu Shaimardanovi} za ich podporu a povzbudzovanie počas celého môjho štúdia.
     
-V neposlednom rade by som sa rád poďakoval pánom \textit{Donaldovi E. Knuthovi} a \textit{Leslie Lamportovi} za typografický systém \LaTeX, s ktorým som strávil množstvo nezabudnuteľných večerov.}
+V neposlednom rade by som sa rád poďakoval spoločnosti \textit{RedBull} a \textit{Ozzy Osbornovi} za za energiu pri napísaní tejto práce.}
 
 % if you want to work only on selected chapters
 %\includeonly{chapters/analyza} %,chapters/synteza}

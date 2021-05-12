@@ -1,4 +1,83 @@
 % !TEX root = ../thesis.tex
 
 \chapter{Vyhodnotenie}
+
+During the first part of this thesis I have analyzed the general genome structure of different organisms, DNA and RNA from the molecular, biological and informatical point of view.
+
+The spatial structure of DNA and its differences were listed at table 1.1 .
+
+The genomes of eukaryotes, prokaryotes and viruses were described in corresponding sections.
+The description of those genomes includes their unique properties, such as intron-exon structures mainly present in genomes of eukaryotes and gene clusters present in genomes of prokaryotes.
+The genes, their types, locations, functions and patterns that allow to find them (ORFs) were analyzed and properly described.
+
+The next step was to classify existing solutions for genome data representation in order to achieve the understanding how the modern software works and what it can suggest to users worldwise.
+They can be classifed as \textit{web-based} and \textit{stand-alone applications}.
+
+Moreover, two categories of existing genome browsers were precisely described:
+\begin{itemize}
+    \item \textbf{Species-independent} solutions that are capable of visualizing any genome, including Ensemble genome browser, UCSC genome browser and GBrowse framework were analyzed and compared (table 1.2).
+    \item \textbf{Species-specific} solutions that are aimed at visualization of particular species, including MSU rise genome browser and Rice-Map genome browser.
+\end{itemize}
+
+After, due to the extreme complexity of prokaryotic and eukaryotic genomes and due to the world pandemic, the SARS-CoV-2 virus genome was chosen to be visualized.
+
+During the second part of this thesis, in order to understand how and where genome data is being stored, I have performed a comprehensive analysis of formats that are usually used to store genome-coherent information: FASTA file format, GFF and GenBank (GBK) file formats.
+The SARS-CoV-2 related files were used as an example for the very analysis.
+
+I came to a conclusion, that genome visualization can be done in two ways:
+\begin{itemize}
+    \item The first way is to visualize raw data which is a nucleotide sequence for DNA and RNA or an amino acid sequence (using information in FASTA files).
+    \item The second way is to visualize previously processed and well studied data, that contain gene locations, ORFs positions, etc. and which is stored in the genome annotation files (GFF and GenBank files).
+\end{itemize}
+
+After that, I have performed the analyzis and visualization of SARS-CoV-2 genome using the following methods.
+
+\textbf{Nucleotides distribution and GC-content} analysis of FASTA file contents have shown, that SARS-CoV-2 genome is composed of 29903 nucleoties (basic units of genome).
+The distribution of them was the following: adenine (A) appeared at the genome sequence 8954 times, thymine (T) - 9594, cytosine (C) - 5492 and  guanine (G) - 5863 times.
+By knowing this data, I have computed the GC-content property of a genome that was low and appeared to be 37.97\%.
+
+This property is important, because it shows that SARS-CoV-2 genome has small number of ORFs (genes), because they are usually begin at GC-rich regions of genome.
+
+\textbf{Gates's method} visualization was chosen to be performed, since I have accidently rediscovered it while thinking of how genome can possibly be visualized.
+It also processes the FASTA file.
+After performing this visualization, I have noticed that strange sequence of 33 adenine (A) nucleotides ends SARS-CoV-2 genome (figure 2.4).
+To make sure, that no errors were made during the visualization I have checked the very FASTA sequence and came up with the conclusion that the visualization was done in the right way.
+    
+Despite the degeneracy, which is the main disadvantage of the method, it can plot DNA patterns without machine examination, as I have shown by visualizing the first chromosome of the smallest known eukaryotic genome that belongs to \textit{Encephalitozoon Intestinalis} (figure 2.6).
+
+To understand whether this method is suitable for visual comprasion of genomes of related species, I have visualized SARS-CoV-2 genome and genome of its closest relative SARS-CoV-1 virus next to each other.
+I have made a hypothesis that they must be very similar since they resemble each other in the terms of achieved visualization (figure 2.7), and to prove it, I have run the pairwise2 algorithm that confirmed, that their percentage of similarity is equal to 83.34\%.
+I have chosen that algorithm since it is among the best alignment algorithms.
+
+\textbf{2D Matrix method} visualization was chosen to be performed, since tandem repeats in a genome sequence might be visually distinguishable without any machine examination.
+However, after the very visualization, I did not manage to find any of them (figure 2.9).
+This method also requires FASTA file with sequence.
+
+The main disadvantage of this method is that point mutations in genome, or even significant ones, are almost not noticabe without comprehensive analyzis of the obtained image.
+
+\textbf{2D Matrix method improvement} was intoduced by me to cope with the disadvantage of the previous method by using a hash-function.
+
+I proved it by comparing original genome of SARS-CoV-2 and the same genome with a point mutation at the second nucleotide (T was substituted with G) using my method (figure 2.10).
+
+\textbf{Amino acid retrieval} was performed to obtain SARS-CoV-2 proteins for required for the next method. 
+
+After achievment of proteins from the DNA sequence stored in a FASTA file, I have compared the results with existing SARS-CoV-2 proteins by performing a BLAST search.
+The compasion have shown, that almost no mistakes were made since the similarity ratio was very high.
+Because of my interest, I have also compared them with proteins of relative species that have also shown a high ratio of similarity (table 2.2).
+
+\textbf{ORF identification and visualization} was performed using the GenBank annotation file in order to visualize those parts of SARS-CoV-2 genome, that are probably genes.
+
+After searching for ORFs locations in the GBK file and comparing their indexes with the proteins obtained previously, removing the short ones, I have achieved 6 coding sequenses of genome (genes).
+The visualiation of achieved genes among other ORFs is visible at the figure 2.11 .
+
+To verify the results, BLAST search was performed (table 2.3).
+It has shown, that I have visulized those genes properly, since they have a high similarity with the existing ones.
+
+\smallskip
+The next and the last step was to combine all the code that was used into a simple stand-alone console application which is capable of visualizing SARS-CoV-2 genome using previously described techniques.
+The detailed software architecture is described at the corresponding section.
+
+From the main disadvantages of the developed program I can admit that it is rather simlple, has no graphical interface and, at the moment, not all methods support visualiaton of any genome.
+Therefore, the developed visualiation tool can be claffied as \textit{species-specific}.
+
 \label{evaluation}
