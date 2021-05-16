@@ -9,43 +9,43 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}General Genome Structure}{3}{section.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.1}Nucleotides: the basic subunit of genome}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Nukleotidy: základná podjednotka genómu}{3}{subsection.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.2}Nucleodic acid spatial stucture}{6}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Priestorová štruktúra nukleovej kyseliny}{6}{subsection.1.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.3}Eukaryotic genome organization}{7}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.3}Organizácia eukaryotického genómu}{6}{subsection.1.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.4}Prokaryotic genome organization}{9}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.4}Organizácia prokaryotického genómu}{9}{subsection.1.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.5}Viral genome organization}{11}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.5}Organizácia vírusových genómov}{10}{subsection.1.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.6}Genes: location and general structure}{12}{subsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.1.6}Gény: umiestnenie a všeobecná štruktúra}{12}{subsection.1.1.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Existing Solutions For Genome Data Representing}{15}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Existujúce riešenia pre reprezentáciu údajov o genóme}{15}{section.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Web-based genome browsers}{16}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.1}Webové prehliadače genómu}{16}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Functionalities and features}{17}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.2}Funkcie a vlastnosti}{16}{subsection.1.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Syntetická časť}{21}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}FASTA, GFF and GBK formats}{21}{section.2.1}%
+\contentsline {section}{\numberline {2.1}FASTA, GFF a GBK formaty}{21}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}SARS-CoV-2 genome analysis and visualization}{23}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Analýza a vizualizácia genómu SARS-CoV-2}{23}{section.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Nucleotides distribution and GC-content}{24}{subsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Gates's method}{25}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.2}Gatesova metóda}{25}{subsection.2.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}2D Matrix method}{28}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Metóda 2D Matrix}{28}{subsection.2.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}2D Matrix method improvement}{30}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.4}Vylepšenie metódy 2D Matrix}{30}{subsection.2.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.5}Aminoacids retrieval}{31}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.5}Získanie aminokyselín}{31}{subsection.2.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.6}ORF identification and visualization}{33}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.6}Identifikácia a vizualizácia ORF}{33}{subsection.2.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Software composition}{37}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Zloženie softvéru}{36}{section.2.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Vyhodnotenie}{39}{chapter.3}%
 \defcounter {refsection}{0}\relax 

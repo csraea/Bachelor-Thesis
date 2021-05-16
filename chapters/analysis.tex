@@ -2,84 +2,84 @@
 
 \chapter{Analytická časť}
 
-This chapter covers analysis of genome structure of different organisms, or, in other words, biological background which is a necessity for creating any bioinformatics software.
-Moreover, it particularly describes existing solutions for genome data representing. 
-Each of the mentioned topics is described in the subsection corresponding to it.
+Táto kapitola sa venuje analýze štruktúry genómu rôznych organizmov, alebo inými slovami biologickému pozadiu, ktoré je nevyhnutné pre vytvorenie akéhokoľvek bioinformatického softvéru.
+Okrem toho, osobitne popisuje existujúce riešenia pre reprezentáciu údajov o genóme s cieľom porozumieť moderným prístupom k vizualizácii štruktúry genómu. 
+Každá zo spomínaných tém je popísaná v jej podsekcii.
 
 \section{General Genome Structure}
-In most eukaryotic and prokaryotic organisms the hereditary material is either linear double-stranded DNA (deoxyribonucleic acid) molecules or a circular double-stranded DNA molecule. 
-However, some extracellular life forms, might use RNA (ribonucleic acid) as the building block for their genome. 
-For instance, viruses have a genome composed of either single-stranded DNA, double-stranded DNA or RNA, depending on the type of a virus. 
-Therefore, a genome itself, is the complete content of genetic information in an organism, or in other words, all the unique DNA (RNA) sequences the organism possesses. 
+U väčšiny eukaryotických a prokaryotických organizmov je dedičným materiálom buď lineárna dvojvláknová molekula DNA (deoxyribonukleová kyselina) alebo kruhová dvojvláknová molekula DNA.
+Avšak, niektoré extracelulárne formy života môžu používať RNA (ribonukleová kyselina) ako stavebný blok svojho genómu.
+Napríklad vírusy majú genóm zložený buď z jednovláknovej DNA, dvojvláknovej DNA alebo RNA, v závislosti od typu vírusu.
+Samotný genóm teda je úplná genetická informácia, alebo inými slovami, všetky jedinečné sekvencie DNA (RNA) organizmu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Nucleotides: the basic subunit of genome}
+\subsection{Nukleotidy: základná podjednotka genómu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Both of DNA and RNA  are polymeric molecules, that are composed of linear chains of various combinations of four different subunits, called nucleotides. 
-The nucleotide itself is the basic unit of the DNA and RNA molecules, the monomer, which, however, could be found in the cell not only as the bearer of the genetic information, 
-but also as a carrier of energy used to power enzymatic reactions \cite{AnalysisOfGenesAndGenomes}. 
-A five-carbon-atom sugar, a phosphate group and a nitrogenous base are three distinct components which, combined together, make up the quite complex nucleotide molecule. 
-The combination of sugar and base is called a nucleoside, while the phosphate-sugar-base is termed a nucleotide. 
+DNA aj RNA sú polymérne molekuly, ktoré sú zložené z lineárnych reťazcov rôznych kombinácií štyroch rôznych podjednotiek, ktoré sa nazývajú nukleotidy.
+Samotný nukleotid je základnou jednotkou molekúl DNA a RNA, monomérom, ktorý sa však v bunke nachádza nielen ako nosič genetickej informácie,
+ale tiež ako nosič energie použitej na napájanie enzymatických reakcií \cite{AnalysisOfGenesAndGenomes}. 
+Cukor s piatimi atómami uhlíka, fosfátová skupina a dusíkatá zásada sú tri odlišné zložky, ktoré spolu tvoria celkom zložitú molekulu nukleotidov (obr. 1.1).
+Kombinácia cukru a bázy sa nazýva nukleozid, zatiaľ čo fosfát-cukor-báza sa nazýva nukleotid. 
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.85\textwidth]{figures/bases}
-	\caption{The structures of the pyrimidines and purines found in DNA and RNA. The sugar groups are highlighted in blue and the nitrogenous bases are highlighted in orange. 
-	The atoms of the sugar are numbered from 1 to 5. The atoms of the purine ring are numbered from 1 to 9, 
-	while those of the pyrimidine ring are numbered from 1 to 6. \label{o:nucleotide}}
+	\caption{Štruktúry pyrimidínov a purínov nachádzajúcich sa v DNA a RNA. Skupiny cukru sú zvýraznené modrou farbou a dusíkaté zásady sú zvýraznené oranžovou farbou.
+	Atómy cukru sú očíslované od 1 do 5. Atómy purínového kruhu sú očíslované od 1 do 9,
+	zatiaľ čo tie pyrimidínového kruhu sú očíslované od 1 do 6. \label{o:nucleotide}}
 \end{figure}
 
-Dinucleotide, trinucleotide and polynucleotide are the terms corresponding to two, three or many nucleotides connected with each other respectively.
+Dinukleotid, trinukleotid a polynukleotid sú výrazy zodpovedajúce dvom, trom alebo mnohým nukleotidom navzájom spojených.
 
-A nucleotide can be either a double-ringed purine or a single-ringed pyrimidine. 
-Guanine (G) and adenine (A) are the common purines for both of DNA and RNA; the pyrimidine called cytosine (C) is also present in both nucleic acids. 
-However, the pyrimidine uracil (U) is limited only to RNA, being replaced with thymine (T) in DNA. 
-There are merely two base-pair combinations that are permissible – A base-paired with T (U) and C base-paired with G. 
-It happens due to the geometries of the nucleotide bases and relative positions of atoms which participate in the connection \cite{MolecularGenetics}.
-This property makes two sequences of polynucleotides in helix complement. 
+Nukleotidom môže byť buď purín s dvojitým kruhom, alebo pyrimidín s jedným kruhom.
+Guanín (G) a adenín (A) sú bežné puríny pre DNA aj RNA; pyrimidín nazývaný cytozín (C) je tiež prítomný v obidvoch nukleových kyselinách.
+Pyrimidín uracil (U) je však obmedzený iba na RNA, ktorý je v DNA nahradený tymínom (T).
+
+Sú prípustné iba dve kombinácie párov báz - A párovaný s T (U) a C pár s G (obr. 1.2).
+Stáva sa to kvôli geometriám nukleotidových báz a relatívnym pozíciám atómov, ktoré sa podieľajú na spojení \cite{MolecularGenetics}.
+Táto vlastnosť robí dve sekvencie polynukleotidov v skrutkovice komplementárnymi. 
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.85\textwidth]{figures/nucleotides.png}
-	\caption{DNA base pairing and complementation. The two chains of the helix, arrowed in the 5` to 3` direction, are antiparallel. The bases on one strand of the helix
-	are complementary to those on the opposite strand, A always base pairs with T and G always base pairs with C \label{o:nucleotide}}
+	\caption{Párovanie a komplementácia báz DNA. Dva reťazce skrutkovice, ktoré sú šípené v smere 5` až 3`, sú antiparalelné. Základne na jednom vlákne špirály
+	sú komplementárne k tým na opačnom vlákne, A vždy párovaný s T a G vždy párovaný s C \label{o:nucleotide}}
 \end{figure}
 
-Discrete nucleotides are attached to each other through sugar–phosphate bonds that connect the phosphate group on the 5’ carbon of one nucleotide with the hydroxyl group on the 3’ carbon of another nucleotide. 
-The base pairing between adenine and thymine (uracil) involves two hydrogen bonds, while between cytosine and guanine involves three hydrogen bonds.
+Diskrétne nukleotidy sú navzájom spojené cukrom-fosfátovými väzbami, ktoré spájajú fosfátovú skupinu na 5 'uhlíku jedného nukleotidu s hydroxylovou skupinou na 3' uhlíku iného nukleotidu.
+Párovanie báz medzi adenínom a tymínom (uracil) zahŕňa dve vodíkové väzby, ale medzi cytozínom a guanínom tri vodíkové väzby. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Nucleodic acid spatial stucture}
+\subsection{Priestorová štruktúra nukleovej kyseliny}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-As the three-dimensional structure of a nucleotide is not completely rigid, it is possible for DNA to have various spatial architectures: 
-A-form, B-form, Z-form and the circular one. The position of the base relatively to the five-carbon-atom sugar can be changed by a rotation 
-around the N-glycosidic bond and, in this way, significantly affect the three dimensional configuration of the molecule and helix consequently.
-
+Pretože trojrozmerná štruktúra nukleotidu nie je úplne tuhá, je možné, aby DNA mala rôzne priestorové architektúry:
+A-forma, B-forma, Z-forma a kruhová (tab. 1.1). Poloha bázy vzhľadom na cukor s piatimi atómami uhlíka sa môže meniť rotáciou
+a týmto spôsobom významne ovplyvňujú trojrozmernú konfiguráciu molekuly a skrutkovice následne, ktorá je viditeľna na obrázku 1.3.
 \begin{table}[!ht]
-	\caption{DNA double helix}\label{t:1}
+	\caption{Dvojvláknová špirála DNA}\label{t:1}
 	\smallskip
 	\centering
 	
 	\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
 		\hline
-		\multicolumn{4}{|c|}{Features of the different conformations of the DNA double helix} \\
+		\multicolumn{4}{|c|}{Vlastnosti rôznych konformácií dvojitej špirály DNA} \\
 		\hline
-		Feature& B-DNA & A-DNA & Z-DNA\\
+		Vlastnosť& B-DNA & A-DNA & Z-DNA\\
 		\hline
 		\hline
-		Type of helix & Right-handed & Right-handed & Left-handed\\
+		Typ špirály & Pravotočivá & Pravotočivá & Ľavotočivá \\
 		\hline
-		Number of base pairs per turn & 10 & 11 & 12\\
+		Počet párov báz na ťah & 10 & 11 & 12\\
 		\hline
-		Distance between base pairs (nm) & 0.34 & 0.29 & 0.37\\
+		Vzdialenosť medzi pármi báz (nm) & 0.34 & 0.29 & 0.37\\
 		\hline
-		Distance per complete turn (nm) & 3.4 & 3.2 & 4.5\\
+		Vzdialenosť na jedno otočenie (nm) & 3.4 & 3.2 & 4.5\\
 		\hline
-		Diameter (nm) & 2.37 & 2.55 & 1.84\\
+		Priemer (nm) & 2.37 & 2.55 & 1.84\\
 		\hline
-		Major groove & Wide, deep & Narrow, deep & Flat\\
+		Hlavná drážka & Široká, hlboká & Úzka, hlboká & Plochá\\
 		\hline
-		Minor groove & Narrow, shallow & Wide shallow & Narrow, deep\\
+		Vedľajšia drážka & Úzka, plytká & Široká plytká & Úzka, hlboká\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -87,52 +87,46 @@ around the N-glycosidic bond and, in this way, significantly affect the three di
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.8\textwidth]{figures/spatial.png}
-	\caption{Double stranded DNA helix.\label{o:latex_friendly_zone}}
+	\caption{Dvojvláknová špirála DNA.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Moreover, although usually single-stranded, some RNA sequences have the ability to form a double helix. 
-However, double helix RNAs are rare and do not appear to participate in some genome related processes in the eukaryotic and prokaryotic organisms.
-Since circular DNA may exist in several forms including single-stranded c-DNA, intact double-stranded c-DNA (closed circles with both strands covalently linked), 
-nicked ds-c-DNA (only one strand covalently linked) and in the form of “concatenated circles” their properties are not described in the attached table.
+Aj keď sú RNA zvyčajne jednoreťazcové, niektoré sekvencií sú schopne tvoriť dvojité špirály.
+Dvojité špirály RNA sú však zriedkavé a nezdá sa, že sa podieľajú na procesoch súvisiacich s genómom v eukaryotických a prokaryotických organizmoch.
+Naviac, kruhová DNA môže existovať v niekoľkých formách, vrátane jednostrannej C-DNA, intaktnej dvojvláknovej C-DNA (uzavreté kruhy s oboma prameňmi kovalentne spojené),
+prezývaná DS-C-DNA (iba jeden prameň kovalentne spojený) a vo forme "zreťazených kruhov", ale ich vlastnosti nie sú opísané v priloženej tabuľke 1.1 .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Eukaryotic genome organization}
+\subsection{Organizácia eukaryotického genómu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Eukaryotes are organisms whose cells have a nucleus enclosed within a nuclear envelope \cite{BioDict}.
-In eukaryotic cells nucleic acid is situated in a membrane-bound organelle called the nucleus.
-The nuclear genome is split into a set of linear double-helix DNA molecules, each contained in a chromosome. 
-A chromosome itself is a linear string of DNA wrapped around associated proteins that give the connected nucleic acid bases a structure.
+Eukaryoty sú organizmy, ktorých bunky majú jadro uzavreté v jadrovom obale \cite{BioDict}.
+V eukaryotických bunkách sa nukleová kyselina nachádza v organele viazanej na membránu, ktorá sa nazýva jadro.
+Jadrový genóm je rozdelený na súbor lineárnych molekúl DNA s dvojitou špirálou, z ktorých každá je obsiahnutá v chromozóme.
+Samotný chromozóm je lineárny reťazec DNA obalený okolo asociovaných proteínov, ktoré dávajú štruktúru spojeným nukleovým kyselinám.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.8\textwidth]{figures/nucleosome1}
-	\caption{Eukatyotic genome organization.\label{o:latex_friendly_zone}}
+	\caption{Organizácia eukaryotického genómu.\label{o:latex_friendly_zone}}
 \end{figure}
 
-No exceptions to this pattern are known: eukaryotes that have been studied posess DNA molecules that are always linear and have at least two chromosomes. \cite{Genomes3}
-The only variability at this level of organization of eukaryotic genome is coherent with the number of chromosomes. 
-Moreover, it appears, that biological features of an organism have no dependence on the number of chromosomes. 
+Nie sú známe žiadne výnimky z tohto vzorca: eukaryoty, ktoré boli študované, obsahujú molekuly DNA, ktoré sú vždy lineárne a majú najmenej dva chromozómy. 
+Jediná variabilita na tejto úrovni organizácie eukaryotického genómu je koherentná s počtom chromozómov.
+Ďalej sa zdá, že biologické vlastnosti organizmu nezávisia od počtu chromozómov. \cite{Genomes3}
 
-The ends of eukaryotic chromosomes are also the ends of linear duplex DNA and as such require a special structure to ensure that they are maintained. 
-The reason for this is connected with the way in which double-stranded DNA is replicated \cite{PrinciplesOfGeneManipulation}.
-In the absence of a method for completing the ends, chromosomes would become shorter after each cell division.
+Konce eukaryotických chromozómov sú tiež koncami lineárnej duplexnej DNA a ako také si vyžadujú špeciálnu štruktúru, ktorá zaisťuje ich zachovanie.
+Dôvod je spojený so spôsobom, akým sa replikuje dvojvláknová DNA \cite{PrinciplesOfGeneManipulation}.
+Ak by neexistoval spôsob dokončovania koncov, chromozómy by sa po každom delení buniek skracovali.
 
-Telomeres are specialized nucleic acid sequences whose role is to protect the ends of chromosomes.
-In most eukaryotes the telomere consists of a short repeat of TTAGGG many hundreds of units long, but the repeated segment might differ among species.
-Also, these repeats vary considerably in length between species, however each species maintains a fixed average telomere length in its germline.
+Teloméry sú špecializované sekvencie nukleových kyselín, ktorých úlohou je chrániť konce chromozómov.
+Vo väčšine eukaryotov pozostáva telomera z krátkeho opakovania TTAGGG s dĺžkou stoviek jednotiek, ale opakovaný segment sa môže medzi jednotlivými druhmi líšiť.
+Tieto opakovania sa tiež medzi jednotlivými druhmi značne líšia, avšak každý druh si zachováva fixnú priemernú dĺžku telomer vo svojej zárodočnej línii.
 
-Despite the size of a nucleus (5-10 um), an overall length of DNA in the human cell is approximately 2.1m and can be packed inside the cell because of the method the nucleic acid is stored. 
+Napriek veľkosti jadra (5 - 10 um) je celková dĺžka DNA v ľudskej bunke približne 2,1 m a môže byť zabalená do bunky vďaka spôsobu, ktorým je nukleová kyselina uložená (obr 1.4).
 
-% \begin{figure}[!ht]
-% 	\centering
-% 	\includegraphics[width=.5\textwidth]{figures/hc.jpg}
-% 	\caption{Human chromosomes during metaphase.\label{o:latex_friendly_zone}}
-% \end{figure}
-
-The genetic material in viruses and bacteria consists of strings of DNA or RNA almost devoid of proteins. 
-However, in eukaryotes, a substantial quantity of protein is associated with the DNA to form chromatin. 
-At the lowest level, the DNA is organized by wrapping DNA strands around he proteins called histones, that contain a large amount of positively charged amino acids arginine and lysine. 
-Those amino acids, and histones in general, play the crucial structural role, making it possible to bind the negative charged phosphate groups of the DNA nucleotides.
+Genetický materiál vo vírusoch a baktériách pozostáva z reťazcov DNA alebo RNA takmer bez bielkovín.
+U eukaryotov je však podstatné množstvo bielkovín spojené s DNA za vzniku chromatínu.
+Na najnižšej úrovni je DNA organizovaná obalením vlákien DNA okolo proteínov nazývaných históny, ktoré obsahujú veľké množstvo pozitívne nabitých aminokyselín arginínu a lyzínu.
+Tieto aminokyseliny a históny všeobecne hrajú rozhodujúcu štrukturálnu úlohu, čo umožňuje viazať negatívne nabité fosfátové skupiny DNA nukleotidov.
 
 \begin{figure}[!ht]
 	\centering
@@ -140,113 +134,93 @@ Those amino acids, and histones in general, play the crucial structural role, ma
 	\caption{The nucleosome structure. H2A, H2B, H3 and H4 represent different types of histones. \label{o:latex_friendly_zone}}
 \end{figure}
 
-Averagely, the DNA rolled around the histones consists of 140-150 base pair, dependently on the species. 
-Such a complex of DNA and histones is termed a nucleosome. 
-These nucleosomes can be further coiled into increasingly larger coils up until forming chromosomes. 
-However, tight coiling of DNA limits cells ability to access DNA and to process it.
-Instead of being constantly coiled, the nucleic acid is usually found in a state called chromatin where some segments of acid are tightly reeled (heterochromatin), while other segments are entirely open (euchromatin). 
-Euchromatin DNA is is highly accessible by the molecular complexes used by the cell and therefore is easier to manipulate with. 
+V priemere DNA valcovaná okolo histónov pozostáva z 140 - 150 párov báz, v závislosti od druhu.
+Takýto komplex DNA a histónov sa nazýva nukleozóm (obr. 1.5).
+Tieto nukleozómy môžu byť ďalej navíjané do čoraz väčších závitov až do vytvorenia chromozómov.
+Tesné navinutie DNA však obmedzuje schopnosť buniek dostať sa k DNA a spracovať ju.
+Namiesto toho, aby bola nukleová kyselina neustále zvinutá, nachádza sa zvyčajne v stave zvanom chromatín, kde sú niektoré segmenty kyseliny pevne navinuté (heterochromatín), zatiaľ čo iné segmenty sú úplne otvorené (euchromatín).
+Euchromatínová DNA je vysoko dostupná pre molekulárne komplexy používané bunkou, a preto sa s ňou ľahšie manipuluje.
 
-The amount and extent of packing are determined by a sell, to control which sections of the genome can be expressed and which cannot. 
-It affects cellular function and appears to be the predominant cause of differentiating cells type, while having the same DNA.
+Množstvo a rozsah balenia určuje bunka, ktorá kontroluje, ktoré časti genómu je možné exprimovať a ktoré nie.
+Ovplyvňuje bunkovú funkciu a javí sa ako hlavná príčina diferenciácie typu buniek pri rovnakej DNA.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Prokaryotic genome organization}
+\subsection{Organizácia prokaryotického genómu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-A prokaryote is a cellular organism that lacks an envelope-enclosed nucleus.
-Prokaryotic genomes are very different from eukaryotic ones, in particular with regard to the physical organization of the genome within the cell.
-Although the word “chromosome” is used to describe the DNA–protein structures present in prokaryotic cells, this is a misnomer as this structure does not resemble an ordinary eukaryotic chromosome.
-In a typical prokaryote the genome is contained in a single, circular DNA molecule, localized within the nucleoid — the lightly staining region of the otherwise featureless prokaryotic cell.
+Prokaryot je bunkový organizmus, ktorému chýba obalené jadro.
+Prokaryotické genómy sa veľmi líšia od eukaryotických, najmä čo sa týka fyzickej organizácie genómu v bunke.
+Aj keď sa slovo „chromozóm“ používa na opis štruktúr DNA a proteínov prítomných v prokaryotických bunkách, jedná sa o nesprávny názov, pretože táto štruktúra nepripomína obyčajný eukaryotický chromozóm.
+V typickom prokaryote je genóm obsiahnutý v jedinej kruhovej molekule DNA lokalizovanej v nukleoide - ľahko sa sfarbujúcej oblasti inak nevýraznej prokaryotickej bunky (obr. 1.6).
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{figures/pro-vs-eu-dna_med.jpeg}
-	\caption{Comprasion of eukaryotic and prokaryotic DNAs \label{o:latex_friendly_zone}}
+	\caption{Porovnanie eukaryotickej a prokaryotickej DNA.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Most of what is known about the organization of DNA in the nucleoid comes from studies of E. coli. 
-The first feature to be recognized was that the circular E. coli genome is supercoiled. 
-Supercoiling occurs when additional turns are introduced into the DNA double helix (positive supercoiling) or if turns are removed (negative supercoiling). 
-With a linear molecule, the torsional stress introduced by over- or underwinding is immediately released by rotation of the ends of the DNA molecule, but a circular molecule, having no ends, cannot reduce the strain in this way. 
-Instead the circular molecule responds by winding around itself to form a more compact structure. 
-Supercoiling is therefore an ideal way to package a circular molecule into a small space. 
-Evidence that supercoiling is involved in packaging the circular E.coli genome was first obtained in the 1970s from examination of isolated nucleoids, and subsequently confirmed as a feature of DNA in living cells in 1981. 
-In E. coli, the supercoiling is thought to be generated and controlled by two enzymes, DNA gyrase and DNA topoisomerase I.
+Väčšina toho, čo je známe o organizácii DNA v nukleoide, pochádza zo štúdií \textit{E. coli}.
+Prvou rozoznateľnou vlastnosťou, bolo, že kruhový genóm \textit{E. coli} je zvinutý.
+Superzávitnica nastáva, keď sa do dvojitej špirály DNA zavedú ďalšie dvojité špirály (pozitívna nadzávitnica) alebo ak sa odstránia závity (negatívna nadzávitnica).
+Pri lineárnej molekule sa torzné napätie vyvolané pretočením alebo odtočením okamžite uvoľní rotáciou koncov molekuly DNA, ale kruhová molekula, ktorá nemá konce, nemôže týmto spôsobom uvoľniť napätie.
+Namiesto toho kruhová molekula reaguje navinutím okolo seba a vytvorí kompaktnejšiu štruktúru.
+Nadzávitnutie je preto ideálny spôsob, ako zabaliť kruhovú molekulu do malého priestoru.
 
-Despite the conventional prokaryotic genome structure, an increasing number of linear genomes are being found. 
-Linear molecules have free ends, which must be distinguishable from DNA breaks, so these chromosomes require terminal structures equivalent to the telomeres 
-of eukaryotic chromosomes. In Borrelia burgdorferi and Agrobacterium tumefaciens, the real chromosome ends are distinguishable because a covalent linkage is formed 
-between the 5` and 3` ends of the polynucleotides in the DNA double helix, and in Streptomyces coelicolor the ends appear to be marked by special binding proteins.
+Napriek konvenčnej prokaryotickej štruktúre genómu sa nachádza čoraz viac lineárnych genómov.
+Lineárne molekuly majú voľné konce, ktoré musia byť odlíšiteľné od zlomov DNA, takže tieto chromozómy vyžadujú terminálne štruktúry rovnocenné s telomérami eukaryotických chromozómov.
+U \textit{Borrelia burgdorferi} a \textit{Agrobacterium tumefaciens} sú skutočné konce chromozómov rozlíšiteľné, pretože sa vytvára kovalentná väzba.
+medzi 5` a 3` koncami polynukleotidov v dvojitej špirále DNA a v Streptomyces coelicolor sa konce zdajú byť označené špeciálnymi väzbovými proteínmi.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Viral genome organization}
+\subsection{Organizácia vírusových genómov}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-To begin with, viruses are out-of-cell forms of life. It means, that their lifecycle and structure are generally less complicated comparely to others.
-Viruses can be extremely simple in design, consisting of nucleic acid surrounded by a protein coat known as a capsid. The capsid is composed of smaller protein components referred to as capsomers. The capsid+genome combination is called a nucleocapsid.
+V prvom rade sú vírusy mimobunkovou formou života. To znamená, že ich životný cyklus a štruktúra sú vo všeobecnosti menej komplikované v porovnaní s ostatnými.
+Vírusy môžu mať extrémne jednoduchý dizajn, ktorý sa skladá z nukleovej kyseliny obklopenej proteínovým obalom známym ako kapsida (obr 1.7).
+Kapsida je zložená z menších bielkovinových zložiek, ktoré sa označujú ako kapsoméry. Kombinácia kapsid + genóm sa nazýva nukleokapsid.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.75\textwidth]{figures/virus.png}
-	\caption{Virus Characteristics. \label{o:latex_friendly_zone}}
+	\caption{Charakteristika vírusu \label{o:latex_friendly_zone}}
 \end{figure}
 
-Viruses can also possess additional components, with the most common being an additional membranous layer that surrounds the nucleocapsid, called an envelope. 
-The envelope is actually acquired from the nuclear or plasma membrane of the infected host cell, and then modified with viral proteins called peplomers. 
-Some viruses contain viral enzymes that are necessary for infection of a host cell and coded for within the viral genome. 
-A complete virus, with all the components needed for host cell infection, is referred to as a virion.
+Vírusy môžu obsahovať aj ďalšie zložky, pričom najbežnejšou je ďalšia membránová vrstva obklopujúca nukleokapsid, ktorá sa nazýva obálka.
+Obal sa skutočne získava z jadrovej alebo plazmatickej membrány infikovanej hostiteľskej bunky a potom sa modifikuje vírusovými proteínmi nazývanými peploméry.
+Niektoré vírusy obsahujú vírusové enzýmy, ktoré sú potrebné na infekciu hostiteľskej bunky a sú kódované vo vírusovom genóme.
+Kompletný vírus so všetkými zložkami potrebnými na infekciu hostiteľských buniek sa označuje ako virión.
 
-While cells contain double-stranded DNA for their genome, viruses are not limited to this form. 
-Moreover, as it was mentioned at the very beginning, apart from the dsDNA (double stranded DNA) viruses, there are also viruses with single-stranded DNA (ssDNA), double-stranded RNA (dsRNA), and single-stranded RNA (ssRNA). 
-In this last category, the ssRNA can either be positive-sense (+ssRNA, meaning it can transcribe a message, like mRNA) or it can be negative-sense (-ssRNA, indicating that it is complementary to mRNA). Some viruses even start with one form of nucleic acid in the nucleocapsid and then convert it to a different form during replication.
-In addition, these can be multipartite, meaning they consist of several RNA molecules.
+Zatiaľ čo bunky obsahujú pre svoj genóm dvojvláknovú DNA, vírusy sa neobmedzujú iba na túto formu.
+Navyše, ako bolo uvedené na samom začiatku, okrem vírusov dsDNA (dvojvláknová DNA) existujú aj vírusy s jednovláknovou DNA (ssDNA), dvojvláknovou RNA (dsRNA) a jednovláknovou RNA (ssRNA).
+V tejto poslednej kategórii môže byť ssRNA buď pozitívna v zmysle (+ ssRNA, čo znamená, že môže prepisovať správu, napríklad mRNA), alebo môže byť v negatívnom zmysle (-ssRNA, čo naznačuje, že je komplementárna k mRNA). Niektoré vírusy dokonca začínajú jednou formou nukleovej kyseliny v nukleokapside a potom ju počas replikácie konvertujú do inej formy.
+Môžu byť navyše viacdielne, čo znamená, že pozostávajú z niekoľkých molekúl RNA.
 
-In general, DNA viruses tend to be larger in size than RNA viruses and the single stranded genomes are smaller than those that are double-stranded. 
-It is hypothesized that single-stranded virus are smaller because that type of molecule is more fragile than the double stranded molecule. 
-This is generally true for both ssDNA and ssRNA viruses.
-Among the double-stranded genomes, these can either have 'small' or 'large' genomes. 
-One major difference between the two genomes is the mechanism of DNA replication. 
-Small genomes use host polymerase activities, whereas large genomes encode an own DNA polymerase.
-
+Všeobecne DNA vírusy majú väčšiu veľkosť ako RNA vírusy a jednovláknové genómy sú menšie ako dvojvláknové.
+Existuje hypotéza, že jednovláknový vírus je menší, pretože tento typ molekuly je krehkejší ako dvojvláknová molekula.
+To všeobecne platí pre vírusy ssDNA aj ssRNA.
+Medzi dvojvláknovými genómami môžu mať buď „malé“, alebo „veľké“ genómy.
+Jedným z hlavných rozdielov medzi týmito dvoma genómami je mechanizmus replikácie DNA.
+Malé genómy využívajú aktivity hostiteľskej polymerázy, zatiaľ čo veľké genómy kódujú vlastnú DNA polymerázu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Genes: location and general structure}
+\subsection{Gény: umiestnenie a všeobecná štruktúra}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Gene is a sequence of nucleotides in DNA or RNA that encodes the synthesis of a gene product, either RNA or protein that have distinctive features. 
-At present the nature of all of these specific features is not fully understandable, and sequence inspection is therefore not a foolproof way of locating genes\cite{Genomes3}.
+Gén je sekvencia nukleotidov v DNA alebo RNA, ktorá kóduje syntézu génového produktu, buď RNA alebo proteínu, ktoré majú charakteristické vlastnosti.
+Povaha všetkých týchto špecifických znakov nie je v súčasnosti úplne pochopiteľná, a preto kontrola sekvencie nie je spoľahlivým spôsobom lokalizácie génov \cite{Genomes3}.
 
-Apart from the usual genes, pseudogenes are also present in different genomes.
-Pseudogenes are sequences of genomic DNA with such similarity to normal genes that they are regarded as non-functional copies or close relatives of genes\cite{PrinciplesOfGeneManipulation}. 
-They are formed in two ways:
+Okrem obvyklých génov sú aj pseudogény prítomné v rôznych genómoch.
+Pseudogény sú sekvencie genómovej DNA s takou podobnosťou s normálnymi génmi, že sa považujú za nefunkčné kópie alebo za blízkych príbuzných génov \cite{PrinciplesOfGeneManipulation}. 
+Sú tvorené dvoma spôsobmi:
 \begin{itemize}
-	\item Classical duplicated pseudogenes are formed when genes that are tandemly duplicated accumulate mutations such that one of the genes becomes non-functional.
-	These mutations may prevent transcription and/or translation.
-	\item Processed pseudogenes are formed by the accumulation of mutations in a gene that has been retrotransposed to a new location. 
-	They are characterized by an absence of introns that are present in the parental gene.
+	\item Klasické duplikované pseudogény sa tvoria, keď tandemovo duplikované gény akumulujú mutácie tak, že jeden z génov sa stane nefunkčným.
+	Tieto mutácie môžu zabrániť transkripcii a / alebo translácii (procesy potrebné pre syntézu proteínov).
+	\item Spracované pseudogény sa tvoria hromadením mutácií v géne, ktorý bol retrotransponovaný na nové miesto.
+	Vyznačujú sa absenciou intrónov (vid' d'alej), ktoré sú prítomné v rodičovskom géne.
 \end{itemize} 
 
-Genes that code for proteins comprise open reading frames (ORFs) consisting of a series of codons (trinucleotides) that specify the amino acid sequence of the protein that the gene codes for. 
-The ORF begins with an initiation codon — usually (but not always) ATG — and ends with a termination codon: TAA, TAG, or TGA. 
-Searching a DNA sequence for ORFs that begin with an ATG and end with a termination triplet is therefore one way of looking for genes. 
-The analysis is complicated by the fact that each DNA sequence has six reading frames, three in one direction and three in the reverse direction on the complementary strand.
-
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=.6\textwidth]{figures/eukaryotic_transcription_2.png}
-	\caption{Intron and exon organization during DNA-coherent processes at the cell's lifecycle.\label{o:latex_friendly_zone}}
-\end{figure}
-
-The key to the success of ORF scanning is the frequency with which termination codons appear in the DNA sequence. 
-If the DNA has a random sequence and a GC content of 50\% then each of the three termination codons — TAA, TAG, and TGA — will appear, on average, once every 64 bp. 
-If the GC content is greater than 50\% then the termination codons, being AT – rich, will occur less frequently, but one will still be expected every 100–200 bp. 
-This means that random DNA should not show many ORFs longer than 50 codons in length.
-Most genes, on the other hand, are longer than 50 codons: the average lengths are 317 codons for Escherichia coli, 483 codons for Saccharomyces cerevisiae, and approximately 450 codons for humans \cite{FindingGenes}. 
-ORF scanning, in its simplest form, therefore takes a figure of, say, 100 codons as the shortest length of a putative gene and records positive hits for all ORFs longer than this.
-
-With bacterial genomes, simple ORF scanning is an effective way of locating most of the genes in a DNA sequence.
-The real genes in the sequence cannot be mistaken because they are much longer than 50 codons in length. 
-With bacteria the analysis is further simplified by the fact that the genes are very closely spaced and hence there is relatively little intergenic DNA in the genome (only 11\% for E. coli). 
-The most of bacterial genes do not overlap.
+Gény, ktoré kódujú proteíny, zahŕňajú otvorené čítacie rámce (ORF) pozostávajúce zo série kodónov (trinukleotidov), ktoré špecifikujú aminokyselinovú sekvenciu proteínu, ktorý gén kóduje.
+ORF začína iniciačným kodónom - zvyčajne (ale nie vždy) ATG - a končí terminačným kodónom: TAA, TAG alebo TGA.
+Hľadanie DNA sekvencie pre ORF, ktoré začínajú ATG a končia terminačným tripletom, je preto jedným zo spôsobov hľadania génov.
+Analýzu komplikuje skutočnosť, že každá sekvencia DNA má na komplementárnom vlákne šesť čítacích rámcov, tri v jednom smere a tri v opačnom smere (obr. 1.8).
 
 \begin{figure}[!ht]
 	\centering
@@ -258,156 +232,168 @@ The most of bacterial genes do not overlap.
 	starting position.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Although ORF scans work well for bacterial genomes, they are less effective for locating genes in DNA sequences from higher eukaryotes. 
-This is partly because there is substantially more space between the real genes in a eukaryotic genome (for example, approximately 62\% of the human genome is intergenic), increasing the chances of finding spurious ORFs. 
-But the main problem with the human genome and the genomes of higher eukaryotes in general is that their genes are often split by introns (non-coding regions of gene), and so do not appear as continuous ORFs in the DNA sequence. 
-Many exons (coding regions of gene) are shorter than 100 codons, some consisting of fewer than 50 codons, and continuing the reading frame into an intron usually leads to a termination sequence that appears to close the ORF. 
-In other words, the genes of a higher eukaryote do not appear in the genome sequence as long ORFs, and simple ORF scanning cannot locate them.
+Kľúčom k úspechu skenovania ORF je frekvencia, s akou sa v sekvencii DNA objavujú terminačné kodóny.
+Ak má DNA náhodnú sekvenciu a obsah GC 50\%, potom sa každý z troch terminačných kodónov - TAA, TAG a TGA - objaví v priemere raz za 64 bp.
+Ak je obsah GC vyšší ako 50\%, potom sa terminačné kodóny, ktoré sú bohaté na AT, vyskytujú menej často, ale stále sa bude očakávať jeden za každých 100–200 bp.
+To znamená, že náhodná DNA by nemala vykazovať veľa ORF dlhších ako 50 kodónov \cite{orf}.
+Väčšina génov je naopak dlhšia ako 50 kodónov: priemerná dĺžka je 317 kodónov pre \textit{Escherichia coli}, 483 kodónov pre Saccharomyces cerevisiae a približne 450 kodónov pre človeka \cite{FindingGenes}.
+Skenovanie ORF vo svojej najjednoduchšej forme preto berie údaj, napríklad 100 kodónov, ako najkratšiu dĺžku predpokladaného génu a zaznamenáva pozitívne zásahy do všetkých ORF dlhších ako je táto.
+With bacterial genomes, simple ORF scanning is an effective way of locating most of the genes in a DNA sequence.
+The real genes in the sequence cannot be mistaken because they are much longer than 50 codons in length. 
+With bacteria the analysis is further simplified by the fact that the genes are very closely spaced and hence there is relatively little intergenic DNA in the genome (only 11\% for \textit{E. coli}). 
+The most of bacterial genes do not overlap.
 
-In addition, since some viruses (mainly eukaryotic ones) have intron-exon stuctures in their genomes \cite{Genes3}, ORF scanning is not the irrefragable method of locating genes among them.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=.6\textwidth]{figures/eukaryotic_transcription_2.png}
+	\caption{Organizácia intrónov a exónov počas procesov koherentných s DNA v životnom cykle bunky.\label{o:latex_friendly_zone}}
+\end{figure}
+Aj keď skenovanie ORF funguje dobre pre bakteriálne genómy, je menej efektívne pri lokalizácii génov v sekvenciách DNA od vyšších eukaryotov.
+Je to čiastočne preto, že medzi skutočnými génmi v eukaryotickom genóme je podstatne viac priestoru (napríklad približne 62\% ľudského genómu je intergénnych), čo zvyšuje šance na nájdenie falošných ORF.
+Ale hlavným problémom ľudského genómu a genómov vyšších eukaryotov všeobecne je, že ich gény sú často štiepené intrónmi (nekódujúce oblasti génu), a tak sa v sekvencii DNA nejavia ako spojité ORF.
+Mnoho exónov (kódujúcich oblastí génu) sú kratšíe ako 100 kodónov, niektoré pozostávajú z menej ako 50 kodónov a pokračovanie čítacieho rámca do intrónu zvyčajne vedie k terminačnej sekvencii, ktorá sa zdá uzavrieť ORF (obr. 1.9).
+Inými slovami, gény vyššieho eukaryotu sa neobjavujú v sekvencii genómu, pokiaľ sú dlhé ORF a jednoduché skenovanie ORF ich nedokáže lokalizovať.
 
-ORF scanning is appropriate for protein-coding genes, but genes for functional RNAs such as rRNA and tRNA do not comprise open reading frames. 
-Functional RNA molecules do, however, have their own distinctive features, which can be used to aid their discovery in a genome sequence. 
+Navyše, keďže niektoré vírusy (hlavne eukaryotické) majú vo svojich genómoch štruktúry intrón-exón \cite{Genes3}, skenovanie ORF nie je nezvratnou metódou lokalizácie génov medzi nimi.
+
+Skenovanie ORF je vhodné pre gény kódujúce proteín, ale gény pre funkčné RNA, ako sú rRNA a tRNA, neobsahujú otvorené čítacie rámce.
+Funkčné molekuly RNA však majú svoje vlastné charakteristické znaky, ktoré môžu byť použité na uľahčenie ich objavenia v sekvencii genómu (obr. 1.10).
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.5\textwidth]{figures/rna.png}
-	\caption{A typical RNA intramolecular base pairing
-	structure.\label{o:latex_friendly_zone}}
+	\caption{Typická štruktúra párovania intramolekulárnych báz RNA.\label{o:latex_friendly_zone}}
 \end{figure}
 
-The most important of these features is the ability to fold into a secondary structure, such as the cloverleaf adopted by tRNA molecules. 
-These secondary structures are held together by base pairing not between two separate polynucleotides, as in the DNA double helix, 
-but between different parts of the same polynucleotide — intramolecular base pairing. 
+Najdôležitejšou z týchto vlastností je schopnosť zložiť sa do sekundárnej štruktúry, ako je napríklad štvorlístok prijatý molekulami tRNA.
+Tieto sekundárne štruktúry sú držané spolu párovaním báz nie medzi dvoma samostatnými polynukleotidmi, ako napríklad v dvojitej špirále DNA,
+ale medzi rôznymi časťami toho istého polynukleotidu - párovanie intramolekulárnych báz.
 
-In order for intramolecular base pairs to form, the nucleotide sequences in the two parts of the molecule must be complementary, 
-and to produce a complex structure such as the cloverleaf, the components of these pairs of complementary sequences must be arranged in a characteristic order within the RNA sequence. 
-These features provide a wealth of information that can be used to locate tRNA genes in a genome sequence.
+Aby sa mohli vytvoriť intramolekulárne páry báz, musia byť nukleotidové sekvencie v dvoch častiach molekuly komplementárne,
+a na vytvorenie komplexnej štruktúry, ako je štvorlístok, musia byť komponenty týchto párov komplementárnych sekvencií usporiadané v charakteristickom poradí v rámci sekvencie RNA.
+Tieto vlastnosti poskytujú množstvo informácií, ktoré možno použiť na lokalizáciu génov tRNA v sekvencii genómu. 
 
-As well as tRNAs, rRNAs and some of the small functional RNAs also adopt secondary structures that have sufficient complexity to enable their genes to be identified without too much difficulty \cite{rna}. 
-Other functional RNA genes are less easy to locate because the RNAs take up structures that involve relatively little base pairing or the base pairing is not in a regular pattern.
+Rovnako ako tRNA, rRNA a niektoré z malých funkčných RNA tiež prijímajú sekundárne štruktúry, ktoré sú dostatočne zložité na to, aby umožnili identifikáciu ich génov bez veľkých ťažkostí \cite{rna}.
+Menej ľahko sa dajú lokalizovať ďalšie funkčné gény RNA, pretože RNA zaberajú štruktúry, ktoré zahŕňajú relatívne malé párovanie báz alebo párovanie báz nie je v pravidelnom obrazci.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Existing Solutions For Genome Data Representing}
+\section{Existujúce riešenia pre reprezentáciu údajov o genóme}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-With the rapid development of next-generation sequencing technologies, hundreds of thousands of genomes have been sequenced. %(http://www.genomesonline.org/)
-All the sequence data as well as the annotations are collected in the genome databases and are publicly available 
-through web portals such as the NCBI genome portal (http://www.ncbi.nlm.nih.gov/genome/) and the EBI genome database website (http://www.ebi.ac.uk/Databases/genomes.html). 
+Vďaka rýchlemu vývoju technológií sekvenovania novej generácie sa sekvenovali státisíce genómov.
+Všetky údaje o postupnosti, ako aj anotácie sa zhromažďujú v databázach genómu a sú verejne dostupné
+prostredníctvom webových portálov, ako je portál genómov NCBI a webová stránka databázy genómov EBI. %(http://www.ncbi.nlm.nih.gov/genome/) (http://www.ebi.ac.uk/Databases/genomes.html)
 
-By systematic integration of genome sequences together with annotations generated through much heterogeneous data, genome browser provides a unique platform 
-for molecular biologists to browse, search, retrieve and analyze these genomic data efficiently and conveniently. 
-With a graphical interface, genome browser helps users to extract and summarize information intuitively from huge amount of raw complex data. 
+Systematickou integráciou sekvencií genómu spolu s anotáciami generovanými prostredníctvom mnohých heterogénnych údajov, prehliadač genómu poskytuje jedinečnú platformu pre molekulárnych biológov, aby mohli tieto genomické údaje efektívne a pohodlne prehliadať, vyhľadávať, získavať a analyzovať.
+Vďaka grafickému rozhraniu pomáha prehliadač genómu používateľom intuitívne extrahovať a sumarizovať informácie z obrovského množstva nespracovaných komplexných údajov.
 
-In general, genome browser can be divided into web-based browsers and stand-alone applications. 
-Web-based genome browsers which usually are more usable in promoting biological research due to their data quality, flexible accessibility and high performance
+Prehliadače genómu možno vo všeobecnosti rozdeliť na webové prehľadávače a samostatné aplikácie.
+Webové prehliadače genómu, ktoré sú zvyčajne vhodnejšie na podporu biologického výskumu vďaka svojej kvalite údajov, flexibilnej dostupnosti a vysokému výkonu.
 \begin{itemize}
-	\item Firstly, dedicated organizations often collect and integrate high-quality annotation data into web-based genome browsers, providing plentiful up-to-date information for the community. 
-	\item Secondly, users can access them anywhere with a standard web browser, avoiding any additional effort of setting up local environment for application installation and data preparation. 
-	\item Thirdly, web-based genome browsers are usually installed on high performance servers and can support more complex and larger scale data types and applications. 
+	\item Po prvé, špecializované organizácie často zhromažďujú a integrujú vysoko kvalitné anotačné údaje do webových prehľadávačov genómu a poskytujú komunite množstvo aktuálnych informácií. 
+	\item Po druhé, používatelia k nim môžu mať prístup kdekoľvek pomocou štandardného webového prehľadávača, čím sa vyhnú ďalšiemu úsiliu pri nastavovaní lokálneho prostredia pre inštaláciu aplikácií a prípravu dát. 
+	\item Po tretie, webové prehľadávače genómu sa zvyčajne inštalujú na vysoko výkonné servery a môžu podporovať zložitejšie a rozsiahlejšie dátové typy a aplikácie.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Web-based genome browsers}
+\subsection{Webové prehliadače genómu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Currently, there are two types of web-based genome browsers. 
+V súčasnosti existujú dva typy webových prehľadávačov genómu. 
 
-The first type is the multiple-species genome browsers such as the Ensembl project \cite{ENSEMBLgb}, the UCSC genome database \cite{UCSCgb} and the NCBI Map viewer website \cite{NCBIgb}.
-These genome browsers promote cross-species comparative analysis. 
-Most of them contain abundant annotations, covering gene model, transcript evidence, expression profiles, regulatory data, genomic conversation, etc. 
-Each set of pre-computed annotation data is called a track in genome browsers. 
-The essence of a genome browser is to pile up multiple tracks under the same genomic coordinate along the Y-axis, thus users could easily examine the consistency or difference of the annotation data and make their judgments of the features of the genomic region.
+Prvým typom sú prehliadače genómu pre viac druhov, ako napríklad projekt Ensembl \cite{ENSEMBLgb}, databáza genómov UCSC \cite{UCSCgb} a webová stránka prehliadača NCBI \cite{NCBIgb}.
+Tieto prehľadávače genómu podporujú medzidruhovú komparatívnu analýzu.
+Väčšina z nich obsahuje veľké množstvo anotácií, ktoré zahŕňajú génový model, dôkazy o transkripcii, profily expresie, regulačné údaje, genómovú konverzáciu atď.
+Každá skupina vopred vypočítaných údajov anotácií sa v prehľadávačoch genómu nazýva stopa.
+Podstatou prehliadača genómu je zhromaždiť viac stôp pod rovnakou genomickou súradnicou pozdĺž osi Y, aby používatelia mohli ľahko preskúmať konzistenciu alebo rozdielnosť anotačných údajov a urobiť úsudok o vlastnostiach genomickej oblasti.
 
-The other type is the species-specific genome browsers which mainly focus on one model organism and may have more annotations for a particular species. 
-Powered by the Generic Model Organism Database (GMOD) project (http://gmod.org/), dozens of open-source software tools are collected for creating and managing genome biological databases.
-The GBrowse framework \cite{GBrowse} is one of the most popular tools in the GMOD project. 
-Table 2 lists several mainstream web-based genome browsers, including Ensembl, the UCSC genome browser and the GBrowse, which are accessed by a large number of users worldwide.
+Druhým typom sú druhovo špecifické prehliadače genómu, ktoré sa zameriavajú hlavne na jeden modelový organizmus a môžu mať pre konkrétny druh viac anotácií.
+Poháňaný projektom Generic Model Organism Database (GMOD) sa zhromažďujú desiatky softvérových nástrojov otvoreného zdroja na vytváranie a správu biologických databáz genómu.
+Rámec GBrowse \cite{GBrowse} je jedným z najpopulárnejších nástrojov v projekte GMOD.
+Tabuľka 1.2 uvádza zoznam niekoľkých bežných webových prehľadávačov genómu, medzi ktoré patrí Ensembl, prehľadávač genómov UCSC a GBrowse, ku ktorým má prístup veľké množstvo používateľov na celom svete.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Functionalities and features}
+\subsection{Funkcie a vlastnosti}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-A web-based genome browser often provides a centralized or a set of databases to store different types of annotation data obtained from several organizations. 
-The challenge for the general genome browsers is how to display this information properly for different genomic scales. 
-Massive amounts of information need to be incorporated into the picture when a large genomic area is requested, which could overburden the server and the network. 
-Furthermore, too many heavy and complicated details also disturb the user attention. 
+Webový prehliadač genómu často poskytuje centralizovanú databázu alebo súbor databáz na ukladanie rôznych typov anotačných údajov získaných od niekoľkých organizácií.
+Výzvou pre všeobecné prehľadávače genómu je, ako správne zobraziť tieto informácie pre rôzne stupne genómu.
+Keď je požadovaná veľká genomická oblasť, je potrebné do obrazu zahrnúť obrovské množstvo informácií, ktoré by mohli preťažiť server a sieť.
+Príliš veľa ťažkých a komplikovaných detailov navyše narúša pozornosť používateľa.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.9\textwidth]{figures/ucsc_gb.png}
-	\caption{The main user interface of the UCSC genome browser showing the default tracks in default order for the human alpha-globin gene cluster.\label{o:latex_friendly_zone}}
+	\caption{Hlavné používateľské rozhranie prehľadávača genómov UCSC, ktoré zobrazuje predvolené stopy v predvolenom poradí pre klaster ľudského génu alfa-globínu.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Being the one of the big players in genomic data visualization, The UCSC genome browser tries to solve the problem by providing multiple views for a track [5]. 
-Every track can be viewed in different modes such as dense, or fully expanded or can be hidden. 
-The user can go deeper on the dense track 25 to open it in full mode. 
-There are many scales possible for the track display. 
-The lowest is a single chromosome and the highest scale is the sequence of base pairs.
-The dense view of some tracks could be displayed to hide complicated details when zooming out to a large area of a chromosome, so that the user has a broad picture of the selected chromosome region.
+Prehliadač genómu UCSC, ktorý je jedným z veľkých hráčov vo vizualizácii genomických údajov, sa snaží tento problém vyriešiť poskytnutím viacerých zobrazení tracku (obr. 1.12).
+Každú stopu je možné zobraziť v rôznych režimoch, napríklad hustú, úplne rozbalenú alebo skrytú.
+Používateľ môže ísť hlbšie po hustej trati 25 a otvoriť ju v plnom režime.
+Pre zobrazenie tracku je možné veľa stupníc.
+Najnižší je jeden chromozóm a najvyššia stupnica je sekvencia párov báz.
+Môže sa zobraziť hustý pohľad na niektoré tracky, aby sa pri oddialení na veľkú oblasť chromozómu skryli komplikované detaily, aby mal používateľ široký obraz o vybranej oblasti chromozómov.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.9\textwidth]{figures/ensembl_gb.png}
-	\caption{The user interface of the Ensembl genome browser with default setting of the annotation tracks, showing the alpha-globin gene cluster. The graphical annotations are displayed in the main
-	body divided in three sections from top to bottom.\label{o:latex_friendly_zone}}
+	\caption{Užívateľské rozhranie prehliadača genómu Ensembl s predvoleným nastavením stôp anotácií zobrazujúcich klaster génov alfa-globínu. Grafické anotácie sú zobrazené v hlavnej časti tela rozdelené do troch sekcií zhora nadol.\label{o:latex_friendly_zone}}
 \end{figure}
 
-The Ensembl genome browser provides the same user interface for each organism. 
-The main body of the interface contains two panels. 
-The left panel lists the main menu for location-based displays at different levels from whole genome, chromosome summary to region overview and region in detail. 
-And links to comparative genomics, genetic variation as well as sequence markers are also provided. 
-The main panel is arranged in three sections from top to bottom, providing different scales for users to analyze the genome.
-In addition to the location view, Ensembl provides separate pages to display various types of information, organized in a tabbed structure.
+Prehliadač genómu Ensembl poskytuje rovnaké užívateľské rozhranie pre každý organizmus.
+Hlavné telo rozhrania obsahuje dva panely (obr. 1.13).
+Na ľavom paneli je uvedená hlavná ponuka pre zobrazenia založené na polohe na rôznych úrovniach od celého genómu, súhrnu chromozómov až po prehľad oblastí a podrobných oblastí.
+Poskytnuté sú tiež odkazy na komparatívnu genomiku, genetické variácie a sekvenčné markery.
+Hlavný panel je usporiadaný do troch častí zhora nadol a poskytuje používateľom rôzne stupnice na analýzu genómu.
+Okrem zobrazenia umiestnenia poskytuje Ensembl samostatné stránky na zobrazenie rôznych typov informácií usporiadaných do štruktúr so záložkami.
+Je užitočné mať prehľad o veľkej ploche chromozómu a súčasne hľadať podrobnosti do niekoľkých malých oblastí.
+Spojenie paralogických génov na jednej stránke by mohlo výrazne podporiť komparatívnu analýzu.
 
-It is useful to have an overview of a large area of the chromosome and look into several small regions for details simultaneously. 
-Putting paralogous genes together in one page could promote comparative analysis greatly. 
-For example, NCBI sequence viewer supports users to view different regions inside the same chromosome, providing flexible multiple-panel-based navigating approach with different color cursors indicating the corresponding genomic locations.
-Meanwhile, ABrowse supports users to visualize multiple genome regions of different chromosomes/genomes in separated in-page windows [11], while the separated windows are not fully operable as the main browsing canvas.
+Napríklad prehliadač sekvencií NCBI podporuje používateľov pri prezeraní rôznych oblastí vo vnútri toho istého chromozómu a poskytuje flexibilný navigačný prístup založený na viacerých paneloch s rôznymi farebnými kurzormi označujúcimi príslušné genómové polohy.
 
-As was mentioned above, there are species-specific genome browsers are available online.
-The bright examples of such tools are the MSU rice genome browser and the Rice-Map genome browser \cite{RMgb}.
+Ako už bolo spomenuté vyššie, existujú druhovo špecifické prehliadače genómu, ktoré sú k dispozícii online.
+Svetlým príkladom takýchto nástrojov je prehliadač genómu ryže MSU a prehliadač genómu Rice-Map \cite{RMgb}.
 
 \begin{table}[]
 
-	\caption{Main functions of the mainstream genome browsers.}\label{t:1}
+	\caption{Hlavné funkcie populánych prehľadávačov genómu.}\label{t:1}
 	\smallskip
 	\centering
 
 	\begin{tabular}{|l|l|l|c|}
 	\hline
-	\multicolumn{1}{|c|}{\textbf{Features}}                              & \multicolumn{1}{c|}{\textbf{UCSC}}                                               & \multicolumn{1}{c|}{\textbf{Ensemble}}                                                            & \textbf{GBrowse}                                                                                           \\ \hline
-	\multicolumn{4}{|c|}{Visualization}                                                                                                                                                                                                                                                                                                                                      \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Annotation \\ navigation\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Page-based browsing,\\ enabling dragging\end{tabular} & \begin{tabular}[c]{@{}l@{}}Page-based\\ browsing\end{tabular}                                     & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Map-like browsing\\ within a limited\\ region\end{tabular}} \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Multiple in-page\\ windows\end{tabular}   & \multicolumn{1}{c|}{-}                                                           & \multicolumn{1}{c|}{-}                                                                            & -                                                                                                          \\ \hline
-	\multicolumn{4}{|c|}{Data retrieval and analysis}                                                                                                                                                                                                                                                                                                                        \\ \hline
-	Query system                                                         & Table Browser                                                                    & BioMart                                                                                           & -                                                                                                          \\ \hline
-	\begin{tabular}[c]{@{}l@{}}User-oriented \\ analysis\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Direct data \\ submission\end{tabular}                & \multicolumn{1}{c|}{-}                                                                            & \multicolumn{1}{l|}{Plugin tools}                                                                          \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Machine-oriented\\ interface\end{tabular} & \multicolumn{1}{c|}{-}                                                           & \begin{tabular}[c]{@{}l@{}}Through\\ BioMart\end{tabular}                                         & \multicolumn{1}{l|}{Through BioDAS}                                                                        \\ \hline
-	\multicolumn{4}{|c|}{Customization}                                                                                                                                                                                                                                                                                                                                      \\ \hline
-	Upload user tracks                                                   & \multicolumn{1}{c|}{+}                                                           & \multicolumn{1}{c|}{+}                                                                            & +                                                                                                          \\ \hline
-	\begin{tabular}[c]{@{}l@{}}User-contributed\\ contents\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Session-based\\ data restoring\end{tabular}           & \begin{tabular}[c]{@{}l@{}}Personal\\ annotation,\\ bookmark\\ and group\\ mechanism\end{tabular} & -                                                                                                          \\ \hline
+	\multicolumn{1}{|c|}{\textbf{Vlastnosti}}                              & \multicolumn{1}{c|}{\textbf{UCSC}}                                               & \multicolumn{1}{c|}{\textbf{Ensemble}}                                                            & \textbf{GBrowse}                                                                                           \\ \hline
+	\multicolumn{4}{|c|}{Vizualizácia}                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Anotácia \\ navigácia\end{tabular}     & \begin{tabular}[c]{@{}l@{}}Prehliadanie\\ podľa stránok, \\ umožňujúce\\ pretiahnutie\end{tabular} & \begin{tabular}[c]{@{}l@{}}Prehliadanie\\ podľa stránok\end{tabular}                                     & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Prehliadanie\\ podobné mape\\ v obmedzenom\\ regióne \\\end{tabular}} \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Viaceré okná\\ na stránke\end{tabular}   & \multicolumn{1}{c|}{-}                                                           & \multicolumn{1}{c|}{-}                                                                            & -                                                                                                          \\ \hline
+	\multicolumn{4}{|c|}{Získavanie a analýza údajov}                                                                                                                                                                                                                                                                                                                        \\ \hline
+	Systém dopytov                                                         & Prehliadač tabuliek                                                                    & BioMart                                                                                           & -                                                                                                          \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Užívateľsky\\ orientovaná \\ analýza\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Priame\\ odoslanie\\ údajov\end{tabular}                & \multicolumn{1}{c|}{-}                                                                            & \multicolumn{1}{l|}{\shortstack{Doplnkové \\ nástroje}}                                                                          \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Strojovo\\ orientované \\ rozhranie\end{tabular} & \multicolumn{1}{c|}{-}                                                           & \begin{tabular}[c]{@{}l@{}}\shortstack{Prostredníctvom \\ BioMart}\end{tabular}                                         & \multicolumn{1}{l|}{\shortstack{Prostredníctvom \\ BioDAS}}                                                                        \\ \hline
+	\multicolumn{4}{|c|}{Prispôsobenie}                                                                                                                                                                                                                                                                                                                                      \\ \hline
+	\shortstack{Nahrajte stopy\\používateľov}                                                  & \multicolumn{1}{c|}{+}                                                           & \multicolumn{1}{c|}{+}                                                                            & +                                                                                                          \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Obsah \\prispievaný\\ používateľmi\end{tabular}  & \begin{tabular}[c]{@{}l@{}}Obnovenie dát\\na základe relácie\end{tabular}           & \begin{tabular}[c]{@{}l@{}}Mechanizmus osobnej \\ anotácie, \\ záložky \\ a skupiny\end{tabular} & -                                                                                                          \\ \hline
 	\end{tabular}
 \end{table}
 
-In the MSU rice genome browser, users can search the OsSPL14 gene by specifying ‘SPL14’ in the search box.
-Powered by the GBrowse platform, the MSU rice genome browser provides annotation views with different scales, including chromosome overview, regional view and detailed view. 
-The large-scale view provides a broader picture for users to inspect the upstream and downstream annotation conveniently. 
-In the detailed annotation canvas, more than 82 annotation tracks are provided, covering gene model, transcript evidence, expression profiling, sequence alignment, genetic marker, SNP, RNA-Seq coverage and other genomic features. 
-In addition to the basic gene model information, users may inspect this gene in different development stages through various RNA-Seq expression data. 
+V prehliadači genómu ryže MSU môžu používatelia prehľadávať gén OsSPL14 zadaním výrazu „SPL14“ do vyhľadávacieho poľa.
+Prehliadač genómu ryže MSU, ktorý je založený na platforme GBrowse, poskytuje anotačné pohľady v rôznych mierkach, vrátane prehľadu chromozómov, regionálneho a podrobného zobrazenia (obr. 1.13).
+Zväčšené zobrazenie poskytuje používateľom širší obraz, aby mohli pohodlne skontrolovať anotáciu pred a za.
+Na podrobnom anotačnom plátne je poskytnutých viac ako 82 anotačných stôp, ktoré zahŕňajú génový model, dôkaz transkriptu, profilovanie expresie, zarovnanie sekvencie, genetický marker, SNP, pokrytie RNA-Seq a ďalšie genómové znaky.
+Okrem základných informácií o génovom modeli môžu používatelia skontrolovať tento gén v rôznych vývojových štádiách prostredníctvom rôznych expresných údajov RNA-Seq.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.9\textwidth]{figures/ss-1.png}
-	\caption{The user interface of the MSU rice genome browser. The chromosome overview is displayed at the top, the regional view is shown at the middle and the bottom section is the detailed view for four annotation tracks.\label{o:latex_friendly_zone}}
+	\caption{Užívateľské rozhranie prehliadača genómu ryže MSU. Prehľad chromozómov je zobrazený v hornej časti, regionálne zobrazenie je zobrazené v strede a spodná časť predstavuje podrobné zobrazenie pre štyri stopy anotácií.\label{o:latex_friendly_zone}}
 \end{figure}
 
-In the Rice-Map genome browser different annotation tracks are organized in a map-like visualization canvas, with the name of opened tracks listed in the right panel. 
-Besides basic gene annotation, there are rich annotation for cross genome alignments and conservation values, offering important clues to investigate this gene in other plants.
+V prehľadávači genómu Rice-Map sú rôzne stopy anotácií usporiadané do vizualizačného plátna podobného mape, pričom názov otvorených stôp je uvedený na pravom paneli (obr. 1.14).
+Okrem základných anotácií génov existujú aj bohaté anotácie pre zosúladenie krížových genómov a hodnoty ochrany, ktoré poskytujú dôležité stopy pre vyšetrovanie tohto génu v iných rastlinách.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.9\textwidth]{figures/ss-2.png}
-	\caption{The Rice-Map genome browser. The detailed information for individual entries is shown in the right panel, interpreting the data resource, entry location, sequence and function etc.\label{o:latex_friendly_zone}}
+	\caption{Prehliadač genómu Rice-Map. Podrobné informácie o jednotlivých položkách sa zobrazujú na pravom paneli a interpretujú zdroj údajov, umiestnenie záznamu, postupnosť a funkciu atď.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Since genome browsers are capable of providing the user with a plenty of different biology-specific information, the definitions of those terms are not provided by this thesis.
+Pretože prehliadače genómu sú schopné poskytnúť používateľovi množstvo rôznych biologicky špecifických informácií, definícia týchto pojmov nie je uvedená v tejto práci.

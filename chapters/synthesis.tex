@@ -2,22 +2,23 @@
 
 \chapter{Syntetická časť}
 
-This chapter is focused on the applying of some widespread 2D genome visualization techniques to the SARS-CoV-2 genome. 
-Since the topic is extremely complex, only some of existing methods are introduced.
-The comprehensive overview of those methods, their analysis and implementation are covered at the corresponding sections.
+Táto kapitola je zameraná na použitie niektorých populárnych postupov vizualizácie 2D genómu na genóm SARS-CoV-2.
+Pretože téma je mimoriadne zložitá, sú predstavené iba niektoré z existujúcich metód.
+Komplexný prehľad o týchto metódach, ich analýze a implementácii je obsiahnutý v zodpovedajúcich častiach.
 
-The second part of this chapter is aimed at the composition of functional but simple software which is capable of visualizing SARS-CoV-2 genome using previously described techniques and libraries.
+Druhá časť tejto kapitoly je zameraná na zloženie funkčného, ale jednoduchého softvéru, ktorý je schopný vizualizovať genóm SARS-CoV-2 pomocou predtým opísaných techník a knižníc.
 
-\section{FASTA, GFF and GBK formats}
+\section{FASTA, GFF a GBK formaty}
 
-To begin with, the understanding of how the genomic data is being stored is the key to the proper visualization.
-Generally, the possible solutions for visualization can be divided in two separate categories: those, which use the very genome sequence and those, which use genome annotations \cite{covvisual}.
+Najskôr, pochopenie toho, ako sa genomické údaje ukladajú, je kľúčom ku správnej vizualizácii.
+Možné riešenia vizualizácie možno všeobecne rozdeliť do dvoch samostatných kategórií: tie, ktoré používajú samotnú sekvenciu genómu, a tie, ktoré používajú anotácie genómu \cite{covvisual}.
 
-The first category operates upon the raw DNA (RNA) sequence and is usually used to search for different patterns, tandem repeats, point mutations or to visually compare the genomes of related species.
-The raw data either it is DNA (RNA) or aminoacid sequence is usually stored in FASTA format (filename extensions .fasta, .fa, .fna) \cite{fasta}.
-The source code below demonstrates the structure of FASTA file containing the SARS-CoV-2 DNA sequence.
+Prvá kategória funguje na sekvencii surovej DNA (RNA) a zvyčajne sa používa na hľadanie rôznych vzorov, tandemových opakovaní, bodových mutácií alebo na vizuálne porovnanie genómov príbuzných druhov.
+Prvotné údaje, buď DNA, alebo aminokyselinové sekvencie, sa zvyčajne ukladajú vo formáte FASTA (prípony súborov .fasta, .fa, .fna)\cite{fasta}.
 
-\begin{lstlisting}[caption={First 180 nucleotides from SARS-CoV-2 genome sequence in FASTA format. The description line, which begins with '>', contains information about the sequence. Following the initial line is the actual sequence itself in standard one-letter character string.},captionpos=b]
+Zdrojový kód uvedený nižšie demonštruje štruktúru súboru FASTA obsahujúceho sekvenciu DNA SARS-CoV-2.
+
+\begin{lstlisting}[caption={Prvých 180 nukleotidov z genómovej sekvencie SARS-CoV-2 vo formáte FASTA. Riadok popisu, ktorý sa začína znakom „>“, obsahuje informácie o postupnosti. Za začiatočným riadkom je samotná aktuálna sekvencia v štandardnom jednopísmenovom reťazci znakov.},captionpos=b]
   >NC_045512.2 |Coronavirus 2 isolate Wuhan-Hu-1, complete genome
   ATTAAAGGTTTATACCTTCCCAGGTAACAAACCAACCAACTTTCGATCTCTTGTAGATCT
   GTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACT
@@ -25,85 +26,85 @@ The source code below demonstrates the structure of FASTA file containing the SA
 \end{lstlisting}
 
 
-Meanwhile, the second one uses preprocessed and well-studied data \cite{gff}, which is obtained from the raw sequence. 
-Genome annotations contain locations of coding regions of genome and therefore they can be useful in fields coherent with genetics, synthesis of proteins, inheritance, etc.
+Druhá kategória medzitým používa predspracované a dobre preštudované údaje \cites{gff}, ktoré sú získané zo surovej sekvencie.
+Anotácie genómu obsahujú miesta kódujúcich oblastí genómu, a preto môžu byť užitočné v oblastiach spojených s genetikou, syntézou proteínov, dedičnosťou atď.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.8\textwidth]{figures/gff3.png}
-	\caption{First 45 lines of SARS-CoV-2 genome annotation file. The rightmost part of the annotation is truncated on the image.\label{o:latex_friendly_zone}}
+	\caption{Prvé 45 riadkov anotačného súboru genómu SARS-CoV-2. Pravá časť anotácie je na obrázku skrátená.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Each annotation of genome has 9 required fields:
+Každá anotácia genómu má 9 povinných polí:
 \begin{enumerate}
-    \item Sequence ID
-    \item Source 
+    \item ID sekvencie
+    \item Zdroj
     \begin{itemize}
-        \item Describes the algorithm or the procedure that generated this feature. Typically Genescane or Genebank, respectively
+        \item Opisuje algoritmus alebo postup, ktorý vygeneroval túto funkciu. Typicky Genescane alebo Genebank
     \end{itemize}
-    \item Feature Type
+    \item Typ vlastnosťi
     \begin{itemize}
-        \item Describes what the feature is (mRNA, domain, exon, etc.)
+        \item Opisuje, o čo ide (mRNA, doména, exón atď.)
     \end{itemize}
-    \item Feature start
-    \item Feature end
-    \item Score 
+    \item Začiatok vlastnosťi
+    \item Koniec vlastnosťi
+    \item Skóre 
     \begin{itemize}
-        \item Values for sequence similarity or predictions
+        \item Hodnoty podobnosti sekvencií alebo predpovedí
     \end{itemize}
-    \item Strand (+ or -)
-    \item Phase
+    \item Prameň (+ alebo -)
+    \item Fáza
     \begin{itemize}
-        \item Indicates where the feature begins with reference to the reading frame
+        \item Označuje, kde vlastnosť začína odkazom na čítací rámec (ORF)
     \end{itemize}
-    \item Atributes
+    \item Atribúty
     \begin{itemize}
-        \item A semicolon-separated list of tag-value pairs, providing additional information about each feature
+        \item Zoznam dvojíc značiek a hodnôt oddelených bodkočiarkou, ktorý poskytuje ďalšie informácie o každej funkcii
     \end{itemize}
 \end{enumerate}
-This data is usually stored in GFF (General Feature Format) files. Filename extensions are .gff, .gff2. and .gff3 \cite{gff2}.
+Tieto údaje sa zvyčajne ukladajú do súborov GFF (General Feature Format). Prípony názvov súborov sú .gff, .gff2. a .gff3 \cite{gff2}.
 
-Apart from the GFF annotation and FASTA sequence files, the GBK (Genbank format) files are also widely used. 
+Okrem anotácií GFF a súborov sekvencií FASTA sa široko používajú aj súbory GBK (formát Genbank).
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/gbk.png}
-	\caption{First 45 lines of contents of GBK file corresponding to SARS-CoV-2 genome\label{o:latex_friendly_zone}}
+	\caption{Prvé 45 riadkov obsahu súboru GBK zodpovedajúcich genómu SARS-CoV-2\label{o:latex_friendly_zone}}
 \end{figure}
-The Genbank format allows for the storage of information in addition to a DNA/protein sequence.
-The screen grab shows various details, the first section includes the entry’s LOCUS, DEFINITION, ACCESSION and VERSION and denoted by ORIGIN, the final detail is the actual sequence. 
-These five elements are the essential parts of the GenBank format.
+Formát Genbank umožňuje ukladanie informácií okrem sekvencie DNA / proteínu.
+Uchopenie obrazovky zobrazuje rôzne podrobnosti, prvá časť obsahuje LOCUS, DEFINÍCIU, PRÍSTUP a VERZIU záznamu a je označená výrazom PÔVOD, konečným detailom je skutočná postupnosť.
+Týchto päť prvkov je podstatnou súčasťou formátu GenBank.
 
-The non-essential parts of the entry contain what is commonly known as metadata, and can include more detailed information about the organism, cross-references to other databases, and even a list of publications in which this entry is featured in.
-The FEATURES part of the entry describes important characteristics of the entry’s sequence such as presence of coding sequences, proteins, etc.
+Nepodstatné časti záznamu obsahujú takzvané metaúdaje a môžu obsahovať podrobnejšie informácie o organizme, krížové odkazy na iné databázy a dokonca aj zoznam publikácií, v ktorých je tento záznam uvedený.
+Časť záznamu „VLASTNOSTI“ popisuje dôležité charakteristiky sekvencie záznamu, ako je prítomnosť kódujúcich sekvencií, proteínov atď.
 
-\section{SARS-CoV-2 genome analysis and visualization}
-To perform the very analysis, BioPython and DNA features viewer packages will be used.
+\section{Analýza a vizualizácia genómu SARS-CoV-2}
+Na vykonanie samotnej analýzy sa použijú balíky BioPython a DNA Features Viewer.
 
-To visualze the SARS-CoV-2 genome the previously described genome data files are required.
-Both the FASTA and GBK files can be obtained at the NCBI webpage (https://www.ncbi.nlm.nih.gov/nuccore/MN908947).
+Na vizualizáciu genómu SARS-CoV-2 sú potrebné predtým opísané súbory s genómovými údajmi. 
+Súbory FASTA aj GBK je možné získať na webových stránkach NCBI (MN908947).
 
 \subsection{Nucleotides distribution and GC-content}
 
-The analysis usually is stared by reading the DNA sequence:
-\begin{lstlisting}[language=Python, caption=Python example]
+Analýza sa zvyčajne začína čítaním sekvencie DNA:
+\begin{lstlisting}[language=Python, caption=Čítaníe sekvencie DNA pomocou BioPython:]
     from Bio.SeqRecord import SeqRecord
     from Bio import SeqIO
     cov19 = SeqIO.read('MN908947.fna', "fasta")
 \end{lstlisting}
 
-One of the most essential genomic properties is G-C (or guanine-cytosine content) \cite{gccontent2}.
-It is the percentage of nitrogenous bases in a DNA or RNA molecule that are either guanine (G) or cytosine (C).
-This measure indicates the proportion of G and C bases out of an implied four total bases, also including adenine and thymine in DNA and adenine and uracil in RNA.
+Jednou z najdôležitejších genomických vlastností je GC-content (alebo obsah guanín-cytozínu) \cite{gccontent2}.
+Je to percento dusíkatých báz v molekule DNA alebo RNA, ktoré sú buď guanín (G) alebo cytozín (C).
+Toto opatrenie udáva podiel báz G a C z implikovaných štyroch celkových báz, tiež zahŕňajúcich adenín a tymín v DNA a adenín a uracil v RNA.
 
-GC-content may be given for a certain fragment of DNA or RNA or for an entire genome. 
-When it refers to a fragment, it may denote the GC-content of an individual gene or section of a gene (domain), a group of genes or gene clusters or a non-coding region \cite{gccontent}.
+Obsah GC sa môže uviesť pre určitý fragment DNA alebo RNA alebo pre celý genóm.
+Ak sa jedná o fragment, môže to znamenať obsah GC v individuálnom géne alebo časti génu (doméne), skupine génov alebo génových zhlukov alebo nekódujúcej oblasti \cite{gccontent}.
 
-GC-content is usually expressed as a percentage value, but sometimes as a ratio. 
-GC-content percentage is calculated as:
+Obsah GC sa zvyčajne vyjadruje ako percentuálna hodnota, niekedy však ako pomer.
+Percento obsahu GC sa počíta ako:
 
     \[\frac{G+C}{A+T+G+C}*100\%\]
 
-The distribution of the nucleotides (A,T,C,G) over the Covid19's DNA can be computed by the attached script.
-\begin{lstlisting}[language=Python, caption=The script for computing the distribution of the nucleotides over the SARS-CoV-2 genome.]
+    Distribúciu nukleotidov (A, T, C, G) v DNA Covid19 je možné vypočítať pomocou priloženého kódu.
+\begin{lstlisting}[language=Python, caption=Skript na výpočet distribúcie nukleotidov v genóme SARS-CoV-2.]
     #Count the nucleotides frequency in the DNA
     DNA = SARS_Cov_2_DNA
     nucleotides = {}
@@ -121,76 +122,79 @@ The distribution of the nucleotides (A,T,C,G) over the Covid19's DNA can be comp
     nts = nts.sort_values(by=['frequency'], ascending=True)
 \end{lstlisting}
 
-The first observation is that the frequency of the nucleotides A (8954) and T (9594)  is higher than the frequency of C (5492) and G (5863). 
-Therefore, the GC-content is 37.97\%. 
-In comprasion, the GC-content of eukaryotes, such as vertebrates, including humans, can be up to 60\% \cite{gccontent3}.
+Prvým pozorovaním je, že frekvencia nukleotidov A (8954) a T (9594) je vyššia ako frekvencia C (5492) a G (5863).
+Preto je obsah GC 37,97\%.
+Pri komparácii môže byť obsah GC v eukaryotoch, ako sú stavovce, vrátane ľudí, až 60\% \cite{gccontent3}.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.9\textwidth]{figures/covidnucleotides.png}
-	\caption{Diagram showing the distribution of SARS-CoV-2 nucleotides.\label{o:latex_friendly_zone}}
+	\caption{Diagrama ukazujúca distribúciu SARS-CoV-2 nukleotidov.\label{o:latex_friendly_zone}}
 \end{figure}
 
-\subsection{Gates's method}
-The 2D methods are primarily based on the Cartesian coordinate system and the very representation is a set of dots or vectors corresponding to different genome properties;
-Gates's method is a typical instance of 2D visualization techniques that operates upon the raw genomic data.
-Therefore, the FASTA file is being processed during the visualization.
+\subsection{Gatesova metóda}
+2D metódy sú primárne založené na karteziánskom súradnicovom systéme a samotnou reprezentáciou je sada bodiek alebo vektorov zodpovedajúcich rôznym vlastnostiam genómu;
+Gatesova metóda je typickým príkladom 2D vizualizačných techník, ktoré pracujú so surovými genomickými dátami.
+Preto sa počas vizualizácie spracováva súbor FASTA.
 
-It is understandable and was chosen as one of methods to implement because it was accidently reinvented by me during the thesis creation.
+Je to pochopiteľné a bol som vybraný ako jeden z metód na implementáciu, pretože som ho omylom znovu objavil pri tvorbe bakalárskej práce.
 
-The four nucleic acid bases are assigned to the four axes of a 2D Cartesian coordinate system.
-A given sequence is plotted according to distribution of its bases in the corresponding direction; 
-in computations for this note adenine (A) was assigned to the negative x-axis, cytosine (C) to the positive y-axis, guanine (G) to the positive x-axis and thymine (T) to the negative y-axis. 
-The weighted average of the x- and y-coordinates of each point of a sequence of length N represents the centre of mass. 
-The Euclidean distance between the origin and the centre of mass provides a quantitative graph descriptor, termed as the graph radius (gR). 
+Štyri bázy nukleových kyselín sú priradené k štyrom osiam 2D karteziánskeho súradnicového systému.
+Daná sekvencia sa vynesie do grafu podľa distribúcie jej báz v príslušnom smere;
+vo výpočtoch je adenín (A) priradený k negatívnej osi x, cytozín (C) k pozitívnej osi y, guanín (G) k pozitívnej osi x a tymín (T) k negatívnej osi y.
+Vážený priemer súradníc x a y každého bodu sekvencie dĺžky N predstavuje ťažisko.
+Euklidovská vzdialenosť medzi začiatkom a centrom hmoty poskytuje kvantitatívny deskriptor grafu, ktorý sa nazýva polomer grafu.
 
-This method can be used to search for similarities among related species and for searching patterns in the particular ones.
-For instance, after the visualization of SARS-CoV-2 genome sequence using the Gates's method, the sequence of 33 adenine (red) nucleotides is easily distinguishable over the whole genome.
+Táto metóda môže byť použitá na hľadanie podobností medzi príbuznými genómami a na hľadanie vzorov v konkrétnych.
+Napríklad po vizualizácii sekvencie genómu SARS-CoV-2 pomocou Gatesovej metódy je sekvencia 33 adenínových (červených) nukleotidov ľahko rozlíšiteľná v celom genóme.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.6\textwidth]{figures/aaaaa.png}
-	\caption{A part of SARS-CoV-2 genome representation using Gates's method. The long sequence of 33 adenine nucleotides is marked at black circle.\label{o:latex_friendly_zone}}
+	\caption{Časť reprezentácie genómu SARS-CoV-2 pomocou Gatesovej metódy. Dlhá sekvencia 33 adenínových nukleotidov je označená čiernym kruhom.\label{o:latex_friendly_zone}}
 \end{figure}
+
+Po vyšetrení súboru FASTA môžeme vidieť, že na samom konci sekvencie genómu je 33 adenínových nukleotidov, ako je uvedené nižšie (obr. 2.5).
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/AAAA.png}
-	\caption{Last 143 nucleotides of SARS-CoV-2 virus genome at the FASTA file with the sequenced genome. The long sequence of 33 adenine nucleotides is highlighted.\label{o:latex_friendly_zone}}
+	\caption{Posledné 143 nukleotidy genómu vírusu SARS-CoV-2 v súbore FASTA so sekvenovaným genómom. Je zvýraznená dlhá sekvencia 33 adenínových nukleotidov.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Another instance of finding patterns in DNA sequence using the Gates's method is an attempt of visualization nucleotide sequence of the first chromosome of Encephalitozoon Intestinalis, which is considered to posess the smallest eukaryotic genome.
-The sequence can be easily obtained using the NCBI resourse at the following address https://www.ncbi.nlm.nih.gov/nuccore/CP001942.
+Ďalším príkladom nájdenia vzorov v sekvencii DNA pomocou Gatesovej metódy je pokus o vizualizáciu nukleotidovej sekvencie prvého chromozómu \textit{Encephalitozoon Intestinalis}, ktorý sa považuje za najmenší eukaryotický genóm \cite{smalleu}.
+Sekvenciu je možné ľahko získať pomocou zdrojov NCBI (ID CP001942).
 
-After the visualization of the mentioned chromosome, the first observation is that both ends of the sequence are almost identical. %%%%cite!!!!!
-The only difference, except for point mutations, is that they are composed of complement nucleotides.
+Po vizualizácii spomínaného chromozómu je prvým pozorovaním to, že obidva konce sekvencie sú takmer identické (obr. 2.6).
+Jediný rozdiel, s výnimkou bodových mutácií, je ten, že sú zložené z nukleotidov komplementu.
+Preto to možno považovať za dôkaz použiteľnosti metódy pri vyhľadávaní vzorov.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/gateseu.png}
-	\caption{Part of the first chromosome visualization of Encephalitozoon Intestinalis. The identical sequences are shown at the middle.\label{o:latex_friendly_zone}}
+	\caption{Časť prvej vizualizácie chromozómu Encephalitozoon Intestinalis. Rovnaké sekvencie sú zobrazené v strede.\label{o:latex_friendly_zone}}
 \end{figure}
 
-The closest relative of modern +ssRNA SARS-CoV-2 virus is SARS-CoV virus, that was the cause of 2004 SARS outbreak.
-The comprasion of SARS-CoV and SARS-CoV-2 genome sequences may be considered as the bright example of applying this method.
+Najbližším príbuzným moderného vírusu + ssRNA SARS-CoV-2 je vírus SARS-CoV, ktorý bol príčinou vypuknutia SARS v roku 2004 \cite{cov1cov2}.
+Za jasný príklad použitia tejto metódy možno považovať komprimáciu sekvencií genómu SARS-CoV a SARS-CoV-2.
 
-The very comrasion can be done using the Squiggle, a two-dimensional DNA sequence visualization library \cite{Lee2018}.
+Samotný rozruch je možné vykonať pomocou Squiggle, dvojrozmernej knižnice vizualizácie sekvencií DNA \cite{Lee2018}.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/comprasion.png}
-	\caption{Comprasion of SARS-CoV-2 (from the left) and SARS-CoV (from the right) genomes using Gates's method.\label{o:latex_friendly_zone}}
+	\caption{Porovnanie genómov SARS-CoV-2 (zľava) a SARS-CoV (sprava) pomocou Gatesovej metódy.\label{o:latex_friendly_zone}}
 \end{figure}
 
-As it visible at the provided plot, both of the viruses resemble each other in the terms of the nucleotide sequence \cite{2d}.
+Ako je zrejmé z poskytnutého grafu, obidva vírusy sa navzájom podobajú z hľadiska štruktúry nukleotidovej sekvencie \cite{2d}.
 
-After processing the sequences of both viruses with the help of pairwise2 algorithm, the percentage of similarity between them is equal to 83.34\%.
+Po spracovaní sekvencií oboch vírusov pomocou algoritmu pairwise2 sa percento podobnosti medzi nimi rovná 83,34\%.
 
-The PairWise algorithm is a variant of the Smith–Waterman algorithm best local alignment algorithm. 
-These algorithms all belong to the class known as minimal string edit algorithms. 
-It was chosen to compare sequences due to the way he aligns sequences.
-The main differences between PairWise and other alignment algorithm is that, besides normal penalties such as Gap Opening Penalty (GOP), Gap Extension Penalty (GEP) and Match, PairWise introduced two new penalties called Frame Opening Penalty (FOP) and Frame Extension Penalty (FEP) \cite{pairwise}.
+Algoritmus PairWise je variantou najlepšieho algoritmu lokálneho zarovnania Smithovho-Watermanovho algoritmu \cite{pairwise}.
+Všetky tieto algoritmy patria do triedy známej ako algoritmy minimálnej úpravy reťazcov.
+Bol vybraný na porovnanie sekvencií kvôli spôsobu, akým zarovnáva sekvencie.
+Hlavné rozdiely medzi PairWise a iným algoritmom zarovnania sú v tom, že okrem bežných trestov, ako sú Gap Opening Penalty (GOP), Gap Extension Penalty (GEP) a Match, PairWise predstavil dva nové ďalšie parametre použité pre porovnanie \cite{pairwise}.
 
-The very comprasion can be easily done using BioPython library, as demonstrated at the attached code.
-\begin{lstlisting}[language=Python, caption=Pairwise2 algorithm using BioPython. COV1.seq and COV2.seq are the DNA sequences of SARS-CoV and SARS-CoV-2 viruses. Two arguments of the very alignment are provided to reduce the alignment comlexity and time.]
+Samotné porovnanie je možné ľahko vykonať pomocou knižnice BioPython, ako je to demonštrované v priloženom kóde.
+\begin{lstlisting}[language=Python, caption=Algoritmus Pairwise2 využívajúci BioPython; COV1.seq a COV2.seq sú sekvencie DNA vírusov SARS-CoV a SARS-CoV-2. Poskytujú sa dva argumenty samotného zarovnania aby sa znížila komlexita a čas zosúladenia.]
     from Bio import pairwise2
 
     alm = pairwise2.align.globalxx(COV1.seq, COV2.seq,
@@ -198,56 +202,58 @@ The very comprasion can be easily done using BioPython library, as demonstrated 
     print('Similarity (%):', alm / len(COV2.seq) * 100)
 \end{lstlisting}
 
-However, the most important disadvantage of Gates's method is degeneracy, meaning that a visualization is not necessarily unique. 
-For example, TGAC is a square (up, right, down, and left), but so is GTCA (right, up, left, down).
+Najdôležitejšou nevýhodou Gatesovej metódy je však degenerácia, čo znamená, že vizualizácia nemusí byť nevyhnutne jedinečná.
+Napríklad TGAC je štvorec (hore, doprava, dole a vľavo), ale rovnako je tomu aj v GTCA (vpravo, hore, vľavo, dole) a obe sekvencie budú mať vo vizualizačnom grafe rovnakú štruktúru.
 
-\subsection{2D Matrix method}
-Another interesting method for DNA visualization, that operates upon the raw DNA squence is 2D matrix method. 
-It's aim is to plot whole genome sequence in the square image of predefined size.
-Plotting is done from left corner to right corner untill the end of the line, and moving to the left side of the new one afterwards.
+\subsection{Metóda 2D Matrix}
+Ďalšou zaujímavou metódou na vizualizáciu DNA, ktorá pracuje na sekvencii DNA, je metóda 2D matice.
+Cieľom je vykresliť celú sekvenciu genómu do štvorcového obrázka s preddefinovanou veľkosťou.
+Plotovanie sa vykonáva z ľavého rohu do pravého rohu až po koniec čiary a potom sa presunie na ľavú stranu nového (obr. 2.8).
 
-Each nucleotide is represented by a pixel (square) of particular color.
+Každý nukleotid je reprezentovaný pixelom (štvorcom) konkrétnej farby.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.4\textwidth]{figures/2d.png}
-	\caption{The plotting of DNA into the two-dimensional matrix.\label{o:latex_friendly_zone}}
+	\caption{Zakreslenie DNA do dvojrozmernej matice.\label{o:latex_friendly_zone}}
 \end{figure}
 
-This method might be useful in finding tandem repeats \cite{fgene} without the detailed examination by a machine since they might be visually detectable.
-Moreover, this method plots every genome in the picture of fixed size, that might be used to identify the very sequence uniquely.
+Táto metóda by mohla byť užitočná pri hľadaní tandemových opakovaní \cite{fgene} bez podrobného preskúmania strojom, pretože by mohli byť vizuálne zistiteľné.
+Ako je však viditeľné na obrázku 2.9, pre genóm SARS-CoV-2 nie sú nevyhnutné žiadne významné a zrejmé tandemové opakovania.
+Dá sa to vysvetliť celkovou malou veľkosťou a zložitosťou genómu.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{figures/matrix.png}
-	\caption{Visualization of SARS-CoV-2 genome using the 2D Matrix method. Since the most fluent genome sequence is composed of 29903 nucleotides and the shown matrix contains 29929 positions (173 on each side), the black squares at the right bottom corner represent empty space that was not used for visualization.\label{o:latex_friendly_zone}}
+	\caption{Vizualizácia genómu SARS-CoV-2 pomocou metódy 2D Matrix. Najplynulejšia sekvencia genómu je zložená z 29 903 nukleotidov a zobrazená matica obsahuje 29 929 pozícií (173 na každej strane), čierne štvorčeky v pravom dolnom rohu predstavujú prázdny priestor, ktorý sa nepoužil na vizualizáciu..\label{o:latex_friendly_zone}}
 \end{figure}
 
-However, in the case of point mutations, or even significant ones, the difference in the plotted genome might be hardly distinguishable without any machine examination.
+Okrem toho táto metóda vykresľuje každý genóm na obrázku pevnej veľkosti, ktorý by sa mohol použiť na jednoznačnú identifikáciu samotnej sekvencie.
+Avšak v prípade bodových alebo dokonca významných mutácií môže byť rozdiel v vynesenom genóme ťažko odlíšiteľný bez strojového vyšetrenia.
 
-\subsection{2D Matrix method improvement}
-This thesis suggests new visualization technique which is capable of visualizing each genome uniquely using the hash-function \cite{hash}, which might be a solution to the menioned above disadvantage.
+\subsection{Vylepšenie metódy 2D Matrix}
+Táto práca navrhuje novú vizualizačnú techniku, ktorá je schopná vizualizovať každý genóm jedinečne pomocou hash-funkcie \cite{hash}, čo by mohlo byť riešením vyššie uvedenej nevýhody.
 
-The main idea of the visualization technique is a recursive algorithm that partitions the image into smaller parts coloring each one depending on the pevious one.
-This prevents the random noise that might appear by breaking it into tiny bits and coloring each one independently. 
-Instead, there are larger regions which maintain some continuity even though their constituent parts diverge.
+Hlavnou myšlienkou vizualizačnej techniky je rekurzívny algoritmus, ktorý rozdeľuje obraz na menšie časti a farbí každú z nich v závislosti na predchádzajucej.
+Toto zabráni náhodnému šumu, ktorý by sa mohol objaviť, rozdelením na malé kúsky a samostatným vyfarbením každého z nich.
+Namiesto toho existujú väčšie regióny, ktoré si zachovávajú určitú kontinuitu, aj keď sa ich základné časti rozchádzajú.
 
-The recursive algorithm is composed of three functions: 
+Rekurzívny algoritmus sa skladá z troch funkcií:
 \begin{itemize}
-    \item Function, which achieves a hash of the nucleotide sequence using sha256 algorithm.
-    \item Function, which recursively partitions the initial empty image in 1/8 parts.
-    It is done recursively 8 times to each of the initial partitions. 
-    \item Function, which colors each partition according to the hash and inserts each partition above the bigger one.
-    The opacity parameter that is computed of each partition size and used to prevent the overlapping between colors of smaller partitions and bigger ones (that are colored before).
+    \item Funkcia, ktorá dosahuje hash nukleotidovej sekvencie pomocou algoritmu sha256 \cite{hash2}.
+    \item Funkcia, ktorá rekurzívne rozdelí počiatočný prázdny obrázok na 1/8 častí.
+    Pre každú z počiatočných oblastí sa to robí rekurzívne 8-krát.
+    \item Funkcia, ktorá zafarbí každú časť podľa hashu a vloží každú časť nad väčšú.
+    Parameter nepriehľadnosti, ktorý je vypočítaný pre každú veľkosť oddielu a slúži na zabránenie prekrývania medzi farbami menších oddielov a väčších (ktoré sú predtým zafarbené).
 \end{itemize}
 
-Listing 2.5 demonstrates the console output during the creation of image which is 512x512 pixels in size.
-The width and heigh values represent the sizes of partitioned images that are being colored, and the opacity value shows the opacity during each partition overlaps.
-The images generated to illustrate this method were using the opacity equation defined as:\\
+Zoznam 2.5 ukazuje výstup z konzoly počas vytvárania obrázka s veľkosťou 512x512 pixelov.
+Hodnoty šírky a výšky predstavujú veľkosť rozdelených obrázkov, ktoré sú zafarbené, a hodnota krytia zobrazuje krytie počas každého prekrytia oddielu.
+Obrázky generované na ilustráciu tejto metódy používali rovnicu krytia definovanú ako:\\
 \[opacity = 256 * (level / 2) / 2 ^ {(level - 1)}\]
-where level represents the current depth of recursion.
-However, this equation can be changed to intoduce another coloring schemes.
+kde úroveň predstavuje súčasnú hĺbku rekurzie. 
+Túto rovnicu je však možné zmeniť tak, aby predstavovala ďalšie schémy vyfarbovania.
 
-\begin{lstlisting}[caption=Console output prodused during the visualization using the improved 2D Matrix method.]
+\begin{lstlisting}[caption=Výstup z konzoly vyrobený počas vizualizácie pomocou vylepšenej metódy 2D Matrix.]
     seed: 223dd4d5c80b98e69f9f8536afa54b...
     width, height: 256.0, 256.0
     opacity: 50%
@@ -263,55 +269,55 @@ However, this equation can be changed to intoduce another coloring schemes.
     opacity: 5%
 \end{lstlisting}
 
-As it is visible on the figure 2.10, this method lets different genomes be easily distinguished with the naked eye.
+Ako je viditeľné na obrázku 2.10, táto metóda umožňuje jednoduché rozlíšenie rôznych genómov voľným okom.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/2dim.png}
-	\caption{Visualization of original SARS-CoV-2 genome [A] and the same genome with a point mutation [B] at the second nucleotide (T changed on G) using the improved 2D Matrix method.\label{o:latex_friendly_zone}}
+	\caption{Vizualizácia pôvodného genómu SARS-CoV-2 [A] a rovnakého genómu s bodovou mutáciou [B] na druhom nukleotide (T zmenené na G) pomocou vylepšenej metódy 2D Matrix.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Because of the recursive nature of the algorithm, the image can be generated at smaller or larger sizes and maintain the same level of detail.
+Kvôli rekurzívnej povahe algoritmu môže byť obraz generovaný v menších alebo väčších veľkostiach a pri zachovaní rovnakej úrovne detailov.
 
-However, among the main disadvantages are the small practical usage and a limit regarding the size of a genome.
-Currently, the method suports the visualization of genomes that are less than 262145 nucleotides long.
+Medzi hlavné nevýhody však patrí malé praktické využitie a obmedzenie týkajúce sa veľkosti genómu.
+V súčasnosti metóda podporuje vizualizáciu genómov, ktoré majú menej ako 262 145 nukleotidov.
 
-\subsection{Aminoacids retrieval}
+\subsection{Získanie aminokyselín}
 
-For the next visualization the raw DNA sequence must be converted to the sequence of aminoacids.
-There are 61 codons (trinucleotides) for 20 amino acids, and each of them is "read" to specify a certain amino acid out of the 20 commonly found in proteins.
-Each aminoacid can be written as a letter of latin alphabet.
-Therefore, the sequence of aminoacids is represented by the sequence of letters A-V. 
+Pre ďalšiu vizualizáciu musí byť surová sekvencia DNA prevedená na sekvenciu aminokyselín.
+Existuje 61 kodónov (trinukleotidov) pre 20 aminokyselín a každý z nich je „načítaný“, aby určil určitú aminokyselinu z 20, ktoré sa bežne nachádzajú v bielkovinách.
+Každá aminokyselina môže byť napísaná ako písmeno latinskej abecedy.
+Preto je sekvencia aminokyselín predstavovaná sekvenciou písmen A-V.
 
-One codon, AUG, specifies the amino acid methionine and also acts as a start codon to signal the start of protein construction.
-There are three more codons that do not specify amino acids: UAA, UAG, and UGA, tell the cell when a polypeptide is complete. 
-All together, this collection of codon-amino acid relationships is called the genetic code, because it lets cells “decode” an mRNA into a chain of amino acids.
+Jeden kodón, AUG, špecifikuje aminokyselinu metionín a tiež slúži ako štartovací kodón na signalizáciu začiatku stavby proteínu.
+Existujú ďalšie tri kodóny, ktoré nešpecifikujú aminokyseliny: UAA, UAG a UGA, ktoré povedia bunke, keď je polypeptid kompletný \cite{aminouag}.
+Celkovo sa táto zbierka vzťahov kodón-aminokyselina nazýva \textit{genetický kód}, pretože umožňuje bunkám „dekódovať“ mRNA do reťazca aminokyselín.
 
-Before converting the DNA sequence into the aminoacid one, firstly, has to be transcribed into the mRNA molecule \cite{rnaseqexp} with the help of transcribe() function.
-Luckily, with the translate() function, BioPython does translate the mRNA to amino acids chains. 
-Chains are separated with a * which is the stop codon (UAA, UAG and UGA).
+Pred konverziou sekvencie DNA na aminokyselinu je potrebné ju najskôr transkribovať do molekuly mRNA \cite{rnaseqexp} pomocou funkcie transkripcie ().
+Našťastie s funkciou translate () BioPython prevádza mRNA na aminokyselinové reťazce (zdrojový kod 2.5).
+Reťazce sú oddelené znakom *, čo je stop kodón (UAA, UAG a UGA).
 
-\begin{lstlisting}[language=Python, caption=Transcription and translation using BioPython]
+\begin{lstlisting}[language=Python, caption=Prepis a preklad pomocou BioPythonu]
     cov_DNA = covid19.seq
     cov_mRNA = covid_DNA.transcribe()
     cov_aa = covid_mRNA.translate()
 \end{lstlisting}
 
-SARS-CoV-2 genome contains 9967 aminoacids separated with stop codons * or, in other words, 775 amino acid chains.
-It's worth to mention that not all the amino acids sequences are proteins. 
-Only the sequences with more than 20 amino acids code for functional proteins. 
-The short amino acid sequences are oligopeptides and have other functionalities. 
-The next step is to filter obtained sequences in such a way, that only long ones will remain to focus only on proteins.
+Som zistil, že genóm SARS-CoV-2 obsahuje 9967 aminokyselín oddelených stop kodónmi * alebo, inými slovami, 775 aminokyselinových reťazcov.
+Je potrebné spomenúť, že nie všetky aminokyselinové sekvencie sú bielkoviny.
+Iba sekvencie s viac ako 20 aminokyselinami kódujú funkčné proteíny \cite{cov1}.
+Krátke aminokyselinové sekvencie sú oligopeptidy a majú ďalšie funkčné skupiny.
+Ďalším krokom je filtrovanie získaných sekvencií takým spôsobom, že zostanú len tie dlhé, aby sa sústredili iba na proteíny.
 
-After the removal of short proteins, only 5 of remaining ones satisfy the length condition (source code 2.6) and are provided at the table 2.1 .
+Po odstránení krátkych proteínov iba 5 zvyšných proteínov spĺňa podmienku dĺžky (zdrojový kód 2.6) a sú uvedené v tabuľke 2.1.
 
-The easiest way to verify results is to find the protein sequences already available in the databases that are the most similar to obtained protein sequences. 
-The BLAST search was used for these purposes.
+Najjednoduchší spôsob overenia výsledkov je nájsť proteínové sekvencie, ktoré sú už k dispozícii v databázach a ktoré sú najviac podobné získaným proteínovým sekvenciám.
+Na tieto účely sa použilo vyhľadávanie BLAST.
 
-BLAST (basic local alignment search tool) is an algorithm and program for comparing primary biological sequence information, such as the amino-acid sequences of proteins or the nucleotides of DNA and/or RNA sequences. 
-A BLAST search enables a researcher to compare a subject protein or nucleotide sequence (called a query) with a library or database of sequences, and identify library sequences that resemble the query sequence above a certain threshold.
+BLAST (základný vyhľadávací nástroj na lokálne zarovnanie) je algoritmus a program na porovnanie informácií o primárnych biologických sekvenciách, ako sú napríklad aminokyselinové sekvencie proteínov alebo nukleotidy sekvencií DNA a / alebo RNA.
+Vyhľadávanie BLAST umožňuje výskumníkovi porovnať predmetnú proteínovú alebo nukleotidovú sekvenciu (nazývanú dopyt) s knižnicou alebo databázou sekvencií a identifikovať sekvencie knižnice, ktoré sa podobajú dopytovanej sekvencii nad určitou hranicou.
 
-\begin{lstlisting}[language=Python, caption=Filtering aminoacid sequences and storing them in a dataframe]
+\begin{lstlisting}[language=Python, caption=Filtrovanie aminokyselinových sekvencií a ich ukladanie do dátového rámca]
     Proteins = covid_aa.split('*')
 
     #Remove porteins with less than than 50 amino acids
@@ -329,7 +335,7 @@ A BLAST search enables a researcher to compare a subject protein or nucleotide s
 \end{lstlisting}
 
 \begin{table}[]
-    \caption{Obtained protein sequences of SARS-CoV-2 genome that are composed of more than 50 aminoacids.}\label{t:1}
+    \caption{Získané proteínové sekvencie genómu SARS-CoV-2, ktoré sú zložené z viac ako 50 aminokyselín.}\label{t:1}
 	\smallskip
 	\centering
     
@@ -344,17 +350,17 @@ A BLAST search enables a researcher to compare a subject protein or nucleotide s
     \end{tabular}
 \end{table}
 
-After searching for the 83 aminoacid chain using BLAST, the results have shown that it has 100\% similarity with Envelope small membrane protein that belongs to SARS-CoV-2 genome.
-The results of performed BLAST searches for other obtained proteins are attached at the table 2.2 .
-It is worth mentioning, that the highest similarities were found among other coronavirus species.
+Po vyhľadaní reťazca 83 aminokyselín pomocou BLAST výsledky ukázali, že má 100\% podobnosť s malým membránovým proteínom Envelope, ktorý patrí do genómu SARS-CoV-2.
+Výsledky vykonaných BLAST hľadaní ďalších získaných proteínov sú uvedené v tabuľke 2.2.
+Za zmienku stojí, že najvyššia podobnosť sa zistila medzi ostatnými druhmi koronavírusov.
 
 \begin{table}[]
-    \caption{Results of comprasion between obtained protein sequences of SARS-CoV-2 using BLAST.}\label{t:1}
+    \caption{Výsledky porovnania medzi získanými proteínovými sekvenciami SARS-CoV-2 pomocou BLAST.}\label{t:1}
 	\smallskip
 	\centering
     \begin{tabular}{|c|c|c|c|c|c|}
         \hline
-        \multicolumn{1}{|l|}{}             & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Protein \\ length\end{tabular}}} & \multicolumn{1}{l|}{\textbf{DB:ID}} & \multicolumn{1}{l|}{\textbf{Organism}}                                                                  & \multicolumn{1}{l|}{\textbf{Protein}}                                                                  & \multicolumn{1}{l|}{\textbf{Match}} \\ \hline
+        \multicolumn{1}{|l|}{}             & \multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Dĺžka \\ proteinu\end{tabular}}} & \multicolumn{1}{l|}{\textbf{DB:ID}} & \multicolumn{1}{l|}{\textbf{Organism}}                                                                  & \multicolumn{1}{l|}{\textbf{Protein}}                                                                  & \multicolumn{1}{l|}{\textbf{Zhoda}} \\ \hline
         \multicolumn{1}{|c|}{\textbf{1}} & \multicolumn{1}{c|}{2701}                                                              & \multicolumn{1}{c|}{P0C6X7}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Replicase \\ polyprotein \\ 1ab\end{tabular}}           & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Replicase \\ polyprotein \\ 1ab\end{tabular}}          & \multicolumn{1}{c|}{96\%}           \\ \hline
         \multicolumn{1}{|c|}{\textbf{2}} & \multicolumn{1}{c|}{290}                                                               & \multicolumn{1}{c|}{Q0Q474}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Bat \\ coronavirus \\ 279/2005 \\ (BtCoV)\end{tabular}} & \multicolumn{1}{c|}{Protein 3}                                                                        & \multicolumn{1}{c|}{75\%}           \\ \hline
         \multicolumn{1}{|c|}{\textbf{3}} & \multicolumn{1}{c|}{123}                                                               & \multicolumn{1}{c|}{Q3I5J0}        & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Bat \\ coronavirus \\ Rp3/2004\end{tabular}}            & \multicolumn{1}{c|}{Protein 7a}                                                                       & \multicolumn{1}{c|}{89\%}           \\ \hline
@@ -363,21 +369,21 @@ It is worth mentioning, that the highest similarities were found among other cor
         \end{tabular}
 \end{table}
 
-\subsection{ORF identification and visualization}
-The next visualization operates upon the preprocessed data stored at the GenBank annotation file.
-As it was mentioned at the first chapter of this thesis, ORF scanning is not a full proof of finding gene locations since not every ORF is a gene beginning.
-However, the longer ORF is, the likely it is a part of gene. \cite{orf}
+\subsection{Identifikácia a vizualizácia ORF}
+Ďalšia vizualizácia pracuje s predspracovanými údajmi uloženými v súbore anotácií GenBank.
+Ako bolo spomenuté v prvej kapitole tejto práce, skenovanie ORF nie je úplným dôkazom nájdenia génových polôh, pretože nie každý ORF je génovým začiatkom.
+Čím je však ORF dlhší, tým je pravdepodobné, že je súčasťou génu. \cite{orf}
 
-The identification of coding sequences (CDS) is an important step in the functional annotation of genes. 
-A typical CDS starts with ATG and ends with a stop codon.
-CDS is a sequence of nucleotides that corresponds with the sequence of amino acids in a protein. 
-Therefore, the amino acids analysis and retrieval (done in section 2.2.5) was necessary to identify coding regions of genome.
-The SARS-CoV-2 genome encodes as far as 50 non-structural, structural, and accessory proteins.
+Identifikácia kódujúcich sekvencií (CDS) je dôležitým krokom vo funkčnej anotácii génov.
+Typický CDS začína ATG a končí stop kodónom.
+CDS je sekvencia nukleotidov, ktorá zodpovedá sekvencii aminokyselín v proteíne \cite{bioinformatics}.
+Preto bola na identifikáciu kódujúcich oblastí genómu nevyhnutná analýza a získanie aminokyselín (vykonané v časti 2.2.5).
+Genóm SARS-CoV-2 kóduje až 50 neštrukturálnych, štrukturálnych a doplnkových proteínov \cite{cov2gene}.
 
-The source code 2.7 is an output a script for visualization that finds the ORFs in the SARS-CoV-2 genome using genome annotation file. 
-The minimum protein length is set to 200 amino acids to retrieve only long ORFs.
+Zdrojový kód 2.7 je výstupný skript pre vizualizáciu, ktorý nájde ORF v genóme SARS-CoV-2 pomocou anotačného súboru genómu.
+Minimálna dĺžka proteínu je nastavená na 200 aminokyselín, aby sa získali iba dlhé ORF.
 
-\begin{lstlisting}[caption=Positions of SARS-CoV-2 genome CDSs]
+\begin{lstlisting}[caption=Pozície CDS genómu SARS-CoV-2]
     PKGKMESLVPGFNEKTH...FAV - length 4409, strand 1, 253:13483
     CTIVFKRVCGVSAARLT...VNN - length 2701, strand 1, 13449:21555
     LEKTTELLFLVMFLLTT...HYT - length 1293, strand 1, 21502:25384
@@ -386,24 +392,24 @@ The minimum protein length is set to 200 amino acids to retrieve only long ORFs.
     RSCCFRFHLNEQTKMSD...TQA - length 433, strand 1, 28231:29533
 \end{lstlisting}
 
-The Covid-19 genome has 6 ORFs with more than 200 amino acids. Figure 2.11 demonstrates all the ORFs and CDSs retrieved from the SARS-CoV-2 genome using BioPython.
+Som zistil, že genóm Covid-19 má 6 ORF s viac ako 200 aminokyselinami. Obrázok 2.11 ukazuje všetky ORF a CDS načítané z genómu SARS-CoV-2 pomocou BioPython.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1\textwidth]{figures/cds.png}
-	\caption{Coding regions of SARS-CoV-2 genome are highlighted in red among other ORFs. They include the ORF1ab, ORF3a, S protein, M protein and N protein. The visualization is done using BioPython\label{o:latex_friendly_zone}}
+	\caption{Kódujúce oblasti genómu SARS-CoV-2 sú medzi ostatnými ORF zvýraznené červenou farbou. Zahŕňajú ORF1ab, ORF3a, S proteín, M proteín a N proteín. Vizualizácia sa vykonáva pomocou programu BioPython\label{o:latex_friendly_zone}}
 \end{figure}
 
-The results of comparing obtained sequences to the existing ones are performed using BLAST and listed at the table 2.3 .
+Výsledky porovnania získaných sekvencií s existujúcimi sekvenciami sa uskutočňujú pomocou programu BLAST a sú uvedené v tabuľke 2.3.
 
 \begin{table}[]
-    \caption{BLAST search results for SARS-CoV-2 ORFs.}\label{t:1}
+    \caption{BLAST výsledky vyhľadávania pre ORF SARS-CoV-2.}\label{t:1}
 	\smallskip
 	\centering
 
     \begin{tabular}{|c|c|c|c|c|c|}
     \hline
-               & \textbf{\begin{tabular}[c]{@{}c@{}}ORF\\ length\end{tabular}} & \textbf{DB:ID} & \textbf{Protein}                                                        & \textbf{Organism}                                                                 & \textbf{Match} \\ \hline
+               & \textbf{\begin{tabular}[c]{@{}c@{}}Dĺžka\\ ORF\end{tabular}} & \textbf{DB:ID} & \textbf{Protein}                                                        & \textbf{Organism}                                                                 & \textbf{Zhoda} \\ \hline
     \textbf{1} & 4409                                                          & P0C6U8         & \begin{tabular}[c]{@{}c@{}}Replicase\\ polyprotein \\ 1a\end{tabular}   & \begin{tabular}[c]{@{}c@{}}Human \\ SARS\\ coronavirus \\ (SARS-CoV)\end{tabular} & 80\%           \\ \hline
     \textbf{2} & 2701                                                          & P0C6X7         & \begin{tabular}[c]{@{}c@{}}Replicase \\ polyprotein \\ 1ab\end{tabular} & \begin{tabular}[c]{@{}c@{}}Human \\ SARS\\ coronavirus \\ (SARS-CoV)\end{tabular} & 96\%           \\ \hline
     \textbf{3} & 1293                                                          & P59594         & \begin{tabular}[c]{@{}c@{}}Spike\\ glycoprotein\end{tabular}            & \begin{tabular}[c]{@{}c@{}}Human \\ SARS\\ coronavirus \\ (SARS-CoV)\end{tabular} & 76\%           \\ \hline
@@ -413,40 +419,41 @@ The results of comparing obtained sequences to the existing ones are performed u
     \end{tabular}
 \end{table}
 
-\section{Software composition}
-The software developed during this thesis appears to be a collection of scripts used to visualize SARS-CoV-2 genome in previously described methods.
-In general, unlike the web based genome browsers where the computations are done at the server side, the suggested software represent a simple stand-alone console application.
-No significant computations are being done and, therefore, the application do not satisfying of demanding system requirements.
+\section{Zloženie softvéru}
+Softvér vyvinutý v priebehu tejto práce sa javí ako súbor skriptov používaných na vizualizáciu genómu SARS-CoV-2 v skôr opísaných metódach.
+Na rozdiel od webových prehľadávačov genómu, kde sa výpočty vykonávajú na strane servera, navrhovaný softvér všeobecne predstavuje jednoduchú samostatnú konzolovú aplikáciu.
+Nevykonávajú sa nijaké významné výpočty, a preto aplikácia nespĺňa náročné systémové požiadavky.
 
-The software is written mainly using the BioPython package in Python 3.8 .
-All the packages that are required are mentioned at the project documentation.
+Napriek skôr opísaným moderným riešeniam reprezentujúcim údaje o genóme sa tento softvér javí ako iba jednoduchý vizualizačný nástroj, ktorý nepodporuje rôzne vlastné vizualizačné stopy ani navigáciu.
+Nedostatok prispôsobenia možno vysvetliť extrémnou zložitosťou vytvárania plne funkčného prehľadávača genómu.
 
-The main idea of a program is to let the user choose which information regarding the virus genome he wants to visualize.
-It consists of 9 modules which have own role at the very process of visualization:
+Softvér sa píše hlavne pomocou balíka BioPython v Pythone 3.8.
+Všetky požadované balíčky sú uvedené v projektovej dokumentácii.
+
+Hlavnou myšlienkou programu je umožniť používateľovi zvoliť si, ktoré informácie týkajúce sa genómu vírusu si chce zobraziť.
+Skladá sa z 9 modulov, ktoré majú vlastnú úlohu pri samotnom procese vizualizácie:
 \begin{enumerate}
-    \item \textbf{Main Module} is the core of the program. It is responsible for providing user with navigation within the program.
-    It handles console input and output, suggests available methods of visualiation and retrieves details required for their performance.
-    \item \textbf{Sequence Collector} is responsible for downloading all the required sequences and annotation files from NCBI database.
-    \item \textbf{Statistics Generator} obtains the statistical data such as GC-content and nucleotide / aminoacid distribution.
-    User is able to choose the region of genome which statistics should be collected and to choose whether he wants his data to be saved into particular file.
-    \item \textbf{Gates Visualization} performs a visualization using the Gates's method into a .png file.
-    User is able to adjust color dependencies.
-    \item \textbf{2D Matrix} module plotes the selected genome into a 2D matrix into a .png file.
-    The size of an output picture is computed automatically.
-    \item \textbf{2D IMatrix} module plotes a genome into a 2D matrix of the selected size using the hash function algorithm into a .png file.
-    The bigger size, the more RAM memory is needed.
-    \item \textbf{Protein Plotter} generates protein sequences of a genome according to the nucleotide sequence.
-    User is able to remove those, that do not satisfy length conditions and is able to chose whether to print the results or to store them into a .csv file.
-    \item \textbf{ORF Plotter} generates an image of SARS-CoV-2 ORFs and GC-content ratio within the genome.
-    \item \textbf{Comprasion} module performs a comprasion of selected genomes.
-    The similarity percentage is obtained using the pairwise2 algorithm.
+    \item \textbf{Main Module} je jadrom programu. Zodpovedá za zabezpečenie navigácie v rámci programu používateľom.
+    Zaoberá sa vstupom a výstupom z konzoly, navrhuje dostupné metódy vizualizácie a získava podrobnosti potrebné na ich výkon.
+    \item \textbf{Sequence Collector} je zodpovedný za stiahnutie všetkých požadovaných sekvencií a súborov anotácií z databázy NCBI.
+    \item \textbf{Statistics Generator} získava štatistické údaje, ako je obsah GC a distribúcia nukleotidov / aminokyselín.
+    Užívateľ si môže zvoliť oblasť genómu, ktorá sa má štatisticky zhromažďovať, a zvoliť si, či chce, aby sa jeho údaje ukladali do konkrétneho súboru.
+    \item \textbf{Gates Visualization} vykoná vizualizáciu pomocou Gatesovej metódy do súboru .png.
+    Užívateľ je schopný upraviť farebné závislosti.
+    \item \textbf{2D Matrix} modul vykreslí vybraný genóm do 2D matice do súboru .png. Veľkosť výstupného obrázka sa počíta automaticky.
+    \item \textbf{2D IMatrix} modul vykreslí genóm do 2D matice vybranej veľkosti pomocou algoritmu hash funkcie do súboru .png.
+    Čím väčšia veľkosť, tým viac pamäte RAM je potrebných.
+    \item \textbf{Protein Plotter} generuje proteínové sekvencie genómu podľa nukleotidovej sekvencie.
+    Užívateľ je schopný odstrániť tie, ktoré nespĺňajú dĺžkové podmienky a je schopný zvoliť si, či výsledky vytlačí alebo ich uloží do súboru .csv.
+    \item \textbf{ORF Plotter} generuje obraz ORF SARS-CoV-2 a pomeru obsahu GC v genóme.
+    \item \textbf{Comprasion} modul vykonáva porovnanie vybraných genómov. Percento podobnosti sa získa pomocou algoritmu pairwise2.
 \end{enumerate}
 
-Modules do not able to interact with each other, but every of them can be called from the main one.
+Moduly nie sú schopné vzájomne interagovať, ale každý z nich je možné zavolať z hlavného.
 
-Each of the modules is described at the documentation and accompanied with the input and output examples.
-Moreover, every module contains different run-time tests which prevent unexpected program behaviour.
+Každý z modulov je popísaný v dokumentácii a je sprevádzaný príkladmi vstupu a výstupu.
+Každý modul navyše obsahuje rôzne testy za behu, ktoré zabraňujú neočakávanému správaniu programu.
 
-At the moment all the modules, except for ORF Plotter, support processing of various genomes.
-However, it is not recommended to use Protein Plotter with genomes that contain complex intron-exon structures due to their complexity.
-In such a case, results might differ significantly from the real characteristics of genome.
+V súčasnosti všetky moduly okrem ORF Plotter podporujú spracovanie rôznych genómov.
+Neodporúča sa však používať Proteínový plotter s genómami, ktoré kvôli svojej zložitosti obsahujú zložité intrón-exón štruktúry.
+V takom prípade sa výsledky môžu výrazne líšiť od skutočných charakteristík genómu.

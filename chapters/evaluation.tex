@@ -2,82 +2,88 @@
 
 \chapter{Vyhodnotenie}
 
-During the first part of this thesis I have analyzed the general genome structure of different organisms, DNA and RNA from the molecular, biological and informatical point of view.
+V prvej časti tejto práce som analyzoval všeobecnú štruktúru genómu rôznych organizmov, DNA a RNA z molekulárneho, biologického a informatického hľadiska.
 
-The spatial structure of DNA and its differences were listed at table 1.1 .
+Priestorová štruktúra DNA a jej rozdiely sú uvedené v tabuľke 1.1.
 
-The genomes of eukaryotes, prokaryotes and viruses were described in corresponding sections.
-The description of those genomes includes their unique properties, such as intron-exon structures mainly present in genomes of eukaryotes and gene clusters present in genomes of prokaryotes.
-The genes, their types, locations, functions and patterns that allow to find them (ORFs) were analyzed and properly described.
+Genomy eukaryotov, prokaryotov a vírusov boli opísané v zodpovedajúcich častiach.
+Opis týchto genómov zahrnuje ich jedinečné vlastnosti, ako sú štruktúry intrónu a exónu prítomné hlavne v genómoch eukaryotov a génové zhluky prítomné v genómoch prokaryotov.
+Gény, ich typy, polohy, funkcie a vzorce, ktoré umožňujú ich nájdenie (ORF), boli analyzované a správne opísané.
 
-The next step was to classify existing solutions for genome data representation in order to achieve the understanding how the modern software works and what it can suggest to users worldwise.
-They can be classifed as \textit{web-based} and \textit{stand-alone applications}.
+Ďalším krokom bola klasifikácia existujúcich riešení pre reprezentáciu údajov o genóme, aby sa dosiahlo pochopenie toho, ako moderný softvér funguje a čo môže navrhnúť používateľom po celom svete.
+Môžu byť klasifikované ako \textit{webové} a \textit{samostatné aplikácie}.
 
-Moreover, two categories of existing genome browsers were precisely described:
+Okrem toho boli presne opísané dve kategórie existujúcich prehľadávačov genómu:
 \begin{itemize}
-    \item \textbf{Species-independent} solutions that are capable of visualizing any genome, including Ensemble genome browser, UCSC genome browser and GBrowse framework were analyzed and compared (table 1.2).
-    \item \textbf{Species-specific} solutions that are aimed at visualization of particular species, including MSU rise genome browser and Rice-Map genome browser.
+    \item \textbf{Species-independent} boli analyzované a porovnané riešenia, ktoré sú schopné vizualizovať akýkoľvek genóm, vrátane prehľadávača genómov Ensemble, prehľadávača UCSC a GBrowse (tabuľka 1.2).
+    \item \textbf{Species-specific} riešenia, ktoré sú zamerané na vizualizáciu konkrétnych druhov, vrátane prehliadača genómu MSU a Rice-Map.
 \end{itemize}
 
-After, due to the extreme complexity of prokaryotic and eukaryotic genomes and due to the world pandemic, the SARS-CoV-2 virus genome was chosen to be visualized.
+Potom sa kvôli vizualizácii vybral genóm vírusu SARS-CoV-2 kvôli extrémnej zložitosti prokaryotických a eukaryotických genómov a kvôli svetovej pandémii.
 
-During the second part of this thesis, in order to understand how and where genome data is being stored, I have performed a comprehensive analysis of formats that are usually used to store genome-coherent information: FASTA file format, GFF and GenBank (GBK) file formats.
-The SARS-CoV-2 related files were used as an example for the very analysis.
+V druhej časti tejto práce som s cieľom pochopiť, ako a kde sa údaje o genóme ukladajú, som vykonal komplexnú analýzu formátov, ktoré sa zvyčajne používajú na ukladanie informácií súvisiacich s genómom: formát súborov FASTA, GFF a GenBank (GBK) formáty súborov.
+Ako príklad pre samotnú analýzu boli použité súbory súvisiace so SARS-CoV-2.
 
-I came to a conclusion, that genome visualization can be done in two ways:
+Dospel som k záveru, že vizualizáciu genómu je možné vykonať dvoma spôsobmi:
 \begin{itemize}
-    \item The first way is to visualize raw data which is a nucleotide sequence for DNA and RNA or an amino acid sequence (using information in FASTA files).
-    \item The second way is to visualize previously processed and well studied data, that contain gene locations, ORFs positions, etc. and which is stored in the genome annotation files (GFF and GenBank files).
+    \item Prvým spôsobom je vizualizácia nespracovaných údajov, ktoré sú nukleotidovou sekvenciou pre DNA a RNA alebo aminokyselinovou sekvenciou (pomocou informácií v súboroch FASTA).
+    \item Druhým spôsobom je vizualizácia predtým spracovaných a dobre preštudovaných údajov, ktoré obsahujú polohy génov, polohy ORF atď. A ktoré sú uložené v súboroch anotácií genómu (súbory GFF a GenBank).
 \end{itemize}
 
-After that, I have performed the analyzis and visualization of SARS-CoV-2 genome using the following methods.
+Potom som vykonal analýzu a vizualizáciu genómu SARS-CoV-2 pomocou nasledujúcich metód.
 
-\textbf{Nucleotides distribution and GC-content} analysis of FASTA file contents have shown, that SARS-CoV-2 genome is composed of 29903 nucleoties (basic units of genome).
-The distribution of them was the following: adenine (A) appeared at the genome sequence 8954 times, thymine (T) - 9594, cytosine (C) - 5492 and  guanine (G) - 5863 times.
-By knowing this data, I have computed the GC-content property of a genome that was low and appeared to be 37.97\%.
+\textbf{Distribúcia nukleotidov a obsah GC} analýza obsahu súboru FASTA ukázala, že genóm SARS-CoV-2 je zložený z 29 903 nukleotidov (základných jednotiek genómu).
+Distribúcia bola nasledovná: adenín (A) sa objavil v sekvencii genómu 8954-krát, tymín (T) - 9594, cytozín (C) - 5492 a guanín (G) - 5863-krát.
+Poznaním týchto údajov som vypočítal vlastnosť GC obsahu genómu, ktorá bola nízka a vyzerala ako 37,97 \%.
 
-This property is important, because it shows that SARS-CoV-2 genome has small number of ORFs (genes), because they are usually begin at GC-rich regions of genome.
+Táto vlastnosť je dôležitá, pretože ukazuje, že genóm SARS-CoV-2 má malý počet ORF (génov), pretože zvyčajne začínajú v genómových oblastiach bohatých na GC.
 
-\textbf{Gates's method} visualization was chosen to be performed, since I have accidently rediscovered it while thinking of how genome can possibly be visualized.
-It also processes the FASTA file.
-After performing this visualization, I have noticed that strange sequence of 33 adenine (A) nucleotides ends SARS-CoV-2 genome (figure 2.4).
-To make sure, that no errors were made during the visualization I have checked the very FASTA sequence and came up with the conclusion that the visualization was done in the right way.
+\textbf{Gatesova metóda} vizualizácie bola vybraná na vykonanie, pretože som ju náhodou znovu objavil ked' premýšľal, ako je možné vizualizovať genóm.
+Spracováva tiež súbor FASTA.
+Po vykonaní tejto vizualizácie som si všimol, že podivná sekvencia 33 adenínových (A) nukleotidov končí genómom SARS-CoV-2 (obrázok 2.4).
+Aby som sa ubezpečil, že počas vizualizácie nedošlo k žiadnym chybám, skontroloval som samotnú sekvenciu FASTA a dospel som ku záveru, že vizualizácia bola vykonaná správnym spôsobom.
     
-Despite the degeneracy, which is the main disadvantage of the method, it can plot DNA patterns without machine examination, as I have shown by visualizing the first chromosome of the smallest known eukaryotic genome that belongs to \textit{Encephalitozoon Intestinalis} (figure 2.6).
+Napriek degenerácii, ktorá je hlavnou nevýhodou metódy, dokáže vykresliť vzory DNA bez strojového vyšetrenia, čo som preukázal vizualizáciou prvého chromozómu najmenšieho známeho eukaryotického genómu, ktorý patrí do \textit{Encephalitozoon Intestinalis} (obrázok 2.6). .
 
-To understand whether this method is suitable for visual comprasion of genomes of related species, I have visualized SARS-CoV-2 genome and genome of its closest relative SARS-CoV-1 virus next to each other.
-I have made a hypothesis that they must be very similar since they resemble each other in the terms of achieved visualization (figure 2.7), and to prove it, I have run the pairwise2 algorithm that confirmed, that their percentage of similarity is equal to 83.34\%.
-I have chosen that algorithm since it is among the best alignment algorithms.
+Aby som pochopil, či je táto metóda vhodná na vizuálne zloženie genómov príbuzných druhov, vizualizoval som vedľa seba genóm SARS-CoV-2 a genóm jeho najbližšieho relatívneho vírusu SARS-CoV-1.
+Vytvoril som hypotézu, že musia byť veľmi podobné, pretože sa navzájom podobajú z hľadiska dosiahnutej vizualizácie (obrázok 2.7), a aby som to dokázal, spustil som algoritmus pairwise2, ktorý potvrdil, že ich percento podobnosti sa rovná 83,34\%.
+Vybral som si tento algoritmus, pretože patrí medzi najlepšie algoritmy zarovnávania.
 
-\textbf{2D Matrix method} visualization was chosen to be performed, since tandem repeats in a genome sequence might be visually distinguishable without any machine examination.
-However, after the very visualization, I did not manage to find any of them (figure 2.9).
-This method also requires FASTA file with sequence.
+\textbf{2D Matrix metóda} bola vybraná vizualizácia, pretože tandemové opakovania v sekvencii genómu môžu byť vizuálne rozlíšiteľné bez strojového vyšetrenia.
+Po samotnej vizualizácii sa mi však nepodarilo nájsť ani jedné z nich (obrázok 2.9).
+Táto metóda tiež vyžaduje súbor FASTA so sekvenciou.
 
-The main disadvantage of this method is that point mutations in genome, or even significant ones, are almost not noticabe without comprehensive analyzis of the obtained image.
+Hlavnou nevýhodou tejto metódy je, že bodové mutácie v genóme, alebo dokonca významné, nie sú takmer postrehnuteľné bez komplexnej analýzy získaného obrazu.
 
-\textbf{2D Matrix method improvement} was intoduced by me to cope with the disadvantage of the previous method by using a hash-function.
+\textbf{Vylepšenie metódy 2D Matrix } bolo zavedene mnou, aby sa vyrovnal s nevýhodou predchádzajúcej metódy pomocou hash funkcie.
 
-I proved it by comparing original genome of SARS-CoV-2 and the same genome with a point mutation at the second nucleotide (T was substituted with G) using my method (figure 2.10).
+Dokázal som to porovnaním pôvodného genómu SARS-CoV-2 a rovnakého genómu s bodovou mutáciou na druhom nukleotide (T bol substituovaný G) pomocou mojej metódy (obrázok 2.10).
 
-\textbf{Amino acid retrieval} was performed to obtain SARS-CoV-2 proteins for required for the next method. 
+\textbf{Získanie aminokyseliny} bolo vykonané za účelom získania proteínov SARS-CoV-2 potrebných pre ďalšiu metódu.
 
-After achievment of proteins from the DNA sequence stored in a FASTA file, I have compared the results with existing SARS-CoV-2 proteins by performing a BLAST search.
-The compasion have shown, that almost no mistakes were made since the similarity ratio was very high.
-Because of my interest, I have also compared them with proteins of relative species that have also shown a high ratio of similarity (table 2.2).
+Po dosiahnutí proteínov zo sekvencie DNA uloženej v súbore FASTA som pomocou BLAST vyhľadávania porovnal výsledky s existujúcimi proteínmi SARS-CoV-2.
+Súcit ukázal, že sa neurobili takmer žiadne chyby, pretože pomer podobnosti bol veľmi vysoký.
+Kvôli môjmu záujmu som ich tiež porovnal s proteínmi relatívnych druhov, ktoré tiež vykazovali vysoký pomer podobnosti (tabuľka 2.2).
 
-\textbf{ORF identification and visualization} was performed using the GenBank annotation file in order to visualize those parts of SARS-CoV-2 genome, that are probably genes.
+\textbf{identifikácia a vizualizácia ORF} sa uskutočnila pomocou anotačného súboru GenBank, aby sa vizualizovali tie časti genómu SARS-CoV-2, ktoré sú pravdepodobne gény.
 
-After searching for ORFs locations in the GBK file and comparing their indexes with the proteins obtained previously, removing the short ones, I have achieved 6 coding sequenses of genome (genes).
-The visualiation of achieved genes among other ORFs is visible at the figure 2.11 .
+Po vyhľadaní umiestnení ORF v súbore GBK a porovnaní ich indexov s predtým získanými proteínmi, po odstránení tých krátkych, som dosiahol 6 kódujúcich sekvencií genómu (génov).
+Vizualizácia dosiahnutých génov medzi ostatnými ORF je viditeľná na obrázku 2.11.
 
-To verify the results, BLAST search was performed (table 2.3).
-It has shown, that I have visulized those genes properly, since they have a high similarity with the existing ones.
+Na overenie výsledkov bolo vykonané BLAST vyhľadávanie (tabuľka 2.3).
+Ukázalo sa, že som tieto gény správne zviditeľnil, pretože sú veľmi podobné tým existujúcim.
 
 \smallskip
-The next and the last step was to combine all the code that was used into a simple stand-alone console application which is capable of visualizing SARS-CoV-2 genome using previously described techniques.
-The detailed software architecture is described at the corresponding section.
 
-From the main disadvantages of the developed program I can admit that it is rather simlple, has no graphical interface and, at the moment, not all methods support visualiaton of any genome.
-Therefore, the developed visualiation tool can be claffied as \textit{species-specific}.
+Ďalším a posledným krokom bolo spojiť všetok použitý kód do jednoduchej samostatnej konzolovej aplikácie, ktorá je schopná vizualizovať genóm SARS-CoV-2 pomocou predtým opísaných postupov.
+Podrobná architektúra softvéru je popísaná v príslušnej časti.
+
+Z hlavných nevýhod vyvinutého programu môžem pripustiť, že je pomerne jednoduchý, nemá grafické rozhranie a momentálne nie všetky metódy podporujú vizualizáciu ľubovoľného genómu.
+Preto je možné vyvinutý nástroj pre vizualizáciu označiť ako \ textit {druhovo špecifický}.
+
+\smallskip
+Na záver možno všetky ciele, ktoré boli stanovené v tejto práci, považovať za splnené: analyzuje sa štruktúra genómu spolu s existujúcimi nástrojmi a genóm SARS-CoV-2 sa úspešne vizualizuje.
+Nie všetky však boli dokončené tak, ako som čakal: tvorba softvéru pre modernú a prispôsobiteľnú vizualizáciu genómu si vyžaduje dlhú pracovnú dobu a nemá zmysel, pretože existujú riešenia, ktoré už majú vynikajúci výkon.
+Softvér sa preto javil ako triviálna konzolová aplikácia, ktorú však nemožno považovať za skutočný prehliadač genómu, ale ktorá určite spĺňa stanovený cieľ.
 
 \label{evaluation}
