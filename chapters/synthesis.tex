@@ -446,7 +446,7 @@ Skladá sa z 9 modulov, ktoré majú vlastnú úlohu pri samotnom procese vizual
     \item \textbf{Protein Plotter} generuje proteínové sekvencie genómu podľa nukleotidovej sekvencie.
     Užívateľ je schopný odstrániť tie, ktoré nespĺňajú dĺžkové podmienky a je schopný zvoliť si, či výsledky vytlačí alebo ich uloží do súboru .csv.
     \item \textbf{ORF Plotter} generuje obraz ORF SARS-CoV-2 a pomeru obsahu GC v genóme.
-    \item \textbf{Comprasion} modul vykonáva porovnanie vybraných genómov. Percento podobnosti sa získa pomocou algoritmu pairwise2.
+    \item \textbf{Comparsion} modul vykonáva porovnanie vybraných genómov. Percento podobnosti sa získa pomocou algoritmu pairwise2.
 \end{enumerate}
 
 Moduly nie sú schopné vzájomne interagovať, ale každý z nich je možné zavolať z hlavného.
@@ -454,6 +454,6 @@ Moduly nie sú schopné vzájomne interagovať, ale každý z nich je možné za
 Každý z modulov je popísaný v dokumentácii a je sprevádzaný príkladmi vstupu a výstupu.
 Každý modul navyše obsahuje rôzne testy za behu, ktoré zabraňujú neočakávanému správaniu programu.
 
-V súčasnosti všetky moduly okrem ORF Plotter podporujú spracovanie rôznych genómov.
+V súčasnosti všetky moduly okrem ORF Plotter podporujú spracovanie rôznych genómov, pretože výkon týchto metód nezávisí od konkrétnych vlastností genómu.
 Neodporúča sa však používať Proteínový plotter s genómami, ktoré kvôli svojej zložitosti obsahujú zložité intrón-exón štruktúry.
 V takom prípade sa výsledky môžu výrazne líšiť od skutočných charakteristík genómu.
