@@ -54,3 +54,49 @@
 \contentsline {chapter}{Literatúra}{45}{chapter*.36}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Zoznam príloh}{48}{chapter*.37}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Documentácia}{50}{chapter*.37}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\Large {Úvod}}{50}{subsubsection*.38}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Úvod}{50}{subsubsection*.38}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\Large {Inštalácia}}{50}{subsubsection*.39}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Inštalácia}{50}{subsubsection*.39}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Python 3.8}{50}{subsubsection*.40}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Pip}{50}{subsubsection*.41}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Knižnice}{51}{subsubsection*.42}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Popis spustenia a činnosti aplikácie}{51}{lstnumber.-6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\Large {Popis spustenia a činnosti aplikácie}}{51}{subsubsection*.43}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 1}{52}{subsubsection*.44}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 2}{53}{subsubsection*.45}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 3}{53}{subsubsection*.46}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 4}{54}{subsubsection*.47}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 5}{54}{subsubsection*.48}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 6}{55}{subsubsection*.49}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Scenár 7}{56}{subsubsection*.50}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Použitie režimu Quiet}{56}{subsubsection*.51}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\Large {Architektúra aplikácie}}{57}{subsubsection*.52}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Architektúra aplikácie}{57}{subsubsection*.52}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Modules description}{58}{subsubsection*.53}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\Large {Záver}}{61}{subsubsection*.54}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Záver}{61}{subsubsection*.54}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.21)  28 MAY 2021 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.21)  28 MAY 2021 22:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1036,7 +1036,7 @@ LaTeX Warning: Reference `theend' on page iii undefined on input line 90.
 [3]
 
 pdfTeX warning: pdflatex (file /home/csraea/Desktop/THESIS/thesis/chapters/ss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<chapters/ss.pdf, id=124, 597.23125pt x 845.1575pt>
+<chapters/ss.pdf, id=147, 597.23125pt x 845.1575pt>
 File: chapters/ss.pdf Graphic file (type pdf)
 <use chapters/ss.pdf>
 Package pdftex.def Info: chapters/ss.pdf  used on input line 90.
@@ -1054,7 +1054,7 @@ pdfTeX warning: pdflatex (file /home/csraea/Desktop/THESIS/thesis/chapters/ss.pd
 
 
 pdfTeX warning: pdflatex (file /home/csraea/Desktop/THESIS/thesis/chapters/ss.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<chapters/ss.pdf, id=127, page=1, 597.23125pt x 845.1575pt>
+<chapters/ss.pdf, id=150, page=1, 597.23125pt x 845.1575pt>
 File: chapters/ss.pdf Graphic file (type pdf)
 <use chapters/ss.pdf, page 1>
 Package pdftex.def Info: chapters/ss.pdf , page1 used on input line 90.
@@ -1159,12 +1159,12 @@ Overfull \hbox (8.18027pt too wide) in paragraph at lines 17--18
 
 
 ]
-<figures/nucleotides.png, id=323, 716.6775pt x 703.62875pt>
+<figures/nucleotides.png, id=352, 716.6775pt x 703.62875pt>
 File: figures/nucleotides.png Graphic file (type png)
 <use figures/nucleotides.png>
 Package pdftex.def Info: figures/nucleotides.png  used on input line 40.
 (pdftex.def)             Requested size: 360.35675pt x 353.79976pt.
-<figures/bases1.png, id=324, 677.53125pt x 962.59625pt>
+<figures/bases1.png, id=353, 677.53125pt x 962.59625pt>
 File: figures/bases1.png Graphic file (type png)
 <use figures/bases1.png>
 Package pdftex.def Info: figures/bases1.png  used on input line 47.
@@ -1199,13 +1199,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--90
 []\T1/qpl/m/n/12 Ved©aj²ia
  []
 
-<figures/spatial.png, id=334, 661.47125pt x 510.90875pt>
+<figures/spatial.png, id=363, 661.47125pt x 510.90875pt>
 File: figures/spatial.png Graphic file (type png)
 <use figures/spatial.png>
 Package pdftex.def Info: figures/spatial.png  used on input line 97.
 (pdftex.def)             Requested size: 360.35675pt x 278.3267pt.
 [6]
-<figures/nucleosome1.jpg, id=341, 1606.0pt x 1700.3525pt>
+<figures/nucleosome1.jpg, id=370, 1606.0pt x 1700.3525pt>
 File: figures/nucleosome1.jpg Graphic file (type jpg)
 <use figures/nucleosome1.jpg>
 Package pdftex.def Info: figures/nucleosome1.jpg  used on input line 117.
@@ -1216,19 +1216,19 @@ Overfull \hbox (4.36227pt too wide) in paragraph at lines 125--128
  []
 
 [7 </home/csraea/Desktop/THESIS/thesis/figures/spatial.png>] [8 </home/csraea/Desktop/THESIS/thesis/figures/nucleosome1.jpg>]
-<figures/nucleoDetailed.png, id=356, 302.12875pt x 433.62pt>
+<figures/nucleoDetailed.png, id=385, 302.12875pt x 433.62pt>
 File: figures/nucleoDetailed.png Graphic file (type png)
 <use figures/nucleoDetailed.png>
 Package pdftex.def Info: figures/nucleoDetailed.png  used on input line 144.
 (pdftex.def)             Requested size: 211.97304pt x 304.22665pt.
  [9 </home/csraea/Desktop/THESIS/thesis/figures/nucleoDetailed.png>]
-<figures/pro-vs-eu-dna_med.jpeg, id=361, 766.865pt x 350.30875pt>
+<figures/pro-vs-eu-dna_med.jpeg, id=390, 766.865pt x 350.30875pt>
 File: figures/pro-vs-eu-dna_med.jpeg Graphic file (type jpg)
 <use figures/pro-vs-eu-dna_med.jpeg>
 Package pdftex.def Info: figures/pro-vs-eu-dna_med.jpeg  used on input line 169.
 (pdftex.def)             Requested size: 423.94609pt x 193.66463pt.
  [10 </home/csraea/Desktop/THESIS/thesis/figures/pro-vs-eu-dna_med.jpeg>]
-<figures/virus.png, id=366, 770.88pt x 501.37312pt>
+<figures/virus.png, id=395, 770.88pt x 501.37312pt>
 File: figures/virus.png Graphic file (type png)
 <use figures/virus.png>
 Package pdftex.def Info: figures/virus.png  used on input line 195.
@@ -1243,29 +1243,29 @@ LaTeX Font Info:    Trying to load font information for TS1+qpl on input line 22
  (/usr/share/texmf/tex/latex/tex-gyre/ts1qpl.fd
 File: ts1qpl.fd 2009/09/25 v1.2 font definition file for TS1/qpl
 ) [12]
-<figures/ORF2.png, id=380, 330.23375pt x 201.75375pt>
+<figures/ORF2.png, id=409, 330.23375pt x 201.75375pt>
 File: figures/ORF2.png Graphic file (type png)
 <use figures/ORF2.png>
 Package pdftex.def Info: figures/ORF2.png  used on input line 239.
 (pdftex.def)             Requested size: 254.37024pt x 155.40935pt.
-<figures/eukaryotic_transcription_2.png, id=383, 451.6875pt x 451.6875pt>
+<figures/eukaryotic_transcription_2.png, id=412, 451.6875pt x 451.6875pt>
 File: figures/eukaryotic_transcription_2.png Graphic file (type png)
 <use figures/eukaryotic_transcription_2.png>
 Package pdftex.def Info: figures/eukaryotic_transcription_2.png  used on input line 260.
 (pdftex.def)             Requested size: 254.37024pt x 254.37685pt.
  [13 </home/csraea/Desktop/THESIS/thesis/figures/ORF2.png>]
-<figures/rna.png, id=391, 298.11375pt x 259.97125pt>
+<figures/rna.png, id=420, 298.11375pt x 259.97125pt>
 File: figures/rna.png Graphic file (type png)
 <use figures/rna.png>
 Package pdftex.def Info: figures/rna.png  used on input line 276.
 (pdftex.def)             Requested size: 211.97304pt x 184.85062pt.
  [14 </home/csraea/Desktop/THESIS/thesis/figures/eukaryotic_transcription_2.png>] [15 </home/csraea/Desktop/THESIS/thesis/figures/rna.png>] [16]
-<figures/ucsc_gb.png, id=416, 968.61874pt x 842.14626pt>
+<figures/ucsc_gb.png, id=446, 968.61874pt x 842.14626pt>
 File: figures/ucsc_gb.png Graphic file (type png)
 <use figures/ucsc_gb.png>
 Package pdftex.def Info: figures/ucsc_gb.png  used on input line 347.
 (pdftex.def)             Requested size: 381.54889pt x 331.72534pt.
-<figures/ensembl_gb.png, id=417, 966.61125pt x 677.53125pt>
+<figures/ensembl_gb.png, id=447, 966.61125pt x 677.53125pt>
 File: figures/ensembl_gb.png Graphic file (type png)
 <use figures/ensembl_gb.png>
 Package pdftex.def Info: figures/ensembl_gb.png  used on input line 360.
@@ -1291,13 +1291,13 @@ Overfull \hbox (0.46027pt too wide) in paragraph at lines 401--403
  []
 
 [18 </home/csraea/Desktop/THESIS/thesis/figures/ucsc_gb.png>] [19]
-<figures/ss-1.png, id=433, 960.58875pt x 388.45125pt>
+<figures/ss-1.png, id=463, 960.58875pt x 388.45125pt>
 File: figures/ss-1.png Graphic file (type png)
 <use figures/ss-1.png>
 Package pdftex.def Info: figures/ss-1.png  used on input line 406.
 (pdftex.def)             Requested size: 381.54889pt x 154.29305pt.
  [20 </home/csraea/Desktop/THESIS/thesis/figures/ensembl_gb.png> </home/csraea/Desktop/THESIS/thesis/figures/ss-1.png>]
-<figures/ss-2.png, id=440, 968.61874pt x 391.4625pt>
+<figures/ss-2.png, id=469, 968.61874pt x 391.4625pt>
 File: figures/ss-2.png Graphic file (type png)
 <use figures/ss-2.png>
 Package pdftex.def Info: figures/ss-2.png  used on input line 419.
@@ -1316,7 +1316,7 @@ Overfull \hbox (3.10736pt too wide) in paragraph at lines 22--23
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<figures/gff3.png, id=448, 835.12pt x 835.12pt>
+<figures/gff3.png, id=477, 835.12pt x 835.12pt>
 File: figures/gff3.png Graphic file (type png)
 <use figures/gff3.png>
 Package pdftex.def Info: figures/gff3.png  used on input line 33.
@@ -1326,7 +1326,7 @@ Package pdftex.def Info: figures/gff3.png  used on input line 33.
 
 
 ] [23 </home/csraea/Desktop/THESIS/thesis/figures/gff3.png>]
-<figures/gbk.png, id=471, 673.51625pt x 857.2025pt>
+<figures/gbk.png, id=500, 673.51625pt x 857.2025pt>
 File: figures/gbk.png Graphic file (type png)
 <use figures/gbk.png>
 Package pdftex.def Info: figures/gbk.png  used on input line 69.
@@ -1344,18 +1344,18 @@ Overfull \hbox (1.41049pt too wide) in paragraph at lines 94--97
 [25 </home/csraea/Desktop/THESIS/thesis/figures/gbk.png>]
 LaTeX Font Info:    Font shape `T1/txtt/m/it' in size <10.95> not available
 (Font)              Font shape `T1/txtt/m/sl' tried instead on input line 108.
-<figures/covidnucleotides.png, id=495, 934.49126pt x 304.13625pt>
+<figures/covidnucleotides.png, id=524, 934.49126pt x 304.13625pt>
 File: figures/covidnucleotides.png Graphic file (type png)
 <use figures/covidnucleotides.png>
 Package pdftex.def Info: figures/covidnucleotides.png  used on input line 131.
 (pdftex.def)             Requested size: 381.54889pt x 124.1769pt.
  [26]
-<figures/aaaaa.png, id=523, 1761.58125pt x 747.79375pt>
+<figures/aaaaa.png, id=552, 1761.58125pt x 747.79375pt>
 File: figures/aaaaa.png Graphic file (type png)
 <use figures/aaaaa.png>
 Package pdftex.def Info: figures/aaaaa.png  used on input line 152.
 (pdftex.def)             Requested size: 254.37024pt x 107.9766pt.
-<figures/AAAA.png, id=524, 511.9125pt x 59.22125pt>
+<figures/AAAA.png, id=553, 511.9125pt x 59.22125pt>
 File: figures/AAAA.png Graphic file (type png)
 <use figures/AAAA.png>
 Package pdftex.def Info: figures/AAAA.png  used on input line 160.
@@ -1366,7 +1366,7 @@ Overfull \hbox (9.7586pt too wide) in paragraph at lines 164--166
  []
 
 [27 </home/csraea/Desktop/THESIS/thesis/figures/covidnucleotides.png> </home/csraea/Desktop/THESIS/thesis/figures/aaaaa.png>]
-<figures/gateseu.png, id=531, 1825.82124pt x 814.04124pt>
+<figures/gateseu.png, id=560, 1825.82124pt x 814.04124pt>
 File: figures/gateseu.png Graphic file (type png)
 <use figures/gateseu.png>
 Package pdftex.def Info: figures/gateseu.png  used on input line 173.
@@ -1376,19 +1376,19 @@ Overfull \hbox (6.14917pt too wide) in paragraph at lines 177--179
 []\T1/qpl/m/n/12 Najbliº²ím prí-buz-ným mo-der-ného ví-rusu + ssRNA SARS-CoV-2 je ví-rus SARS-
  []
 
-<figures/comprasion.png, id=534, 1510.64375pt x 503.8825pt>
+<figures/comprasion.png, id=563, 1510.64375pt x 503.8825pt>
 File: figures/comprasion.png Graphic file (type png)
 <use figures/comprasion.png>
 Package pdftex.def Info: figures/comprasion.png  used on input line 183.
 (pdftex.def)             Requested size: 423.94609pt x 141.40906pt.
 [28 </home/csraea/Desktop/THESIS/thesis/figures/AAAA.png> </home/csraea/Desktop/THESIS/thesis/figures/gateseu.png>]
-<figures/2d.png, id=546, 775.89874pt x 520.94624pt>
+<figures/2d.png, id=576, 775.89874pt x 520.94624pt>
 File: figures/2d.png Graphic file (type png)
 <use figures/2d.png>
 Package pdftex.def Info: figures/2d.png  used on input line 216.
 (pdftex.def)             Requested size: 169.57584pt x 113.85336pt.
  [29 </home/csraea/Desktop/THESIS/thesis/figures/comprasion.png>]
-<figures/matrix.png, id=559, 1389.19pt x 1389.19pt>
+<figures/matrix.png, id=589, 1389.19pt x 1389.19pt>
 File: figures/matrix.png Graphic file (type png)
 <use figures/matrix.png>
 Package pdftex.def Info: figures/matrix.png  used on input line 226.
@@ -1404,7 +1404,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--252
  []
 
 [31]
-<figures/2dim.png, id=581, 957.5775pt x 498.86375pt>
+<figures/2dim.png, id=610, 957.5775pt x 498.86375pt>
 File: figures/2dim.png Graphic file (type png)
 <use figures/2dim.png>
 Package pdftex.def Info: figures/2dim.png  used on input line 276.
@@ -1434,7 +1434,7 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 357.
 
 [34] [35]
-<figures/cds.png, id=636, 1219.55624pt x 578.16pt>
+<figures/cds.png, id=665, 1219.55624pt x 578.16pt>
 File: figures/cds.png Graphic file (type png)
 <use figures/cds.png>
 Package pdftex.def Info: figures/cds.png  used on input line 399.
@@ -1449,7 +1449,11 @@ Overfull \hbox (8.15923pt too wide) in paragraph at lines 458--459
 \T1/qpl/m/n/12 sek-ven-cií a sú-bo-rov ano-tá-cií z da-ta-bázy NCBI pre vi-zu-ali-zá-ciu ge-nómu SARS-
  []
 
-[38]) [39]
+[38]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 461.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) [39]
 \openout2 = `chapters/evaluation.aux'.
 
  (/home/csraea/Desktop/THESIS/thesis/chapters/evaluation.tex
@@ -1495,7 +1499,44 @@ Package biblatex Warning: Name format 'last-first' deprecated.
 ]
 \openout2 = `appendixes/prilohaa.aux'.
 
- (/home/csraea/Desktop/THESIS/thesis/appendixes/prilohaa.tex)
+ (/home/csraea/Desktop/THESIS/thesis/appendixes/prilohaa.tex [49
+
+
+]
+Overfull \hbox (0.81746pt too wide) in paragraph at lines 40--41
+\T1/qpl/m/n/12 Túto do-ku-men-tá-ciu moºno po-va-ºo-va´ za po-u-ºí-va-te©-skú prí-ru£ku k po-u-ºi-tiu prog-
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) [50]
+Overfull \hbox (9.64226pt too wide) in paragraph at lines 97--98
+[]\T1/qpl/m/n/12 Úplný zo-znam po-ºa-do-va-ných ba-lí-kov sa na-chá-dza v sú-bore \T1/lmtt/b/n/12 requirements.txt\T1/qpl/m/n/12 ,
+ []
+
+[51] [52] [53] [54] [55] [56]
+Overfull \hbox (3.10736pt too wide) in paragraph at lines 365--366
+[][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (29.38757pt too wide) in paragraph at lines 366--367
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.24747pt too wide) in paragraph at lines 367--368
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[57]
+Overfull \hbox (1.04138pt too wide) in paragraph at lines 397--399
+\T1/qpl/m/n/12 prog-ram vy-tvorí. Preto, aby si uºí-va-te© mo-hol po-zrie´ vy-ko-nané vi-zu-ali-zá-cie, musí
+ []
+
+[58] [59] [60]) [61]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -1507,7 +1548,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 132.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 132.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 132.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2FE16D4090A025341D8C8C9880113183;5945.
+(rerunfilecheck)             Checksum: FF462A2C229CFDCE443D3AAF78DE5D7C;6790.
 
 
 LaTeX Warning: There were undefined references.
@@ -1520,18 +1561,18 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26896 strings out of 482368
- 432652 string characters out of 5941917
- 1200675 words of memory out of 5000000
- 41256 multiletter control sequences out of 15000+600000
- 575834 words of font info for 55 fonts, out of 8000000 for 9000
+ 27341 strings out of 482368
+ 438715 string characters out of 5941917
+ 1210763 words of memory out of 5000000
+ 41495 multiletter control sequences out of 15000+600000
+ 576470 words of font info for 57 fonts, out of 8000000 for 9000
  428 hyphenation exceptions out of 8191
- 59i,18n,84p,2058b,3211s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on /home/csraea/Desktop/THESIS/thesis/thesis.pdf (59 pages, 6521556 bytes).
+ 59i,18n,97p,2058b,3211s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on /home/csraea/Desktop/THESIS/thesis/thesis.pdf (72 pages, 6609264 bytes).
 PDF statistics:
- 808 PDF objects out of 1000 (max. 8388607)
- 690 compressed objects within 7 object streams
- 241 named destinations out of 1000 (max. 500000)
- 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1120 PDF objects out of 1200 (max. 8388607)
+ 984 compressed objects within 10 object streams
+ 437 named destinations out of 1000 (max. 500000)
+ 402 words of extra memory for PDF output out of 10000 (max. 10000000)
 

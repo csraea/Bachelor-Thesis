@@ -1,33 +1,491 @@
 % !TEX root = ../thesis.tex
 
-% \chapter{Karel Language Reference}
 
-% \section*{Karel's Primitives}
+\thispagestyle{empty}
+	\begin{center}
+		\vspace*{1cm}
+		
+		\textbf{\large Technicka Univerzita v Košiciach }
+		
+		\vspace{0.4cm}
+		Fakulta elektrotechniky a informatiky
+		
+		\vspace{4.5cm}
+		
+		\textbf{\Large Dokumentácia k programu na vizualizáciu štruktúry genómu\\}
+		\vspace{1.5cm}
+		Príloha A k bakalárskej práci
+		\vfill
+		
+		
+		\vspace{2.8cm}
+		
+		{\raggedleft\vfill{%
+		 		
+			}\par}
+		
+		{\raggedright\vfill{%
+				2021 \quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad Oleksandr Korotetskyi
+			}\par}
+		
+		
+		
+	\end{center}
 
-% \begin{itemize}
-%     \item \verb|void movek()| - Moves \textit{Karel} one intersection forward.
-%     \item \verb|void turn_left()| - Pivots \textit{Karel} $90$ degrees left.
-%     \item \verb|void pick_beeper()| - Takes a beeper from the current intersection and puts it in the beeper bag.
-%     \item \verb|void put_beeper()| - Takes a beeper from the beeper bag and puts it at the current intersection.
-%     \item \verb|void turn_on(char* path)| - Turns \textit{Karel} on.
-%     \item \verb|void turn_off()| - Turns \textit{Karel} off.
-% \end{itemize}
+\newpage
+\rhead{Dokumentácia}
+\addcontentsline{toc}{chapter}{Documentácia}
+\subsubsection{\Large{Úvod}}
+\addcontentsline{toc}{section}{Úvod}
+Túto dokumentáciu možno považovať za používateľskú príručku k použitiu programu a ako systémovú príručku, ktorá popisuje funkčnosť a architektúru programu.
+
+Dokumentácia je rozdelená na niekoľko častí, ktoré sa venujú zodpovedajúcim témam: inštalácia, scenáre spustenia a použitia, architektúra aplikácie.
+
+\subsubsection{\Large{Inštalácia}}
+\addcontentsline{toc}{section}{Inštalácia}
+Aplikácia bola vyvinutá pre použitie hlavne na platformách Unix / Linux, a preto môže pokus o jej inštaláciu na platformu Windows viesť k neočakávanému správaniu programu.
 
 
-% \section*{Karel's Sensors}
+\subsubsection{Python 3.8}
+Aplikácia je napísaná v Pythone 3.8, a preto on je nevyhnutný pre použitie programu.
+V systémoch založených na Debiane je možné ho nainštalovať pomocou nasledujúcich príkazov v termináli (štandardnóm príkazovóm riadku):
+\begin{lstlisting}[language=bash]
+  $ sudo apt-get update
+  $ sudo apt-get install python3.8
+\end{lstlisting}
 
-% \begin{itemize}
-%     \item \verb|int front_is_clear()| - Returns \texttt{1} if there is no wall directly in front of \textit{Karel}. \texttt{0} if there is.
-%     \item \verb|int right_is_clear()| - Returns \texttt{1} if there is no wall immediately to \textit{Karel}'s right. \texttt{0} if there is.
-%     \item \verb|int beepers_present()| - Returns \texttt{1} if \textit{Karel} is standing at an intersection that has a beeper. \texttt{0} otherwise.
-%     \item \verb|int facing_north()| - Returns \texttt{1} if \textit{Karel} is facing north. \texttt{0} otherwise.
-%     \item \verb|int beepers_in_bag()| - Returns \texttt{1} if there is at least one beeper in \textit{Karel}'s beeper bag. \texttt{0} if the beeper bag is empty.
-% \end{itemize}
+Pre systémy založené na Fedore by sa mal použiť nasledujúci príkaz:
+\begin{lstlisting}[language=bash]
+  $ sudo dnf install python3
+\end{lstlisting}
 
 
-% \section*{Misc Functions}
+\subsubsection{Pip}
+Ďalším krokom je inštalácia {\fontfamily{lmtt}\selectfont pip} (správca balíkov python), ktorý sa použije na inštaláciu ďalších závislostí.
+Je to môžne urobiť pomocou nasledujúceho príkazu pre distribúcie založené na Debiane:
+\begin{lstlisting}[language=bash]
+  $ sudo apt-get install python3-pip
+\end{lstlisting}
 
-% \begin{itemize}
-%     \item \verb|void set_step_delay(int)| - Sets delay of one \textit{Karel}'s step in miliseconds.
-%     \item \verb|loop(int)| - Repeats \textit{Karel}'s instruction in a loop.
-% \end{itemize}
+A pre systémy založené na Fedore musia byť použité:
+\begin{lstlisting}[language=bash]
+  $ curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+  $ python get-pip.py
+\end{lstlisting}
+
+
+\subsubsection{Knižnice}
+Softvér pracuje na populárnych knižniciach, ktoré poskytujú používateľovi rozšírené funkcie pre sprácovanie genomov a ine účely.
+Aby bolo možné aplikáciu používať, je potrebné nainštalovať nasledujúcich 12 balíkov:
+{\fontfamily{lmtt}\selectfont
+\begin{itemize}
+    \item bio==0.4.1
+    \item biopython==1.78
+    \item matplotlib==3.4.2
+    \item numpy==1.19.5
+    \item pandas==1.2.4
+    \item pillow==8.2.0
+    \item pyparsing==2.4.7
+    \item requests==2.25.1
+    \item seaborn==0.11.1
+    \item urllib3==1.26.4
+    \item bcbio-gff
+    \item dna\_features\_viewer
+\end{itemize}
+}
+
+Úplný zoznam požadovaných balíkov sa nachádza v súbore \textbf{\fontfamily{lmtt}\selectfont requirements.txt}, ktorý je umiestnený v koreňovom adresári programu.
+
+Samotnú inštaláciu knižníc je možné vykonať v termináli v koreňovom adresári programu pomocou jedného z nasledujúcich príkazov, ktoré sa môžu líšiť v závislosti od systému:
+\begin{lstlisting}[language=bash]
+  $ pip install -r requirements.txt
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+  $ pip3 install -r requirements.txt
+\end{lstlisting}
+
+\addcontentsline{toc}{section}{Popis spustenia a činnosti aplikácie}
+\subsubsection{\Large{Popis spustenia a  činnosti aplikácie}}
+Tento vizualizačný nástroj podporuje dva režimy vykonávania: \textit {verbose} a \textit {quiet}.
+Aplikácia v režime \textit{verbose} poskytuje používateľovi komentáre a prostredie na triviálnu interakciu, zatiaľ čo režim \textit{quit} je vhodnejší na účely rýchlejšej vizualizácie a automatizácie.
+
+Oba režimy majú rovnaké funkcie, a preto sa líšia iba v tom, ako používateľ povie programovi, čo má robiť.
+V režime \textit{verbose} používateľ komunikuje s programom prostredníctvom vstupu a výstupu konzoly, zatiaľ čo v režime \textit{quit} používa iba argumenty príkazového riadku.
+
+Táto časť popisuje rôzne scenáre vykonávania programu v režime \textit{verbose} a sprevádzané príkazom na vykonanie rovnakej akcie iba pomocou argumentov príkazového riadku v režime \textit{quiet}.
+
+Na spustenie aplikácie v režime \textit{verbose} by sa mal použiť jeden z nasledujúcich príkazov:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py
+\end{lstlisting}
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m v
+\end{lstlisting}
+
+Po spustení aplikácie sa objavi hlavné menu nástroja:
+\begin{lstlisting}[language=bash]
+  +----------------------------------+
+  |--- Welcome to the Visualizer! ---|
+  +----------------------------------+
+  Choose the option: 
+  1. Download SARS-CoV-2 genome sequence & associated files
+  2. Plot sequence statistics
+  3. Gates' visualization
+  4. 2D Matrix visualization
+  5. Improved 2D Matrix visualization
+  6. Plot ORFs
+  7. Compare genomes
+  8. Exit
+  Choice: 
+\end{lstlisting}
+Užívateľ je schopný voliť rôzné možnosti zadaním zodpovedajúceho im čísla.
+Na ukončenie práci s nástrojem je potrebné stlačiť zadať „q“ pri hoci akom vstupe, na ktorý program čaká.
+
+
+\subsubsection{Scenár 1}
+Po výbere prvej možnosti sa v prípade úspechu zobrazia nasledujúce správy.
+\begin{lstlisting}[language=bash]
+  Necessary files are being downloaded...
+  Done!
+\end{lstlisting}
+Všetky potrebné súbory (SARS-CoV-2.fasta a SARS-CoV-2.gb) sa úspešne stiahli.
+Všetky ostatné súbory na vizualizáciu genómom musí používateľ pridať ručne do adresára {\fontfamily{lmtt}\selectfont data}.
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} bez akýchkoľvek programových správ pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -d
+\end{lstlisting}
+
+
+\subsubsection{Scenár 2}
+Po výbere druhej možnosti program požiada používateľa, aby si vybral postupnosť z tých, ktoré sa nachádzajú v adresári {\fontfamily{lmtt}\selectfont data}.
+\begin{lstlisting}[language=bash]
+  Choose the sequence to plot the statistics of:
+  1. alteromonas.fasta
+  2. SARS-CoV-2.fasta
+  3. ebola.fasta
+  Choice: 2
+\end{lstlisting}
+Ďalším krokom je určenie intervalu, o ktorom sa musia štatistické údaje zobrazovať:
+\begin{lstlisting}[language=bash]
+  Specify the interval (0 for the entire genome)
+  Start:	1223
+  End:	0
+\end{lstlisting}
+
+Nuly predstavujú defaultné hodnoty, zatiaľ čo program vytvára tento výstup:
+\begin{lstlisting}[language=bash]
+  Frequencies of nucleotides on the interval [1223;29903]:
+  A:	8626
+  T:	9251
+  G:	5577
+  C:	5226
+  Total:	28680
+  GC-content on interval [1223;29903]:	0.3767%
+\end{lstlisting}
+Zobrazuju sa základné štatistické údaje analyzovanej sekvencie, ktoré by mohli byť užitočné.
+
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -s --pos 1223 0
+\end{lstlisting}
+
+
+
+\subsubsection{Scenár 3}
+Po výbere tretej možnosti program požiada používateľa, aby si vybral postupnosť z tých, ktoré sa nachádzajú v adresári {\fontfamily{lmtt}\selectfont data}.
+\begin{lstlisting}[language=bash]
+  Choose the sequence to visualize using Gates' method:
+  1. alteromonas.fasta
+  2. SARS-CoV-2.fasta
+  3. ebola.fasta
+  Choice: 3
+\end{lstlisting}
+Ďalším krokom je určenie intervalu sekvencie genómu, ktorý sa bude vizualizovať:
+\begin{lstlisting}[language=bash]
+  Specify the interval (0 for the entire genome)
+  Start:	0
+  End:	8000
+  Done!
+\end{lstlisting}
+
+Generovaný obrázok je uložený v adresári {\fontfamily{lmtt}\selectfont out}.
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -g ebola.fasta --pos 0 8000
+\end{lstlisting}
+
+\subsubsection{Scenár 4}
+Po výbere štvrtej možnosti program požiada používateľa, aby si vybral postupnosť z tých, ktoré sa nachádzajú v adresári {\fontfamily{lmtt}\selectfont data}.
+\begin{lstlisting}[language=bash]
+  Choose the sequence to visualize using 2D Matrix method:
+  1. alteromonas.fasta
+  2. SARS-CoV-2.fasta
+  3. ebola.fasta
+  Choice: 3
+  Done
+\end{lstlisting}
+
+Táto vizualizácia nepodporuje voľbu intervalu a vygenerovaný obrázok sa ukláda do adresára {\fontfamily{lmtt}\selectfont out}.
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -x ebola.fasta
+\end{lstlisting}
+
+\subsubsection{Scenár 5}
+Po výbere piatej možnosti program požiada používateľa, aby si vybral postupnosť z tých, ktoré sa nachádzajú v adresári {\fontfamily{lmtt}\selectfont data}.
+\begin{lstlisting}[language=bash]
+  Choose the sequence to visualize using 2D HMatrix method:
+  1. alteromonas.fasta
+  2. SARS-CoV-2.fasta
+  3. ebola.fasta
+  Choice: 2
+\end{lstlisting}
+
+Ďalším krokom je zadavánie veľkosti vytvoreného obrázka a po ňom program vygeneruje nasledujúci výstup:
+\begin{lstlisting}[language=bash]
+  Specify the size of image (preferably a power of 2, >= 512):
+  Size (px):	2048
+  seed: f9fa11164acc370f5c187a286c25dcffe0b93363c68ce5d658d83e
+  w, h: 1024.0, 512.0
+  w, h: 256.0, 256.0
+  opacity: 50%
+  w, h: 128.0, 64.0
+  opacity: 37%
+  w, h: 32.0, 32.0
+  opacity: 25%
+  w, h: 16.0, 8.0
+  opacity: 15%
+  w, h: 4.0, 4.0
+  opacity: 9%
+  w, h: 2.0, 1.0
+  opacity: 5%
+  Done
+\end{lstlisting}
+
+Vygenerovaný obrázok sa ukláda do adresára {\fontfamily{lmtt}\selectfont out}.
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} bez výstupu konzoly pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -i ebola.fasta -S 2048
+\end{lstlisting}
+
+
+
+\subsubsection{Scenár 6}
+Po výbere šiestej možnosti program požiada používateľa, aby si vybral anotačný súbor genómu, ktorý sa má použiť, z tých, ktoré sa nachádzajú v adresári {\fontfamily{lmtt}\selectfont data}.
+\begin{lstlisting}[language=bash]
+  Choose the annotation file to visualize ORFs:
+  1. ebola.gb
+  2. SARS-CoV-2.gbk
+  Choice: 2
+  Done  
+\end{lstlisting}
+Vygenerovaný obrázok sa úspešne ulkláda do adresára {\fontfamily{lmtt}\selectfont out}.
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} bez výstupu konzoly pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -o SARS-CoV-2.gbk
+\end{lstlisting}
+
+
+
+\subsubsection{Scenár 7}
+Po výbere siedmej možnosti program požiada používateľa, aby vybral sekvencie genómu na porovnanie so sekvenciami, ktoré sa nachádzajú v adresári {\fontfamily{lmtt}\selectfont data}.
+\begin{lstlisting}[language=bash]
+  Choose the first sequence to compare:
+  1. alteromonas.fasta
+  2. SARS-CoV-2.fasta
+  3. ebola.fasta
+  Choice: 2
+  Choose the second sequence to compare:
+  1. alteromonas.fasta
+  2. SARS-CoV-2.fasta
+  3. ebola.fasta
+  Choice: 3
+  Similarity (%): 72  
+\end{lstlisting}
+Po samotnom porovnaní program zadá percento podobnosti.
+
+\bigskip
+Rovnaký scenár je možné vykonať v režime \textit{quiet} bez výstupu konzoly pomocou nasledujúceho príkazu:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -m q -c SARS-CoV-2.fasta ebola.fasta
+\end{lstlisting}
+
+
+\subsubsection{Použitie režimu Quiet}
+Pre ziskanie dokladnéj informácií o režime \textit{quiet}, používateľ môže zadať nasledujúci príkaz:
+\begin{lstlisting}[language=bash]
+  $ python3 Main.py -h
+\end{lstlisting}
+
+Tento príkaz zobrazuje všetky podporované argumenty príkazového riadku:
+\begin{lstlisting}[language=bash]
+usage: Main.py [-h] [-m {q,v}] [-d] [-g GATES] [-o ORF] [-s] 
+               [-x MATRIX] [-i HASH] [-c COMP COMP] [-S SIZE]
+               [-p POS POS] [-a] [-n NAME]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -m {q,v}, --mode {q,v}
+                        Execution mode: quiet / verbose
+  -d, --download        Download SARS-CoV-2 genome associated 
+                        files
+  -g GATES, --gates GATES
+                        Perform Gates' visualization. Parameter
+                        is an input sequence filename
+  -o ORF, --orf ORF     Plot ORFs of the genome. Parameter is 
+                        an input sequence filename
+  -s, --stat            Obtain genome statistical data including
+                        the distribution of nucleotides 
+                        and a GC-content
+  -x MATRIX, --matrix MATRIX
+                        Plot the nucleotide sequence into a 2D 
+                        matrix. Parameter is the input sequence 
+                        filename
+  -i HASH, --hmatrix HASH
+                        Plot the nucleotide sequense into Hashed
+                        2D matrix. Parameter is input sequence 
+                        filename
+  -c COMP COMP, --compare COMP COMP
+                        Compare specified genome sequences using 
+                        the pairwise2 algorithm
+  -S SIZE, --size SIZE  Size of the picture side in pixels
+  -p POS POS, --pos POS POS
+                        Start and end positions of the nucleotide 
+                        sequence to perform an action (0 for default)
+  -a, --all             Perform all possible actions but comparison
+                        in the default mode
+  -n NAME, --name NAME  Input sequnce filename
+\end{lstlisting}
+
+
+\rhead{Dokumentácia}
+\subsubsection{\Large{Architektúra aplikácie}}
+\addcontentsline{toc}{section}{Architektúra aplikácie}
+Vyvinutý program predstavuje samostatnú konzolovú aplikáciu, ktorá sa skladá z 8 modulov umiestnených v koreňovom adresári programu.
+Obsah adresára je uvedený nižšie:
+\textbf{\fontfamily{lmtt}\selectfont
+\begin{itemize}
+    \item Main.py
+    \item Comparison.py
+    \item GatesVisualization.py
+    \item MatrixVisualization.py
+    \item HMatrixVisualization.py
+    \item ORFPlotter.py
+    \item SeqCollector.py
+    \item StatGenerator.py
+    \item requirements.txt
+\end{itemize}
+}
+
+Počas chodu programu sa vytvárajú dva ďalšie adresáre so súbormi, ak neexistujú: \textbf{\fontfamily{lmtt}\selectfont data} a \textbf{\fontfamily{lmtt}\selectfont out}.
+
+Prvý adresár obsahuje stiahnuté sekvencie a program ho považuje za zdrojový adresár všetkých sekvencií genómu a súborov anotácií genómu, s ktorými program pracuje.
+Preto, aby bolo možné vizualizovať a pracovať s vlastnými genómami, ich súbory musia byť vložené do adresára \textbf{\fontfamily{lmtt}\selectfont data}.
+
+Druhý slúži na uloženie všetkých výstupných obrázkov formátu {\fontfamily{lmtt}\selectfont .png}, ktoré program vytvorí.
+Preto, aby si užívateľ mohol pozrieť vykonané vizualizácie, musí ich vyhľadať v adresári \textbf{\fontfamily{lmtt}\selectfont out}.
+
+\rhead{Dokumentácia}
+\subsubsection{Modules description}
+\textbf{\fontfamily{lmtt}\selectfont Main.py} je hlavný modul programu, ktorý je zodpovedný za použitie zvyšných modulov na vykonanie zadanej úlohy.
+Zaoberá sa vstupom a výstupom z konzoly, navrhuje dostupné metódy vizualizácie a získava podrobnosti potrebné na ich výkon.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont verifyArgs()} -- overuje a kontroluje argumenty príkazového riadku, ak je program spustený v režime \textit{quiet}. Ak sa vyskytne chyba, program sa zastaví.
+  \item \textbf{\fontfamily{lmtt}\selectfont welcomeBanner()} -- ak je zapnutý režim \textit{verbose}, zobrazí "uvítací banner".
+  \item \textbf{\fontfamily{lmtt}\selectfont mainMenu()} -- if \textit{verbose} mode is on, displays the main menu and asks user to choose an option to continue; checks the user input.  Returns the number of chosen option.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainFiles(msg)} -- if \textit{verbose} mode is on, lists all the files of {\fontfamily{lmtt}\selectfont FASTA} format and asks user to choose one. Parameter {\fontfamily{lmtt}\selectfont msg} represents a message to display. Returns the filename of a chosen file if present, otherwise, raises an error message and {\fontfamily{lmtt}\selectfont returns None}.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainFiles2(msg)} -- if \textit{verbose} mode is on, lists all the files of {\fontfamily{lmtt}\selectfont GenBank} format and asks user to choose one. Parameter {\fontfamily{lmtt}\selectfont msg} represents a message to display. Returns the filename of a chosen file if present, otherwise, raises an error message and {\fontfamily{lmtt}\selectfont returns None}
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainInterval()} -- if \textit{verbose} mode is on, asks user to specify the interval of genome sequence to perform an action on. Returns {\fontfamily{lmtt}\selectfont start} and {\fontfamily{lmtt}\selectfont end} positions, verifying them.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainSize()} -- if \textit{verbose} mode is on, asks user to specify the size of an image side, in order to generate a square figure. Returns the size of an image side in pixels.
+  \item \textbf{\fontfamily{lmtt}\selectfont main()} -- performs a main loop of a program, by determing which action to perform according to the command line arguments and user input. In \textit{quite} mode, stop the program immideately after performing an action, while in \textit{verbose} mode shows the main menu again.
+\end{itemize}
+
+
+
+\textbf{\fontfamily{lmtt}\selectfont SeqCollector.py} je zodpovedný za stiahnutie všetkých požadovaných sekvencií a súborov anotácií z databázy NCBI pre vizualizáciu genómu SARS-CoV-2.
+At this moment it does not suport downloading of files associated with other genomes.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont downloadFiles()} -- creates {\fontfamily{lmtt}\selectfont data} directory if it does not exist and downloads (internet connection required) SARS-CoV-2 genome sequence and annotation files.
+\end{itemize}
+
+
+
+\textbf{\fontfamily{lmtt}\selectfont StatGenerator.py} získava štatistické údaje, ako je obsah GC a distribúcia nukleotidov / aminokyselín.
+Užívateľ si môže zvoliť oblasť genómu, ktorá sa má štatisticky analyzovať.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont getStats(filename, mode, start, end)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Verifyes {\fontfamily{lmtt}\selectfont start} and {\fontfamily{lmtt}\selectfont end} positions. Function stops the program execution in error cases, displaying the corresponding error mesage. Plots the statistical data of specified genome sequene interval, providing user with additional comments in the \textit{verbose} mode.
+\end{itemize}
+
+
+
+\textbf{\fontfamily{lmtt}\selectfont GatesVisualization.py} vykonáva vizualizáciu pomocou Gatesovej metódy do súboru {\fontfamily{lmtt}\selectfont -Gates.png} .
+Užívateľ je schopný zvoliť oblasť genómu ktorú chce vizualizovať.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename, mode, start, end)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Verifyes {\fontfamily{lmtt}\selectfont start} and {\fontfamily{lmtt}\selectfont end} positions. Function stops the program execution in error cases, displaying the corresponding error mesage. Performs the Gates' visualization of specified genome sequene interval.
+  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, image)} -- creates the {\fontfamily{lmtt}\selectfont out} directoty if it does not exist and saves the generated image {\fontfamily{lmtt}\selectfont outFileName} into {\fontfamily{lmtt}\selectfont out} directory.
+\end{itemize}
+
+
+
+\textbf{\fontfamily{lmtt}\selectfont MatrixVisualization.py} kreslí zvolený genóm pomocou generácie 2D matice do súboru {\fontfamily{lmtt}\selectfont -Matrix.png} .
+Veľkosť výstupného obrázka sa počíta automaticky.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Function stops the program execution in error cases, displaying the corresponding error mesage. Performs the visualization of specified genome sequene by plotting it into a 2D matrix.
+\end{itemize}
+
+
+
+\textbf{\fontfamily{lmtt}\selectfont HMatrixVisualization.py} kreslí genóm do 2D matice vybranej veľkosti pomocou algoritmu hash funkcie do súboru {\fontfamily{lmtt}\selectfont -Hmatrix.png} .
+Veľkosť výstupného obrázka môže byť zádana používateľom.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, image)} -- creates the {\fontfamily{lmtt}\selectfont out} directoty if it does not exist and saves the generated image {\fontfamily{lmtt}\selectfont outFileName} into {\fontfamily{lmtt}\selectfont out} directory.
+  \item \textbf{\fontfamily{lmtt}\selectfont drawLayer(imgSize, depth, mode)} -- draws blocks  filled with color achieved by {\fontfamily{lmtt}\selectfont getRandomColor()} of {\fontfamily{lmtt}\selectfont getBlockSize(imgSize, depth)} in size for particular layers. Returns an image of current layer. Provides user with additional comments in the \textit{verbose} mode.
+  \item \textbf{\fontfamily{lmtt}\selectfont getHash(filename)} -- computes hash of the {\fontfamily{lmtt}\selectfont filename} genome sequence.
+  \item \textbf{\fontfamily{lmtt}\selectfont getRandomColor()} -- returns a tuple of random color values in RGB format.
+  \item \textbf{\fontfamily{lmtt}\selectfont getBlockSize(imgSize, depth)} -- computes and returns the {\fontfamily{lmtt}\selectfont width} and {\fontfamily{lmtt}\selectfont height} according to {\fontfamily{lmtt}\selectfont imgSize} and {\fontfamily{lmtt}\selectfont depth}. With each iteration of the cycle each side of a block is being halved or quartered, depending on the {\fontfamily{lmtt}\selectfont depth}.
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename, mode, ssize)} -- checks the extension of {\fontfamily{lmtt}\selectfont filename} and stops the program excecution in the case of errors. Performs 2D Hashed Matrix visualization of specified genome sequence in the recursive way. Adjusts {\fontfamily{lmtt}\selectfont seed } for random numbers generation based on {\fontfamily{lmtt}\selectfont getHash(filename) } function. Merges layers of {\fontfamily{lmtt}\selectfont size} in size created by {\fontfamily{lmtt}\selectfont drawLayer(size, depth, mode) } function depending on the defined {\fontfamily{lmtt}\selectfont opacity}. Provides user with additional comments in the \textit{verbose} mode.
+\end{itemize}
+
+
+
+\textbf{\fontfamily{lmtt}\selectfont ORFPlotter.py} generuje obraz distribúcie ORF a pomeru obsahu GC v genóme do súboru {\fontfamily{lmtt}\selectfont -ORFs.png} .
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Function stops the program execution in error cases, displaying the corresponding error mesage. Performs the visualization of specified genome annotation file by plotting the ORFs.
+  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, plt)} -- creates the {\fontfamily{lmtt}\selectfont out} directoty if it does not exist and saves the generated plot {\fontfamily{lmtt}\selectfont plt} into {\fontfamily{lmtt}\selectfont out} directory.
+\end{itemize}
+
+\textbf{\fontfamily{lmtt}\selectfont Comparison.py} vykonáva porovnanie zvolenych genómov. Percento podobnosti sa získa na základe algoritmu pairwise2.
+Obsahuje nasledujúce funkcie:
+\begin{itemize}
+  \item \textbf{\fontfamily{lmtt}\selectfont compare(filename1, filename2, mode)} -- verifyes the file extensions of {\fontfamily{lmtt}\selectfont filename1} and {\fontfamily{lmtt}\selectfont filename2} and stops the program execution in the case of error, providing a user with corresponding message. Perfoms a comparison of selected genome sequences, using the pairwise2 algorithm. Provides a user with additional comments in the \textit{verbose} mode. 
+\end{itemize}
+
+\subsubsection{\Large{Záver}}
+\addcontentsline{toc}{section}{Záver}
+This documentation represents a comprehensivex overview of the software, that was developed during the thesis "Genome Structure Visualization".
+
+The application works in two possible modes and allows user to visualize and analyze genomes of different organisms using the set of predefined techniques.
+
+The installation, excecution, technical aspects and scenarios of usage were covered in details in corresponding sections.
+
+In conclusion, the further enchancements might focus on applying object-oriented paradigm to the architecture of a program and on adding new functionalities.
+

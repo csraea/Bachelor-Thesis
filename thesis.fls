@@ -463,6 +463,9 @@ INPUT /home/csraea/Desktop/THESIS/thesis/figures/2dim.png
 INPUT /home/csraea/Desktop/THESIS/thesis/figures/cds.png
 INPUT /home/csraea/Desktop/THESIS/thesis/figures/cds.png
 INPUT /home/csraea/Desktop/THESIS/thesis/figures/cds.png
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/tex/latex/lm/t1lmtt.fd
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtt12.tfm
 OUTPUT /home/csraea/Desktop/THESIS/thesis/chapters/evaluation.aux
 INPUT /home/csraea/Desktop/THESIS/thesis/chapters/evaluation.tex
 INPUT /home/csraea/Desktop/THESIS/thesis/chapters/evaluation.tex
@@ -500,6 +503,11 @@ INPUT /home/csraea/Desktop/THESIS/thesis/appendixes/prilohy.tex
 OUTPUT /home/csraea/Desktop/THESIS/thesis/appendixes/prilohaa.aux
 INPUT /home/csraea/Desktop/THESIS/thesis/appendixes/prilohaa.tex
 INPUT /home/csraea/Desktop/THESIS/thesis/appendixes/prilohaa.tex
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texmf/fonts/tfm/public/lm/ec-lmtk10.tfm
 INPUT /home/csraea/Desktop/THESIS/thesis/thesis.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/slovak-iso.lbx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex-iso690/english-iso.lbx
@@ -522,6 +530,7 @@ INPUT /home/csraea/Desktop/THESIS/thesis/thesis.out
 INPUT /home/csraea/Desktop/THESIS/thesis/thesis.out
 INPUT /home/csraea/Desktop/THESIS/thesis/thesis.run.xml
 OUTPUT /home/csraea/Desktop/THESIS/thesis/thesis.run.xml
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
@@ -530,6 +539,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pfb
 INPUT /usr/share/texmf/fonts/type1/public/tex-gyre/qplri.pfb
