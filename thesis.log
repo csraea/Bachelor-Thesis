@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.21)  28 MAY 2021 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.21)  28 MAY 2021 23:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1536,7 +1536,17 @@ Overfull \hbox (1.04138pt too wide) in paragraph at lines 397--399
 \T1/qpl/m/n/12 prog-ram vy-tvorí. Preto, aby si uºí-va-te© mo-hol po-zrie´ vy-ko-nané vi-zu-ali-zá-cie, musí
  []
 
-[58] [59] [60]) [61]
+[58] [59]
+Overfull \hbox (72.72415pt too wide) in paragraph at lines 460--461
+[]\T1/lmtt/b/n/12 drawLayer(imgSize, depth, mode) \T1/qpl/m/n/12 -- kreslí fa-rébne bloky na zá-klade \T1/lmtt/m/n/12 getRandomColor()
+ []
+
+[60]
+Overfull \hbox (3.74704pt too wide) in paragraph at lines 479--480
+[]\T1/lmtt/b/n/12 compare(filename1, filename2, mode) \T1/qpl/m/n/12 -- ove-ruje typy sú-bo-rov \T1/lmtt/m/n/12 filename1
+ []
+
+) [61]
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
@@ -1561,15 +1571,15 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27341 strings out of 482368
- 438715 string characters out of 5941917
+ 27340 strings out of 482368
+ 438701 string characters out of 5941917
  1210763 words of memory out of 5000000
- 41495 multiletter control sequences out of 15000+600000
+ 41494 multiletter control sequences out of 15000+600000
  576470 words of font info for 57 fonts, out of 8000000 for 9000
  428 hyphenation exceptions out of 8191
  59i,18n,97p,2058b,3211s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qplri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on /home/csraea/Desktop/THESIS/thesis/thesis.pdf (72 pages, 6609264 bytes).
+Output written on /home/csraea/Desktop/THESIS/thesis/thesis.pdf (72 pages, 6609192 bytes).
 PDF statistics:
  1120 PDF objects out of 1200 (max. 8388607)
  984 compressed objects within 10 object streams

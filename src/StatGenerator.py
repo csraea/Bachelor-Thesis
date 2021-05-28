@@ -15,7 +15,7 @@ def getStats(filename, mode, start, end):
     covid19 = SeqIO.read(filename, "fasta")
     DNA = covid19.seq
 
-    if start >= end and start != 0:
+    if start >= end and start != 0 and end != 0:
         print("Error: START is greater then END")
 
         if mode == 'v':

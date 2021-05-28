@@ -405,21 +405,21 @@ Obsahuje nasledujúce funkcie:
 \begin{itemize}
   \item \textbf{\fontfamily{lmtt}\selectfont verifyArgs()} -- overuje a kontroluje argumenty príkazového riadku, ak je program spustený v režime \textit{quiet}. Ak sa vyskytne chyba, program sa zastaví.
   \item \textbf{\fontfamily{lmtt}\selectfont welcomeBanner()} -- ak je zapnutý režim \textit{verbose}, zobrazí "uvítací banner".
-  \item \textbf{\fontfamily{lmtt}\selectfont mainMenu()} -- if \textit{verbose} mode is on, displays the main menu and asks user to choose an option to continue; checks the user input.  Returns the number of chosen option.
-  \item \textbf{\fontfamily{lmtt}\selectfont vObtainFiles(msg)} -- if \textit{verbose} mode is on, lists all the files of {\fontfamily{lmtt}\selectfont FASTA} format and asks user to choose one. Parameter {\fontfamily{lmtt}\selectfont msg} represents a message to display. Returns the filename of a chosen file if present, otherwise, raises an error message and {\fontfamily{lmtt}\selectfont returns None}.
-  \item \textbf{\fontfamily{lmtt}\selectfont vObtainFiles2(msg)} -- if \textit{verbose} mode is on, lists all the files of {\fontfamily{lmtt}\selectfont GenBank} format and asks user to choose one. Parameter {\fontfamily{lmtt}\selectfont msg} represents a message to display. Returns the filename of a chosen file if present, otherwise, raises an error message and {\fontfamily{lmtt}\selectfont returns None}
-  \item \textbf{\fontfamily{lmtt}\selectfont vObtainInterval()} -- if \textit{verbose} mode is on, asks user to specify the interval of genome sequence to perform an action on. Returns {\fontfamily{lmtt}\selectfont start} and {\fontfamily{lmtt}\selectfont end} positions, verifying them.
-  \item \textbf{\fontfamily{lmtt}\selectfont vObtainSize()} -- if \textit{verbose} mode is on, asks user to specify the size of an image side, in order to generate a square figure. Returns the size of an image side in pixels.
-  \item \textbf{\fontfamily{lmtt}\selectfont main()} -- performs a main loop of a program, by determing which action to perform according to the command line arguments and user input. In \textit{quite} mode, stop the program immideately after performing an action, while in \textit{verbose} mode shows the main menu again.
+  \item \textbf{\fontfamily{lmtt}\selectfont mainMenu()} -- ak je režim \textit{verbose} zapnutý, zobrazí hlavné menu aplikácie a požiada používateľa, aby vybral možnosť pokračovania; skontroluje vstup používateľa. Vráti číslo vybratého scenára.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainFiles(msg)} -- ak je zapnutý režim \textit{verbose}, vypíše všetky súbory vo formáte {\fontfamily{lmtt}\selectfont FASTA} a požiada používateľa, aby si jeden vybral. Parameter {\fontfamily{lmtt}\selectfont msg} predstavuje správu, ktorá sa má zobraziť. Vráti názov vybraného súboru, ak je prítomný, v opačnom prípade sa zobrazí chybové hlásenie a funkcia vráti hodnotu {\fontfamily{lmtt}\selectfont None}.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainFiles2(msg)} -- ak je zapnutý režim \textit{verbose}, vypíše všetky súbory vo formáte {\fontfamily{lmtt}\selectfont GenBank} a požiada používateľa, aby si jeden vybral. Parameter {\fontfamily{lmtt}\selectfont msg} predstavuje správu, ktorá sa má zobraziť. Vráti názov vybraného súboru, ak je prítomný, v opačnom prípade sa zobrazí chybové hlásenie a funkcia vráti hodnotu {\fontfamily{lmtt}\selectfont None}.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainInterval()} -- ak je režim \textit{verbose} zapnutý, požiada používateľa, aby určil interval sekvencie genómu, na ktorom má vykonať akciu. Vráti pozície {\fontfamily{lmtt}\selectfont start} a {\fontfamily{lmtt}\selectfont end} po ich overení.
+  \item \textbf{\fontfamily{lmtt}\selectfont vObtainSize()} -- ak je zapnutý režim \textit{verbose}, požiada používateľa, aby určil veľkosť pre vygenerovanie štvorcového obrázku. Vráti veľkosť strany obrázka v pixeloch.
+  \item \textbf{\fontfamily{lmtt}\selectfont main()} -- vykoná hlavný cyclus programu a určuje, ktorú akciu má vykonať podľa argumentov príkazového riadku a vstupu používateľa. V režime \textit{quiet} končí program po vykonaní akcie, zatiaľ čo v režime \textit{verbose} znova zobrazí hlavné menu aplikácie.
 \end{itemize}
 
 
 
 \textbf{\fontfamily{lmtt}\selectfont SeqCollector.py} je zodpovedný za stiahnutie všetkých požadovaných sekvencií a súborov anotácií z databázy NCBI pre vizualizáciu genómu SARS-CoV-2.
-At this moment it does not suport downloading of files associated with other genomes.
+V tejto chvíli nepodporuje sťahovanie súborov spojených s inými genómami.
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont downloadFiles()} -- creates {\fontfamily{lmtt}\selectfont data} directory if it does not exist and downloads (internet connection required) SARS-CoV-2 genome sequence and annotation files.
+  \item \textbf{\fontfamily{lmtt}\selectfont downloadFiles()} -- vytvorí adresár {\fontfamily{lmtt}\selectfont data}, ak neexistuje, a stiahne (vyžaduje sa internetové pripojenie) sekvenciu genómu a anotačné súbory SARS-CoV-2.
 \end{itemize}
 
 
@@ -428,7 +428,7 @@ Obsahuje nasledujúce funkcie:
 Užívateľ si môže zvoliť oblasť genómu, ktorá sa má štatisticky analyzovať.
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont getStats(filename, mode, start, end)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Verifyes {\fontfamily{lmtt}\selectfont start} and {\fontfamily{lmtt}\selectfont end} positions. Function stops the program execution in error cases, displaying the corresponding error mesage. Plots the statistical data of specified genome sequene interval, providing user with additional comments in the \textit{verbose} mode.
+  \item \textbf{\fontfamily{lmtt}\selectfont getStats(filename, mode, start, end)} -- overuje typ {\fontfamily{lmtt}\selectfont filename}. Overuje {\fontfamily{lmtt}\selectfont start} a {\fontfamily{lmtt}\selectfont end} pozície. Funkcia zastaví vykonávanie programu v chybových prípadoch a zobrazí príslušné chybové hlásenie. Vypisuje štatistické údaje o zadanom intervale sekvencie genómu a poskytne používateľovi ďalšie komentáre v režime \textit{verbose}.
 \end{itemize}
 
 
@@ -437,8 +437,8 @@ Obsahuje nasledujúce funkcie:
 Užívateľ je schopný zvoliť oblasť genómu ktorú chce vizualizovať.
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename, mode, start, end)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Verifyes {\fontfamily{lmtt}\selectfont start} and {\fontfamily{lmtt}\selectfont end} positions. Function stops the program execution in error cases, displaying the corresponding error mesage. Performs the Gates' visualization of specified genome sequene interval.
-  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, image)} -- creates the {\fontfamily{lmtt}\selectfont out} directoty if it does not exist and saves the generated image {\fontfamily{lmtt}\selectfont outFileName} into {\fontfamily{lmtt}\selectfont out} directory.
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename, mode, start, end)} -- overuje typ {\fontfamily{lmtt}\selectfont filename}. Overuje {\fontfamily{lmtt}\selectfont start} a {\fontfamily{lmtt}\selectfont end} pozície. Funkcia zastaví vykonávanie programu v chybových prípadoch a zobrazí príslušné chybové hlásenie. Vykonáva Gatesovu vizualizáciu určeného intervalu sekvencie genómu.
+  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, image)} -- vytvorí adresár {\fontfamily{lmtt}\selectfont out} ak neexistuje, a uloží vygenerovaný obrázok {\fontfamily{lmtt}\selectfont outFileName} do adresára {\fontfamily{lmtt}\selectfont out}.
 \end{itemize}
 
 
@@ -447,7 +447,7 @@ Obsahuje nasledujúce funkcie:
 Veľkosť výstupného obrázka sa počíta automaticky.
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Function stops the program execution in error cases, displaying the corresponding error mesage. Performs the visualization of specified genome sequene by plotting it into a 2D matrix.
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename)} -- overuje typ {\fontfamily{lmtt}\selectfont filename}. Funkcia zastaví vykonávanie programu v chybových prípadoch a zobrazí príslušné chybové hlásenie. Vykoná vizualizáciu sekvencie špecifikovaného genómu jeho vykreslením do 2D matice.
 \end{itemize}
 
 
@@ -456,12 +456,12 @@ Obsahuje nasledujúce funkcie:
 Veľkosť výstupného obrázka môže byť zádana používateľom.
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, image)} -- creates the {\fontfamily{lmtt}\selectfont out} directoty if it does not exist and saves the generated image {\fontfamily{lmtt}\selectfont outFileName} into {\fontfamily{lmtt}\selectfont out} directory.
-  \item \textbf{\fontfamily{lmtt}\selectfont drawLayer(imgSize, depth, mode)} -- draws blocks  filled with color achieved by {\fontfamily{lmtt}\selectfont getRandomColor()} of {\fontfamily{lmtt}\selectfont getBlockSize(imgSize, depth)} in size for particular layers. Returns an image of current layer. Provides user with additional comments in the \textit{verbose} mode.
-  \item \textbf{\fontfamily{lmtt}\selectfont getHash(filename)} -- computes hash of the {\fontfamily{lmtt}\selectfont filename} genome sequence.
-  \item \textbf{\fontfamily{lmtt}\selectfont getRandomColor()} -- returns a tuple of random color values in RGB format.
-  \item \textbf{\fontfamily{lmtt}\selectfont getBlockSize(imgSize, depth)} -- computes and returns the {\fontfamily{lmtt}\selectfont width} and {\fontfamily{lmtt}\selectfont height} according to {\fontfamily{lmtt}\selectfont imgSize} and {\fontfamily{lmtt}\selectfont depth}. With each iteration of the cycle each side of a block is being halved or quartered, depending on the {\fontfamily{lmtt}\selectfont depth}.
-  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename, mode, ssize)} -- checks the extension of {\fontfamily{lmtt}\selectfont filename} and stops the program excecution in the case of errors. Performs 2D Hashed Matrix visualization of specified genome sequence in the recursive way. Adjusts {\fontfamily{lmtt}\selectfont seed } for random numbers generation based on {\fontfamily{lmtt}\selectfont getHash(filename) } function. Merges layers of {\fontfamily{lmtt}\selectfont size} in size created by {\fontfamily{lmtt}\selectfont drawLayer(size, depth, mode) } function depending on the defined {\fontfamily{lmtt}\selectfont opacity}. Provides user with additional comments in the \textit{verbose} mode.
+  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, image)} -- vytvorí adresár {\fontfamily{lmtt}\selectfont out}, ak neexistuje, a uloží vygenerovaný obrázok{\fontfamily{lmtt}\selectfont outFileName} do adresára {\fontfamily{lmtt}\selectfont out}.
+  \item \textbf{\fontfamily{lmtt}\selectfont drawLayer(imgSize, depth, mode)} -- kreslí farébne bloky na základe {\fontfamily{lmtt}\selectfont getRandomColor()} vo veľkosti {\fontfamily{lmtt}\selectfont getBlockSize(imgSize, depth)} pre jednotlivé vrstvy. Vráti obrázok aktuálnej vrstvy. Poskytuje používateľovi ďalšie komentáre v režime \textit{verbose}.
+  \item \textbf{\fontfamily{lmtt}\selectfont getHash(filename)} -- počíta hash sekvencie genómu {\fontfamily{lmtt}\selectfont filename}.
+  \item \textbf{\fontfamily{lmtt}\selectfont getRandomColor()} -- vráti n-ticu náhodných hodnôt farieb vo formáte RGB.
+  \item \textbf{\fontfamily{lmtt}\selectfont getBlockSize(imgSize, depth)} -- počíta a vracia {\fontfamily{lmtt}\selectfont width} a {\fontfamily{lmtt}\selectfont height} podľa {\fontfamily{lmtt}\selectfont imgSize} a {\fontfamily{lmtt}\selectfont depth}. S každou iteráciou cyklu sa každá strana bloku delí na polovicu alebo na štvrtiny, v závislosti od {\fontfamily{lmtt}\selectfont depth}.
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename, mode, ssize)} -- skontroluje typ {\fontfamily{lmtt}\selectfont filename} a zastaví vykonávanie programu v prípade chýb. Vykonáva 2D Hashed Matrix vizualizáciu určenej sekvencie genómu rekurzívnym spôsobom. Upraví {\fontfamily{lmtt}\selectfont seed} na generovanie náhodných čísel na základe funkcie {\fontfamily{lmtt}\selectfont getHash(filename)}. Zlúči vrstvy veľkosti {\fontfamily{lmtt}\selectfont size} vytvorené funkciou {\fontfamily{lmtt}\selectfont drawLayer(size, depth, mode)} v závislosti od definovanej {\fontfamily{lmtt}\selectfont opacity}. Poskytuje používateľovi ďalšie komentáre v režime \textit{verbose}.
 \end{itemize}
 
 
@@ -469,23 +469,23 @@ Obsahuje nasledujúce funkcie:
 \textbf{\fontfamily{lmtt}\selectfont ORFPlotter.py} generuje obraz distribúcie ORF a pomeru obsahu GC v genóme do súboru {\fontfamily{lmtt}\selectfont -ORFs.png} .
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename)} -- verifyes {\fontfamily{lmtt}\selectfont filename} extension. Function stops the program execution in error cases, displaying the corresponding error mesage. Performs the visualization of specified genome annotation file by plotting the ORFs.
-  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, plt)} -- creates the {\fontfamily{lmtt}\selectfont out} directoty if it does not exist and saves the generated plot {\fontfamily{lmtt}\selectfont plt} into {\fontfamily{lmtt}\selectfont out} directory.
+  \item \textbf{\fontfamily{lmtt}\selectfont visualize(filename)} -- overuje príponu {\fontfamily{lmtt}\selectfont filname}. Funkcia zastaví vykonávanie programu v chybových prípadoch a zobrazí príslušné chybové hlásenie. Vykoná vizualizáciu súboru s anotáciami určeného genómu zobrazením ORF.
+  \item \textbf{\fontfamily{lmtt}\selectfont save(outFileName, plt)} -- vytvorí adresár {\fontfamily{lmtt}\selectfont out} ak neexistuje, a uloží vygenerovaný plot {\fontfamily{lmtt}\selectfont plt} do adresára {\fontfamily{lmtt}\selectfont out}.
 \end{itemize}
 
 \textbf{\fontfamily{lmtt}\selectfont Comparison.py} vykonáva porovnanie zvolenych genómov. Percento podobnosti sa získa na základe algoritmu pairwise2.
 Obsahuje nasledujúce funkcie:
 \begin{itemize}
-  \item \textbf{\fontfamily{lmtt}\selectfont compare(filename1, filename2, mode)} -- verifyes the file extensions of {\fontfamily{lmtt}\selectfont filename1} and {\fontfamily{lmtt}\selectfont filename2} and stops the program execution in the case of error, providing a user with corresponding message. Perfoms a comparison of selected genome sequences, using the pairwise2 algorithm. Provides a user with additional comments in the \textit{verbose} mode. 
+  \item \textbf{\fontfamily{lmtt}\selectfont compare(filename1, filename2, mode)} -- overuje typy súborov {\fontfamily{lmtt}\selectfont filename1} a {\fontfamily{lmtt}\selectfont filename2} a zastaví vykonávanie programu v prípade chyby a poskytne používateľovi príslušnú správu. Vykonáva porovnanie vybraných sekvencií genómu pomocou algoritmu pairwise2. Poskytuje používateľovi ďalšie komentáre v režime \textit{verbose}.
 \end{itemize}
 
 \subsubsection{\Large{Záver}}
 \addcontentsline{toc}{section}{Záver}
-This documentation represents a comprehensivex overview of the software, that was developed during the thesis "Genome Structure Visualization".
+Táto dokumentácia predstavuje komplexný prehľad softvéru, ktorý bol vyvinutý počas bakalárskej práce „Vizualizácia štruktúry genómu“.
 
-The application works in two possible modes and allows user to visualize and analyze genomes of different organisms using the set of predefined techniques.
+Aplikácia pracuje v dvoch možných režimoch a umožňuje používateľovi vizualizovať a analyzovať genómy rôznych organizmov pomocou sady vopred určených techník.
 
-The installation, excecution, technical aspects and scenarios of usage were covered in details in corresponding sections.
+Inštalácia, vykonanie, technické aspekty a scenáre použitia boli podrobne popísané v príslušných častiach.
 
-In conclusion, the further enchancements might focus on applying object-oriented paradigm to the architecture of a program and on adding new functionalities.
+Na záver by sa ďalšie vylepšenia mohli zamerať na aplikovánie objektovo-orientovanej paradigmy programovania na architektúru programu a na pridanie nových funkcionalít.
 

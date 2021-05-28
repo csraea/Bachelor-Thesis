@@ -37,7 +37,7 @@ parser.add_argument("-g", "--gates", help="Perform Gates' visualization. Paramet
 parser.add_argument("-o", "--orf", help="Plot ORFs of the genome. Parameter is an input sequence filename", dest="orf", required=False)
 parser.add_argument("-s", "--stat", help="Obtain genome statistical data, including the distribution of nucleotides and a GC-content", action="store_true", dest="stat", required=False)
 parser.add_argument("-x", "--matrix", help="Plot the nucleotide sequence into a 2D matrix. Parameter is the input sequence filename", dest="matrix", required=False)
-parser.add_argument("-i", "--hmatrix", help="Plot the nucleotide sequense into a Hashed 2D matrix. Parameter is the output figure filename", dest="hash", required=False)
+parser.add_argument("-i", "--hmatrix", help="Plot the nucleotide sequense into a Hashed 2D matrix. Parameter is the input sequence filename", dest="hash", required=False)
 parser.add_argument("-c", "--compare", help="Compare specified genome sequences using the pairwise2 algorithm", dest="comp", nargs=2, required=False)
 parser.add_argument("-S", "--size", help="Size of the picture side in pixels", type=int, dest="size", required=False)
 parser.add_argument("-p", "--pos", help="Start and end positions of the nucleotide sequence to perform an action (0 for defaults)", type=int, nargs=2, dest="pos", required=False)
