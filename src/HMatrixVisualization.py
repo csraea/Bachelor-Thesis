@@ -12,7 +12,7 @@ def save(outFileName, image):
     if not os.path.exists("out"):
         os.mkdir("out")
     os.chdir("out")
-    image.save(os.path.basename(outFileName) + "-Hmatrix", 'PNG')
+    image.save(os.path.basename(outFileName) + "-Hmatrix.png", 'PNG')
     os.chdir("..")
 
 def drawLayer(imgSize, depth, mode):
