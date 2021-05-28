@@ -1,43 +1,39 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Analytická časť}
+\chapter{Analýza štruktúry genómu a nástrojov na jej reprezentáciu}
 
 Táto kapitola sa venuje analýze štruktúry genómu rôznych organizmov, alebo inými slovami biologickému pozadiu, ktoré je nevyhnutné pre vytvorenie akéhokoľvek bioinformatického softvéru.
-Okrem toho, osobitne popisuje existujúce riešenia pre reprezentáciu údajov o genóme s cieľom porozumieť moderným prístupom k vizualizácii štruktúry genómu. 
-Každá zo spomínaných tém je popísaná v jej podsekcii.
+Lebo bez pochopenia toho, ako je organizovaný genóm, nedá sa aj navrhunuť nástroj na jeho vizualizáciu.
 
-\section{General Genome Structure}
-U väčšiny eukaryotických a prokaryotických organizmov je dedičným materiálom buď lineárna dvojvláknová molekula DNA (deoxyribonukleová kyselina) alebo kruhová dvojvláknová molekula DNA.
+Okrem toho, táto kapitola osobitne popisuje a porovnáva existujúce riešenia pre reprezentáciu údajov o genóme s cieľom porozumieť moderným prístupom k vizualizácii štruktúry genómu. 
+
+Každá zo spomínaných tém je popísaná v zodpovedajúcej podsekcii.
+
+\section{Všeobecná štruktúra genómu}
+U väčšiny organizmov je dedičným materiálom buď lineárna dvojvláknová molekula DNA (deoxyribonukleová kyselina) alebo kruhová dvojvláknová molekula DNA.
 Avšak, niektoré extracelulárne formy života môžu používať RNA (ribonukleová kyselina) ako stavebný blok svojho genómu.
 Napríklad vírusy majú genóm zložený buď z jednovláknovej DNA, dvojvláknovej DNA alebo RNA, v závislosti od typu vírusu.
+
 Samotný genóm teda je úplná genetická informácia, alebo inými slovami, všetky jedinečné sekvencie DNA (RNA) organizmu.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Nukleotidy: základná podjednotka genómu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-DNA aj RNA sú polymérne molekuly, ktoré sú zložené z lineárnych reťazcov rôznych kombinácií štyroch rôznych podjednotiek, ktoré sa nazývajú nukleotidy.
+DNA aj RNA sú polymérové molekuly, ktoré sú zložené z lineárnych reťazcov rôznych kombinácií štyroch typov nukleotidov.
+
 Samotný nukleotid je základnou jednotkou molekúl DNA a RNA, monomérom, ktorý sa však v bunke nachádza nielen ako nosič genetickej informácie,
 ale tiež ako nosič energie použitej na napájanie enzymatických reakcií \cite{AnalysisOfGenesAndGenomes}. 
-Cukor s piatimi atómami uhlíka, fosfátová skupina a dusíkatá zásada sú tri odlišné zložky, ktoré spolu tvoria celkom zložitú molekulu nukleotidov (obr. 1.1).
+
+Cukor s piatimi atómami uhlíka, fosfátová skupina a dusíkatá zásada sú tri odlišné zložky, ktoré spolu tvoria celkom zložitú molekulu nukleotidov.
 Kombinácia cukru a bázy sa nazýva nukleozid, zatiaľ čo fosfát-cukor-báza sa nazýva nukleotid. 
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=.85\textwidth]{figures/bases}
-	\caption{Štruktúry pyrimidínov a purínov nachádzajúcich sa v DNA a RNA. Skupiny cukru sú zvýraznené modrou farbou a dusíkaté zásady sú zvýraznené oranžovou farbou.
-	Atómy cukru sú očíslované od 1 do 5. Atómy purínového kruhu sú očíslované od 1 do 9,
-	zatiaľ čo tie pyrimidínového kruhu sú očíslované od 1 do 6. \label{o:nucleotide}}
-\end{figure}
-
-Dinukleotid, trinukleotid a polynukleotid sú výrazy zodpovedajúce dvom, trom alebo mnohým nukleotidom navzájom spojených.
-
-Nukleotidom môže byť buď purín s dvojitým kruhom, alebo pyrimidín s jedným kruhom.
+Nukleotidom môže byť buď purín s dvojitým kruhom, alebo pyrimidín s jedným kruhom (obr. 1.2).
 Guanín (G) a adenín (A) sú bežné puríny pre DNA aj RNA; pyrimidín nazývaný cytozín (C) je tiež prítomný v obidvoch nukleových kyselinách.
 Pyrimidín uracil (U) je však obmedzený iba na RNA, ktorý je v DNA nahradený tymínom (T).
 
-Sú prípustné iba dve kombinácie párov báz - A párovaný s T (U) a C pár s G (obr. 1.2).
+Sú prípustné iba dve kombinácie párov báz - A párovaný s T (U) a C párovaný s G (obr. 1.1).
 Stáva sa to kvôli geometriám nukleotidových báz a relatívnym pozíciám atómov, ktoré sa podieľajú na spojení \cite{MolecularGenetics}.
-Táto vlastnosť robí dve sekvencie polynukleotidov v skrutkovice komplementárnymi. 
+Táto vlastnosť robí dve sekvencie polynukleotidov v skrutkovnicie DNA (RNA) komplementárnymi. 
 
 \begin{figure}[!ht]
 	\centering
@@ -46,7 +42,19 @@ Táto vlastnosť robí dve sekvencie polynukleotidov v skrutkovice komplementár
 	sú komplementárne k tým na opačnom vlákne, A vždy párovaný s T a G vždy párovaný s C \label{o:nucleotide}}
 \end{figure}
 
-Diskrétne nukleotidy sú navzájom spojené cukrom-fosfátovými väzbami, ktoré spájajú fosfátovú skupinu na 5 'uhlíku jedného nukleotidu s hydroxylovou skupinou na 3' uhlíku iného nukleotidu.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=.9\textwidth]{figures/bases1.png}
+	\caption{Štruktúry nukleotidov nachádzajúcich sa v DNA a RNA. Skupiny cukru sú zvýraznené modrou farbou a dusíkaté zásady sú zvýraznené oranžovou farbou.
+	Atómy cukru sú očíslované od 1 do 5. Atómy purínového kruhu sú očíslované od 1 do 9, zatiaľ čo tie pyrimidínového kruhu sú očíslované od 1 do 6. \label{o:nucleotides}}
+\end{figure}
+
+Dinukleotid, trinukleotid a polynukleotid sú výrazy zodpovedajúce dvom, trom alebo mnohým nukleotidom spojených navzájom.
+
+Každý koniec molekuly DNA je označený číslom: jeden koniec sa označuje ako 5') a druhý koniec sa označuje ako 3'. 
+Čísla 5' a 3' označujú počet atómov uhlíka v molekule cukru deoxyribózy, ku ktorým sa viaže fosfátová skupina.
+
+Diskrétne nukleotidy sú navzájom spojené cukrom-fosfátovými väzbami, ktoré spájajú fosfátovú skupinu na 5' uhlíku jedného nukleotidu s hydroxylovou skupinou na 3' uhlíku iného nukleotidu.
 Párovanie báz medzi adenínom a tymínom (uracil) zahŕňa dve vodíkové väzby, ale medzi cytozínom a guanínom tri vodíkové väzby. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,7 +72,7 @@ a týmto spôsobom významne ovplyvňujú trojrozmernú konfiguráciu molekuly a
 		\hline
 		\multicolumn{4}{|c|}{Vlastnosti rôznych konformácií dvojitej špirály DNA} \\
 		\hline
-		Vlastnosť& B-DNA & A-DNA & Z-DNA\\
+		Vlastnosť& B-forma & A-forma & Z-forma\\
 		\hline
 		\hline
 		Typ špirály & Pravotočivá & Pravotočivá & Ľavotočivá \\
@@ -86,22 +94,23 @@ a týmto spôsobom významne ovplyvňujú trojrozmernú konfiguráciu molekuly a
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=.8\textwidth]{figures/spatial.png}
+	\includegraphics[width=.85\textwidth]{figures/spatial.png}
 	\caption{Dvojvláknová špirála DNA.\label{o:latex_friendly_zone}}
 \end{figure}
 
 Aj keď sú RNA zvyčajne jednoreťazcové, niektoré sekvencií sú schopne tvoriť dvojité špirály.
 Dvojité špirály RNA sú však zriedkavé a nezdá sa, že sa podieľajú na procesoch súvisiacich s genómom v eukaryotických a prokaryotických organizmoch.
 Naviac, kruhová DNA môže existovať v niekoľkých formách, vrátane jednostrannej C-DNA, intaktnej dvojvláknovej C-DNA (uzavreté kruhy s oboma prameňmi kovalentne spojené),
-prezývaná DS-C-DNA (iba jeden prameň kovalentne spojený) a vo forme "zreťazených kruhov", ale ich vlastnosti nie sú opísané v priloženej tabuľke 1.1 .
+prezývaná DS-C-DNA (iba jeden prameň kovalentne spojený) a vo forme "zreťazených kruhov" \cite{MolecularGenetics}, ale ich vlastnosti nie sú opísané v priloženej tabuľke 1.1 .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Organizácia eukaryotického genómu}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Eukaryoty sú organizmy, ktorých bunky majú jadro uzavreté v jadrovom obale \cite{BioDict}.
 V eukaryotických bunkách sa nukleová kyselina nachádza v organele viazanej na membránu, ktorá sa nazýva jadro.
+
 Jadrový genóm je rozdelený na súbor lineárnych molekúl DNA s dvojitou špirálou, z ktorých každá je obsiahnutá v chromozóme.
-Samotný chromozóm je lineárny reťazec DNA obalený okolo asociovaných proteínov, ktoré dávajú štruktúru spojeným nukleovým kyselinám.
+Samotný chromozóm je lineárny reťazec DNA obalený okolo asociovaných proteínov, ktoré dávajú štruktúru spojenej s nimi nukleovéj kyseline.
 
 \begin{figure}[!ht]
 	\centering
@@ -109,24 +118,26 @@ Samotný chromozóm je lineárny reťazec DNA obalený okolo asociovaných prote
 	\caption{Organizácia eukaryotického genómu.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Nie sú známe žiadne výnimky z tohto vzorca: eukaryoty, ktoré boli študované, obsahujú molekuly DNA, ktoré sú vždy lineárne a majú najmenej dva chromozómy. 
-Jediná variabilita na tejto úrovni organizácie eukaryotického genómu je koherentná s počtom chromozómov.
-Ďalej sa zdá, že biologické vlastnosti organizmu nezávisia od počtu chromozómov. \cite{Genomes3}
+Nie sú známe žiadne výnimky z tohto vzora: eukaryoty, ktoré boli študované, obsahujú molekuly DNA, ktoré sú vždy lineárne a majú najmenej dva chromozómy. 
+Jediná variabilita na tejto úrovni organizácie eukaryotického genómu je zaviazana na počte chromozómov.
+Ďalej sa zdá, že biologické vlastnosti organizmu nezávisia od počtu chromozómov \cite{Genomes3}.
 
-Konce eukaryotických chromozómov sú tiež koncami lineárnej duplexnej DNA a ako také si vyžadujú špeciálnu štruktúru, ktorá zaisťuje ich zachovanie.
+Konce eukaryotických chromozómov sú tiež koncami lineárnej duplexnej DNA a ako také si vyžadujú špeciálnu štruktúru, ktorá by zaisťovala ich zachovanie.
 Dôvod je spojený so spôsobom, akým sa replikuje dvojvláknová DNA \cite{PrinciplesOfGeneManipulation}.
 Ak by neexistoval spôsob dokončovania koncov, chromozómy by sa po každom delení buniek skracovali.
 
 Teloméry sú špecializované sekvencie nukleových kyselín, ktorých úlohou je chrániť konce chromozómov.
-Vo väčšine eukaryotov pozostáva telomera z krátkeho opakovania TTAGGG s dĺžkou stoviek jednotiek, ale opakovaný segment sa môže medzi jednotlivými druhmi líšiť.
-Tieto opakovania sa tiež medzi jednotlivými druhmi značne líšia, avšak každý druh si zachováva fixnú priemernú dĺžku telomer vo svojej zárodočnej línii.
+Vo väčšine eurkaryotickych buniek pozostáva telomer z krátkeho opakovania nukleotidov TTAGGG s dĺžkou stoviek jednotiek, ale opakovaný segment sa môže medzi jednotlivými druhmi líšiť.
+Tieto opakovania sa tiež medzi jednotlivými druhmi značne líšia, avšak každý druh si zachováva fixnú priemernú dĺžku telomerov vo svojej rodovéj línii.
 
 Napriek veľkosti jadra (5 - 10 um) je celková dĺžka DNA v ľudskej bunke približne 2,1 m a môže byť zabalená do bunky vďaka spôsobu, ktorým je nukleová kyselina uložená (obr 1.4).
 
 Genetický materiál vo vírusoch a baktériách pozostáva z reťazcov DNA alebo RNA takmer bez bielkovín.
-U eukaryotov je však podstatné množstvo bielkovín spojené s DNA za vzniku chromatínu.
+U eukaryotov je však podstatné množstvo bielkovín ktoré sú spojené s DNA na udržanie štruktúry.
+Takýto komplex bielkovín a DNA sa nazýva chromatín.
+
 Na najnižšej úrovni je DNA organizovaná obalením vlákien DNA okolo proteínov nazývaných históny, ktoré obsahujú veľké množstvo pozitívne nabitých aminokyselín arginínu a lyzínu.
-Tieto aminokyseliny a históny všeobecne hrajú rozhodujúcu štrukturálnu úlohu, čo umožňuje viazať negatívne nabité fosfátové skupiny DNA nukleotidov.
+Tieto aminokyseliny ako súčasť histónov všeobecne hrajú rozhodujúcu štrukturálnu úlohu, čo umožňuje viazať negatívne nabité fosfátové skupiny nukleotidov.
 
 \begin{figure}[!ht]
 	\centering
@@ -134,15 +145,16 @@ Tieto aminokyseliny a históny všeobecne hrajú rozhodujúcu štrukturálnu úl
 	\caption{The nucleosome structure. H2A, H2B, H3 and H4 represent different types of histones. \label{o:latex_friendly_zone}}
 \end{figure}
 
-V priemere DNA valcovaná okolo histónov pozostáva z 140 - 150 párov báz, v závislosti od druhu.
+V priemere DNA namotaná okolo histónov pozostáva z 140 - 150 párov báz, v závislosti od druhu.
 Takýto komplex DNA a histónov sa nazýva nukleozóm (obr. 1.5).
-Tieto nukleozómy môžu byť ďalej navíjané do čoraz väčších závitov až do vytvorenia chromozómov.
+Tieto nukleozómy, ktoré sú súčasťou chromatínu, môžu byť ďalej navíjané do čoraz väčších závitov až do vytvorenia chromozómov.
+
 Tesné navinutie DNA však obmedzuje schopnosť buniek dostať sa k DNA a spracovať ju.
 Namiesto toho, aby bola nukleová kyselina neustále zvinutá, nachádza sa zvyčajne v stave zvanom chromatín, kde sú niektoré segmenty kyseliny pevne navinuté (heterochromatín), zatiaľ čo iné segmenty sú úplne otvorené (euchromatín).
 Euchromatínová DNA je vysoko dostupná pre molekulárne komplexy používané bunkou, a preto sa s ňou ľahšie manipuluje.
 
-Množstvo a rozsah balenia určuje bunka, ktorá kontroluje, ktoré časti genómu je možné exprimovať a ktoré nie.
-Ovplyvňuje bunkovú funkciu a javí sa ako hlavná príčina diferenciácie typu buniek pri rovnakej DNA.
+Množstvo a rozsah navinutie DNA určuje bunka, ktorá kontroluje, ktoré časti genómu je možné využivať na syntézu proteinov a ktoré nie.
+Toto navinutie DNA vplyvňuje bunkovú funkciu a javí sa ako hlavná príčina diferenciácie typu buniek pri rovnakej DNA.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Organizácia prokaryotického genómu}
@@ -276,6 +288,16 @@ Tieto vlastnosti poskytujú množstvo informácií, ktoré možno použiť na lo
 Rovnako ako tRNA, rRNA a niektoré z malých funkčných RNA tiež prijímajú sekundárne štruktúry, ktoré sú dostatočne zložité na to, aby umožnili identifikáciu ich génov bez veľkých ťažkostí \cite{rna}.
 Menej ľahko sa dajú lokalizovať ďalšie funkčné gény RNA, pretože RNA zaberajú štruktúry, ktoré zahŕňajú relatívne malé párovanie báz alebo párovanie báz nie je v pravidelnom obrazci.
 
+\bigskip
+\smallskip
+
+Na zhrnutie, je môžne vyvodiť závery o tom, ako presne je možné zobraziť štruktúru genómu SARS-CoV-2, a to, že najjednoduchšie vizualizácie sa môžu týkať nasledujúcich oblastí:
+\begin{itemize}
+	\item Vizualizácia nukleotidovej sekvencie za účelom vyhľadávania vzorov a vyhodnotenia ich štatistickej distribúcie v reťazci DNA.
+	\item Vizualizácia pozícií génov s cieľom analyzovať oblasti genómu, ktoré kódujú určité proteíny.
+	\item Vizualizácia pozícií intrónov a exónov ak sa ide o genómy eukaryotov.
+\end{itemize} 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Existujúce riešenia pre reprezentáciu údajov o genóme}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -326,7 +348,7 @@ Príliš veľa ťažkých a komplikovaných detailov navyše narúša pozornosť
 	\caption{Hlavné používateľské rozhranie prehľadávača genómov UCSC, ktoré zobrazuje predvolené stopy v predvolenom poradí pre klaster ľudského génu alfa-globínu.\label{o:latex_friendly_zone}}
 \end{figure}
 
-Prehliadač genómu UCSC, ktorý je jedným z veľkých hráčov vo vizualizácii genomických údajov, sa snaží tento problém vyriešiť poskytnutím viacerých zobrazení tracku (obr. 1.12).
+Prehliadač genómu UCSC, ktorý je jedným z veľkých hráčov vo vizualizácii genomických údajov, sa snaží tento problém vyriešiť poskytnutím viacerých zobrazení tracku (obr. 1.11).
 Každú stopu je možné zobraziť v rôznych režimoch, napríklad hustú, úplne rozbalenú alebo skrytú.
 Používateľ môže ísť hlbšie po hustej trati 25 a otvoriť ju v plnom režime.
 Pre zobrazenie tracku je možné veľa stupníc.
@@ -340,7 +362,8 @@ Môže sa zobraziť hustý pohľad na niektoré tracky, aby sa pri oddialení na
 \end{figure}
 
 Prehliadač genómu Ensembl poskytuje rovnaké užívateľské rozhranie pre každý organizmus.
-Hlavné telo rozhrania obsahuje dva panely (obr. 1.13).
+Hlavné telo rozhrania obsahuje dva panely (obr. 1.12).
+
 Na ľavom paneli je uvedená hlavná ponuka pre zobrazenia založené na polohe na rôznych úrovniach od celého genómu, súhrnu chromozómov až po prehľad oblastí a podrobných oblastí.
 Poskytnuté sú tiež odkazy na komparatívnu genomiku, genetické variácie a sekvenčné markery.
 Hlavný panel je usporiadaný do troch častí zhora nadol a poskytuje používateľom rôzne stupnice na analýzu genómu.
@@ -355,7 +378,7 @@ Svetlým príkladom takýchto nástrojov je prehliadač genómu ryže MSU a preh
 
 \begin{table}[]
 
-	\caption{Hlavné funkcie populánych prehľadávačov genómu.}\label{t:1}
+	\caption{Hlavné funkcie populánych prehľadávačov genómu. BioMart a BioDas sú komunitné projekty, ktoré poskytuju jediný prístupový bod k distribuovaným výskumným údajom}\label{t:1}
 	\smallskip
 	\centering
 
@@ -377,15 +400,16 @@ Svetlým príkladom takýchto nástrojov je prehliadač genómu ryže MSU a preh
 
 V prehliadači genómu ryže MSU môžu používatelia prehľadávať gén OsSPL14 zadaním výrazu „SPL14“ do vyhľadávacieho poľa.
 Prehliadač genómu ryže MSU, ktorý je založený na platforme GBrowse, poskytuje anotačné pohľady v rôznych mierkach, vrátane prehľadu chromozómov, regionálneho a podrobného zobrazenia (obr. 1.13).
-Zväčšené zobrazenie poskytuje používateľom širší obraz, aby mohli pohodlne skontrolovať anotáciu pred a za.
-Na podrobnom anotačnom plátne je poskytnutých viac ako 82 anotačných stôp, ktoré zahŕňajú génový model, dôkaz transkriptu, profilovanie expresie, zarovnanie sekvencie, genetický marker, SNP, pokrytie RNA-Seq a ďalšie genómové znaky.
-Okrem základných informácií o génovom modeli môžu používatelia skontrolovať tento gén v rôznych vývojových štádiách prostredníctvom rôznych expresných údajov RNA-Seq.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=.9\textwidth]{figures/ss-1.png}
 	\caption{Užívateľské rozhranie prehliadača genómu ryže MSU. Prehľad chromozómov je zobrazený v hornej časti, regionálne zobrazenie je zobrazené v strede a spodná časť predstavuje podrobné zobrazenie pre štyri stopy anotácií.\label{o:latex_friendly_zone}}
-\end{figure}
+\end{figure} 
+
+Zväčšené zobrazenie poskytuje používateľom širší obraz, aby mohli pohodlne skontrolovať anotáciu pred a za.
+Na podrobnom anotačnom plátne je poskytnutých viac ako 82 anotačných stôp, ktoré zahŕňajú génový model, dôkaz transkriptu, profilovanie expresie, zarovnanie sekvencie, genetický marker, SNP, pokrytie RNA-Seq a ďalšie genómové znaky.
+Okrem základných informácií o génovom modeli môžu používatelia skontrolovať tento gén v rôznych vývojových štádiách prostredníctvom rôznych expresných údajov RNA-Seq.
 
 V prehľadávači genómu Rice-Map sú rôzne stopy anotácií usporiadané do vizualizačného plátna podobného mape, pričom názov otvorených stôp je uvedený na pravom paneli (obr. 1.14).
 Okrem základných anotácií génov existujú aj bohaté anotácie pre zosúladenie krížových genómov a hodnoty ochrany, ktoré poskytujú dôležité stopy pre vyšetrovanie tohto génu v iných rastlinách.
@@ -397,3 +421,11 @@ Okrem základných anotácií génov existujú aj bohaté anotácie pre zosúlad
 \end{figure}
 
 Pretože prehliadače genómu sú schopné poskytnúť používateľovi množstvo rôznych biologicky špecifických informácií, definícia týchto pojmov nie je uvedená v tejto práci.
+
+\bigskip
+\smallskip
+
+Na zhrnutie vykonaéj analýzu, je možné dospieť k záveru, že moderné a populárne nástroje na vizualizáciu genómu majú tendenciu byť zložité, založené na webe a už poskytujú používateľovi všetky potrebné informácie.
+
+Preto, vývoj softvéru zameraného na vizualizáciu 2D genómu bude zameraný na poskytnutie samostatnej konzolovej aplikácie pre používateľa, ktorá využíva niektoré z menej používaných vizualizačných metód.
+Kvôli tomu, že SARS-CoV-2 vlastní virusový genóm, vizualizácia bude zameraná len na zobrazenie sekvencií nukleotidov a pozícií ORF.

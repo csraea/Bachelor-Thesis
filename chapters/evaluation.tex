@@ -7,27 +7,27 @@ V prvej časti tejto práce som analyzoval všeobecnú štruktúru genómu rôzn
 Priestorová štruktúra DNA a jej rozdiely sú uvedené v tabuľke 1.1.
 
 Genomy eukaryotov, prokaryotov a vírusov boli opísané v zodpovedajúcich častiach.
-Opis týchto genómov zahrnuje ich jedinečné vlastnosti, ako sú štruktúry intrónu a exónu prítomné hlavne v genómoch eukaryotov a génové zhluky prítomné v genómoch prokaryotov.
-Gény, ich typy, polohy, funkcie a vzorce, ktoré umožňujú ich nájdenie (ORF), boli analyzované a správne opísané.
+Opis týchto genómov zahrnuje ich jedinečné vlastnosti, ako sú štruktúry intrónov a exónov prítomné hlavne v genómoch eukaryotov a génové clustery prítomné v genómoch prokaryotov.
+Gény, ich typy, pozície, funkcie a vzorce, ktoré umožňujú ich nájdenie (ORF), boli analyzované a detalne opísané.
 
-Ďalším krokom bola klasifikácia existujúcich riešení pre reprezentáciu údajov o genóme, aby sa dosiahlo pochopenie toho, ako moderný softvér funguje a čo môže navrhnúť používateľom po celom svete.
+Ďalším krokom bola klasifikácia existujúcich riešení pre reprezentáciu údajov o genóme, aby sa dosiahlo pochopenie toho, ako moderný softvér funguje a čo môže navrhnúť používateľom po celom svete pre vizualizáciu dát genómu.
 Môžu byť klasifikované ako \textit{webové} a \textit{samostatné aplikácie}.
 
 Okrem toho boli presne opísané dve kategórie existujúcich prehľadávačov genómu:
 \begin{itemize}
-    \item \textbf{Species-independent} boli analyzované a porovnané riešenia, ktoré sú schopné vizualizovať akýkoľvek genóm, vrátane prehľadávača genómov Ensemble, prehľadávača UCSC a GBrowse (tabuľka 1.2).
+    \item \textbf{Species-independent} riešenia, ktoré sú schopné vizualizovať akýkoľvek genóm, vrátane prehľadávača genómov Ensemble, prehľadávača UCSC a GBrowse (tabuľka 1.2).
     \item \textbf{Species-specific} riešenia, ktoré sú zamerané na vizualizáciu konkrétnych druhov, vrátane prehliadača genómu MSU a Rice-Map.
 \end{itemize}
 
-Potom sa kvôli vizualizácii vybral genóm vírusu SARS-CoV-2 kvôli extrémnej zložitosti prokaryotických a eukaryotických genómov a kvôli svetovej pandémii.
+Potom na vizualizáciu sa vybral genóm vírusu SARS-CoV-2 kvôli extrémnej zložitosti prokaryotických a eukaryotických genómov a kvôli svetovej pandémii.
 
-V druhej časti tejto práce som s cieľom pochopiť, ako a kde sa údaje o genóme ukladajú, som vykonal komplexnú analýzu formátov, ktoré sa zvyčajne používajú na ukladanie informácií súvisiacich s genómom: formát súborov FASTA, GFF a GenBank (GBK) formáty súborov.
+V druhej časti tejto práce som s cieľom pochopiť, ako a kde sa údaje o genóme ukladajú, som vykonal komplexnú analýzu formátov, ktoré sa zvyčajne používajú na ukladanie informácií súvisiacich s genómom: formát súborov FASTA, formáty súborov GFF a GenBank (GBK).
 Ako príklad pre samotnú analýzu boli použité súbory súvisiace so SARS-CoV-2.
 
 Dospel som k záveru, že vizualizáciu genómu je možné vykonať dvoma spôsobmi:
 \begin{itemize}
     \item Prvým spôsobom je vizualizácia nespracovaných údajov, ktoré sú nukleotidovou sekvenciou pre DNA a RNA alebo aminokyselinovou sekvenciou (pomocou informácií v súboroch FASTA).
-    \item Druhým spôsobom je vizualizácia predtým spracovaných a dobre preštudovaných údajov, ktoré obsahujú polohy génov, polohy ORF atď. A ktoré sú uložené v súboroch anotácií genómu (súbory GFF a GenBank).
+    \item Druhým spôsobom je vizualizácia predtým spracovaných a dobre preštudovaných údajov, ktoré obsahujú pozície génov, pozície ORF atď. A ktoré sú uložené v súboroch anotácií genómu (súbory GFF a GenBank).
 \end{itemize}
 
 Potom som vykonal analýzu a vizualizáciu genómu SARS-CoV-2 pomocou nasledujúcich metód.
@@ -38,16 +38,16 @@ Poznaním týchto údajov som vypočítal vlastnosť GC obsahu genómu, ktorá b
 
 Táto vlastnosť je dôležitá, pretože ukazuje, že genóm SARS-CoV-2 má malý počet ORF (génov), pretože zvyčajne začínajú v genómových oblastiach bohatých na GC.
 
-\textbf{Gatesova metóda} vizualizácie bola vybraná na vykonanie, pretože som ju náhodou znovu objavil ked' premýšľal, ako je možné vizualizovať genóm.
+\textbf{Gatesova metóda} vizualizácie bola vybraná na vykonanie, pretože bola náhodou znovu objavena počas premýšľania, ako je možné vizualizovať genóm.
 Spracováva tiež súbor FASTA.
 Po vykonaní tejto vizualizácie som si všimol, že podivná sekvencia 33 adenínových (A) nukleotidov končí genómom SARS-CoV-2 (obrázok 2.4).
-Aby som sa ubezpečil, že počas vizualizácie nedošlo k žiadnym chybám, skontroloval som samotnú sekvenciu FASTA a dospel som ku záveru, že vizualizácia bola vykonaná správnym spôsobom.
+Pre ubezpečenie, že počas vizualizácie nedošlo k žiadnym chybám, samotná sekvenciu FASTA bola skontrolována a dospel som ku záveru, že vizualizácia bola vykonaná správnym spôsobom.
     
 Napriek degenerácii, ktorá je hlavnou nevýhodou metódy, dokáže vykresliť vzory DNA bez strojového vyšetrenia, čo som preukázal vizualizáciou prvého chromozómu najmenšieho známeho eukaryotického genómu, ktorý patrí do \textit{Encephalitozoon Intestinalis} (obrázok 2.6). .
 
-Aby som pochopil, či je táto metóda vhodná na vizuálne zloženie genómov príbuzných druhov, vizualizoval som vedľa seba genóm SARS-CoV-2 a genóm jeho najbližšieho relatívneho vírusu SARS-CoV-1.
+Pre pochopenie, či je táto metóda vhodná na vizuálne zostavénia genómov príbuzných druhov, vizualizoval som genóm SARS-CoV-2 a genóm jeho najbližšieho relatívneho vírusu SARS-CoV-1.
 Vytvoril som hypotézu, že musia byť veľmi podobné, pretože sa navzájom podobajú z hľadiska dosiahnutej vizualizácie (obrázok 2.7), a aby som to dokázal, spustil som algoritmus pairwise2, ktorý potvrdil, že ich percento podobnosti sa rovná 83,34\%.
-Vybral som si tento algoritmus, pretože patrí medzi najlepšie algoritmy zarovnávania.
+Vybral som si tento algoritmus, pretože patrí medzi najlepšie algoritmy porovnávania.
 
 \textbf{2D Matrix metóda} bola vybraná vizualizácia, pretože tandemové opakovania v sekvencii genómu môžu byť vizuálne rozlíšiteľné bez strojového vyšetrenia.
 Po samotnej vizualizácii sa mi však nepodarilo nájsť ani jedné z nich (obrázok 2.9).
@@ -55,19 +55,19 @@ Táto metóda tiež vyžaduje súbor FASTA so sekvenciou.
 
 Hlavnou nevýhodou tejto metódy je, že bodové mutácie v genóme, alebo dokonca významné, nie sú takmer postrehnuteľné bez komplexnej analýzy získaného obrazu.
 
-\textbf{Vylepšenie metódy 2D Matrix } bolo zavedene mnou, aby sa vyrovnal s nevýhodou predchádzajúcej metódy pomocou hash funkcie.
+\textbf{Vylepšenie metódy 2D Matrix } bolo zavedene mnou, pre riešenie nevýhody predchádzajúcej metódy pomocou hash funkcie.
 
-Dokázal som to porovnaním pôvodného genómu SARS-CoV-2 a rovnakého genómu s bodovou mutáciou na druhom nukleotide (T bol substituovaný G) pomocou mojej metódy (obrázok 2.10).
+Dokázal som to porovnaním pôvodného genómu SARS-CoV-2 a rovnakého genómu s bodovou mutáciou na druhom nukleotide (T bol substituovaný G) pomocou tejto metódy (obrázok 2.10).
 
-\textbf{Získanie aminokyseliny} bolo vykonané za účelom získania proteínov SARS-CoV-2 potrebných pre ďalšiu metódu.
+\textbf{Získanie aminokyselin} bolo vykonané za účelom získania proteínov SARS-CoV-2 potrebných pre ďalšiu metódu.
 
 Po dosiahnutí proteínov zo sekvencie DNA uloženej v súbore FASTA som pomocou BLAST vyhľadávania porovnal výsledky s existujúcimi proteínmi SARS-CoV-2.
 Súcit ukázal, že sa neurobili takmer žiadne chyby, pretože pomer podobnosti bol veľmi vysoký.
 Kvôli môjmu záujmu som ich tiež porovnal s proteínmi relatívnych druhov, ktoré tiež vykazovali vysoký pomer podobnosti (tabuľka 2.2).
 
-\textbf{identifikácia a vizualizácia ORF} sa uskutočnila pomocou anotačného súboru GenBank, aby sa vizualizovali tie časti genómu SARS-CoV-2, ktoré sú pravdepodobne gény.
+\textbf{Identifikácia a vizualizácia ORF} sa uskutočnila pomocou anotačného súboru GenBank, aby sa vizualizovali tie časti genómu SARS-CoV-2, ktoré sú pravdepodobne gény.
 
-Po vyhľadaní umiestnení ORF v súbore GBK a porovnaní ich indexov s predtým získanými proteínmi, po odstránení tých krátkych, som dosiahol 6 kódujúcich sekvencií genómu (génov).
+Po vyhľadaní umiestnených ORF v súbore GBK a porovnaní ich indexov s predtým získanými proteínmi a po odstránení krátkych, som dosiahol 6 kódujúcich sekvencií genómu (génov).
 Vizualizácia dosiahnutých génov medzi ostatnými ORF je viditeľná na obrázku 2.11.
 
 Na overenie výsledkov bolo vykonané BLAST vyhľadávanie (tabuľka 2.3).
@@ -75,15 +75,16 @@ Ukázalo sa, že som tieto gény správne zviditeľnil, pretože sú veľmi podo
 
 \smallskip
 
-Ďalším a posledným krokom bolo spojiť všetok použitý kód do jednoduchej samostatnej konzolovej aplikácie, ktorá je schopná vizualizovať genóm SARS-CoV-2 pomocou predtým opísaných postupov.
+Ďalším a posledným krokom bolo spojiť všetký použité kódy do samostatnej konzolovej aplikácie, ktorá je schopná vizualizovať genóm SARS-CoV-2 pomocou predtým opísaných postupov.
 Podrobná architektúra softvéru je popísaná v príslušnej časti.
 
-Z hlavných nevýhod vyvinutého programu môžem pripustiť, že je pomerne jednoduchý, nemá grafické rozhranie a momentálne nie všetky metódy podporujú vizualizáciu ľubovoľného genómu.
-Preto je možné vyvinutý nástroj pre vizualizáciu označiť ako \ textit {druhovo špecifický}.
+Z hlavných nevýhod vyvinutého programu môžem pripustiť, že je pomerne jednoduchý, nemá grafické rozhranie a momentálne neexistuje môžnosť automaticky sťahovať genomy inych orgranizmov okrem SARS-CoV-ľ, ale všetky metódy podporujú vizualizáciu ľubovoľného genómu.
+Preto je možné vyvinutý nástroj pre vizualizáciu označiť ako \textit{druhovo nezávislý}.
 
 \smallskip
 Na záver možno všetky ciele, ktoré boli stanovené v tejto práci, považovať za splnené: analyzuje sa štruktúra genómu spolu s existujúcimi nástrojmi a genóm SARS-CoV-2 sa úspešne vizualizuje.
-Nie všetky však boli dokončené tak, ako som čakal: tvorba softvéru pre modernú a prispôsobiteľnú vizualizáciu genómu si vyžaduje dlhú pracovnú dobu a nemá zmysel, pretože existujú riešenia, ktoré už majú vynikajúci výkon.
+
+Nie všetky však boli dokončené tak, ako som čakal na začiatku: tvorba uplné nového softvéru pre modernú a prispôsobiteľnú vizualizáciu genómu si vyžaduje dlhú pracovnú dobu a nemá zmysel, pretože už existujú riešenia, ktoré majú vynikajúci výkon a splnia súčasné potreby.
 Softvér sa preto javil ako triviálna konzolová aplikácia, ktorú však nemožno považovať za skutočný prehliadač genómu, ale ktorá určite spĺňa stanovený cieľ.
 
 \label{evaluation}

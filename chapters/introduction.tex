@@ -6,32 +6,28 @@
 
 \chapter*{Úvod}
 
-\par Poradie sekvencie DNA a jej variácie sú samotným aspektom, ktorý určuje vývojové procesy organizmu,
-určuje náchylnosť na rôzne choroby a jedinečne identifikuje každého tvora. Táto oblasť bola vždy na periférii
-záujmov vedeckej spoločnosti, od objavu v roku 1869 biochemikom Fredricha Mieschera narodeného vo Švajčiarsku.
-Napríklad Projekt ľudského genómu (HGP), ktorý sa začal 1. októbra 1990 a bol dokončený v apríli 2003, bol jedným z najväčších počinov.
-bádania v dejinách vedy. Bolo to zamerané na čítanie všetkých sekvencií DNA nášho druhu, Homo sapiens. Všetko vo všetkom,
-HGP nám predstavil schopnosť čítať kompletný genetický plán prírody pre stavbu človeka.
-Napriek úspešnému dokončeniu projektu však stále existuje množstvo neznámych vlastností DNA, ktoré si vyžadujú dôkladné štúdium.
+Sekvencia DNA a jej variácie sú samotným aspektom, ktorý určuje vývojové procesy organizmu, určuje náchylnosť na rôzne choroby a identifikuje každého tvora. 
+Táto oblasť bola vždy v centre záujmu vedeckej komunity, od objavenia v roku 1869 biochemikom Fredricha Mieschera.
+Napríklad Projekt Ľudského Genómu, ktorý sa začal 1 októbra 1990 a bol dokončený v apríli 2003, bol jedným z najväčších počinov bádania v dejinách vedy. 
+Projekt bol zameraný na určenie všetkých sekvencií DNA nášho druhu Homo sapiens. 
 
-Väčšina ľudí nevie, čo je bioinformatika, a táto práca je pokusom o jej ponorenie.
+V konečnom dôsledku, Projekt Ľudského Genómu umôžnil nám čítanie kompletného genetického plánu prírody pre stavbu človeka.
+Avšak čítanie genetického kódu neznamená pochopenie jeho štruktúry, a preto, napriek úspešnému dokončeniu projektu stále existuje množstvo neznámych vlastností DNA, ktoré si vyžadujú dôkladné štúdium.
 
-Pandémia COVID-19 priniesla nové výzvy pre ľudstvo a zvlášť pre bioinformatiku: po sekvenovaní by sa mal každý genóm správne analyzovať, aby sa lepšie pochopili jeho vlastnosti.
-Počas analýzy genómu sa často používajú rôzne vizualizačné techniky, aby sa dali dáta ľahko pochopiť.
+Pandémia COVID-19 priniesla nové výzvy pre ľudstvo a upriamila pozornosť vedeckej komunity na bioinformatiku: po sekvenovaní by sa mal každý genóm byť správne analyzovaný, aby jeho vlastnosti sa boli pochopiteľné.
+Počas analýzy genómu sa často používajú rôzne vizualizačné techniky, aby sa dalo rozlíšiť rôzne vzory, vykonať vizuálne porovnanie medzi rôznymi údajmi a poskytnuť informácie zrozumiteľným spôsobom.
 Preto si vizualizácia štruktúry a vlastností genómu SARS-CoV-2 zaslúži osobitnú pozornosť.
 
-Prvá kapitola tejto diplomovej práce je zameraná na analýzu všeobecnej štruktúry genómu rôznych organizmov (eukaryotov, prokaryotov a vírusov) s cieľom pochopiť, ako si ich vizualizovať.
-Táto kapitola tiež obsahuje prehľad existujúcich riešení predstavujúcich údaje o genóme.
+Prvá kapitola tejto bakalárskej práce je zameraná na analýzu všeobecnej štruktúry genómu rôznych organizmov (eukaryoty, prokaryoty a vírusy) s cieľom najsť vhodne univerzálne spôsoby ich vizualizácie.
+Táto kapitola tiež obsahuje prehľad, porovnanie a analýzu niektorých existujúcich programov určených na reprezentáciu údajov o genóme s cieľom pochopiť moderné prístupy ku riešeniu danej problematiky.
 
-Druhá kapitola tejto práce obsahuje analýzu súborov, ktoré sa používajú na ukladanie údajov SARS-CoV-2, analýzu a implementáciu rôznych 2D vizuálnych techník do genómu koronavírusu.
-Táto práca navyše navrhuje nový prístup, ako je možné vizualizovať údaje o genóme, aby bolo možné vidieť najmenšie rozdiely v genómoch bez dôkladného skúmania.
-Druhá kapitola navyše popisuje zloženie softvéru, ktorý je vyrobený zo skriptov, ktoré sa použili na vizualizáciu genómu SARS-CoV-2.
+Druhá kapitola tejto práce obsahuje analýzu formátov, ktoré sa používajú na ukladanie údajov o genomoch (na príklade SARS-CoV-2), analýzu a implementáciu rôznych techník pre 2D vizualizáciu genómu koronavírusu.
+Táto kapitola navyše navrhuje nový spôsob vizualizácie sekvencií genómu, ktorý umôžní identifikovať najmenšie rozdiely v genómoch bez dôkladného skúmania.
+Druhá kapitola navyše opisuje štruktúru a zostavenie softvéru, určeného na vizualizáciu genómu SARS-CoV-2 pomocou použitých metód.
 
-Aj keď existuje niekoľko nástrojov na spracovanie DNA, problém reprezentácie rôznych vlastností genómu, ktoré sa môžu líšiť,
-pokiaľ ide o počet konkrétnych génov alebo úplné chromozómov (ak sú prítomné), zostáva stále aktuálny. Navyše,
-spracovanie genómu a jeho vizualizácia si vyžaduje efektívny prístup, pokiaľ ide o veľkosť údajov a výpočtové schopnosti
-priemerného počítača.
-Cieľom tejto práce je reprezentovať niektoré kľúčové vlastnosti genómu takým spôsobom.
+Tretia kapitola tejto práce obsahuje komplexný prehľad vykonanej práce vrátane vyhodnotenia výsledkov a dosiahnutia stanovených cieľov, analyzy výhod a nevýhod vyvinutého riešenia na vizualizáciu genómu.
+
+Táto práca je pokusom o využitie aplikovanej bioinformatiky na vizualizáciu štruktúry genómu moderného koronavírusu.
 
 \bigskip
 \bigskip
@@ -41,6 +37,5 @@ Cieľom tejto práce je reprezentovať niektoré kľúčové vlastnosti genómu 
 \smallskip
 \smallskip
 
-V tejto bakalárskej práci by som chcel analyzovať štruktúru genómu organizmov, opísať existujúce riešenia predstavujúcich údaje o genóme.
-Samotným cieľom je vykonať analýzu, vizualizáciu a komparáciu genómu SARS-CoV-2 pomocou rôznych techník a porovnať získané výsledky s existujúcimi.
-Ďalším cieľom je zostaviť všetky skripty, ktoré boli použité na analýzu a vizualizáciu, do samostatnej aplikácie.
+Cieľom práce je vykonať analýzu, vizualizáciu a komparáciu genómu SARS-CoV-2 pomocou rôznych techník a porovnať získané výsledky s existujúcimi údajmi.
+Ďalším cieľom je zostavenie samostatnej konzolovéj aplikácie pomocou kódu použitého na samotnú analýzu a vizualizáciu genómu SARS-CoV-2.

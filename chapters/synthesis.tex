@@ -1,12 +1,12 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Syntetická časť}
+\chapter{Vizualizácia genómu SARS-CoV-2}
 
-Táto kapitola je zameraná na použitie niektorých populárnych postupov vizualizácie 2D genómu na genóm SARS-CoV-2.
+Táto kapitola je zameraná na použitie niektorých postupov vizualizácie 2D genómu na genóm SARS-CoV-2.
 Pretože téma je mimoriadne zložitá, sú predstavené iba niektoré z existujúcich metód.
-Komplexný prehľad o týchto metódach, ich analýze a implementácii je obsiahnutý v zodpovedajúcich častiach.
+Komplexný prehľad týchto metódach, ich analýza a implementácia je obsiahnutá v zodpovedajúcich sekcíach.
 
-Druhá časť tejto kapitoly je zameraná na zloženie funkčného, ale jednoduchého softvéru, ktorý je schopný vizualizovať genóm SARS-CoV-2 pomocou predtým opísaných techník a knižníc.
+Druhá časť tejto kapitoly je zameraná na zostavenie funkčného softvéru, ktorý je schopný vizualizovať genóm SARS-CoV-2 pomocou predtým popísaných techník a knižníc.
 
 \section{FASTA, GFF a GBK formaty}
 
@@ -243,7 +243,7 @@ Rekurzívny algoritmus sa skladá z troch funkcií:
     \item Funkcia, ktorá rekurzívne rozdelí počiatočný prázdny obrázok na 1/8 častí.
     Pre každú z počiatočných oblastí sa to robí rekurzívne 8-krát.
     \item Funkcia, ktorá zafarbí každú časť podľa hashu a vloží každú časť nad väčšú.
-    Parameter nepriehľadnosti, ktorý je vypočítaný pre každú veľkosť oddielu a slúži na zabránenie prekrývania medzi farbami menších oddielov a väčších (ktoré sú predtým zafarbené).
+    Parameter nepriehľadnosti je vypočítaný pre každú veľkosť oddielu a slúži na zabránenie prekrývania medzi farbami menších oddielov a väčších (ktoré sú predtým zafarbené).
 \end{itemize}
 
 Zoznam 2.5 ukazuje výstup z konzoly počas vytvárania obrázka s veľkosťou 512x512 pixelov.
@@ -280,7 +280,7 @@ Ako je viditeľné na obrázku 2.10, táto metóda umožňuje jednoduché rozlí
 Kvôli rekurzívnej povahe algoritmu môže byť obraz generovaný v menších alebo väčších veľkostiach a pri zachovaní rovnakej úrovne detailov.
 
 Medzi hlavné nevýhody však patrí malé praktické využitie a obmedzenie týkajúce sa veľkosti genómu.
-V súčasnosti metóda podporuje vizualizáciu genómov, ktoré majú menej ako 262 145 nukleotidov.
+V súčasnosti metóda podporuje vizualizáciu genómov, ktoré majú menej ako 262 145 nukleotidov kvôli začiatočným rôzmeram obazku (512x512 px).
 
 \subsection{Získanie aminokyselín}
 
@@ -315,7 +315,7 @@ Najjednoduchší spôsob overenia výsledkov je nájsť proteínové sekvencie, 
 Na tieto účely sa použilo vyhľadávanie BLAST.
 
 BLAST (základný vyhľadávací nástroj na lokálne zarovnanie) je algoritmus a program na porovnanie informácií o primárnych biologických sekvenciách, ako sú napríklad aminokyselinové sekvencie proteínov alebo nukleotidy sekvencií DNA a / alebo RNA.
-Vyhľadávanie BLAST umožňuje výskumníkovi porovnať predmetnú proteínovú alebo nukleotidovú sekvenciu (nazývanú dopyt) s knižnicou alebo databázou sekvencií a identifikovať sekvencie knižnice, ktoré sa podobajú dopytovanej sekvencii nad určitou hranicou.
+Vyhľadávanie BLAST umožňuje porovnať predmetnú proteínovú alebo nukleotidovú sekvenciu (nazývanú dopyt) s knižnicou alebo databázou sekvencií a identifikovať sekvencie knižnice, ktoré sa podobajú dopytovanej sekvencii nad určitou hranicou.
 
 \begin{lstlisting}[language=Python, caption=Filtrovanie aminokyselinových sekvencií a ich ukladanie do dátového rámca]
     Proteins = covid_aa.split('*')
@@ -355,7 +355,7 @@ Výsledky vykonaných BLAST hľadaní ďalších získaných proteínov sú uved
 Za zmienku stojí, že najvyššia podobnosť sa zistila medzi ostatnými druhmi koronavírusov.
 
 \begin{table}[]
-    \caption{Výsledky porovnania medzi získanými proteínovými sekvenciami SARS-CoV-2 pomocou BLAST.}\label{t:1}
+    \caption{Nejaké výsledky porovnania medzi získanými proteínovými sekvenciami SARS-CoV-2 pomocou BLAST.}\label{t:1}
 	\smallskip
 	\centering
     \begin{tabular}{|c|c|c|c|c|c|}
@@ -403,7 +403,7 @@ Som zistil, že genóm Covid-19 má 6 ORF s viac ako 200 aminokyselinami. Obráz
 Výsledky porovnania získaných sekvencií s existujúcimi sekvenciami sa uskutočňujú pomocou programu BLAST a sú uvedené v tabuľke 2.3.
 
 \begin{table}[]
-    \caption{BLAST výsledky vyhľadávania pre ORF SARS-CoV-2.}\label{t:1}
+    \caption{Nejaké výsledky BLAST vyhľadávania pre ORF SARS-CoV-2.}\label{t:1}
 	\smallskip
 	\centering
 
@@ -419,41 +419,58 @@ Výsledky porovnania získaných sekvencií s existujúcimi sekvenciami sa uskut
     \end{tabular}
 \end{table}
 
-\section{Zloženie softvéru}
-Softvér vyvinutý v priebehu tejto práce sa javí ako súbor skriptov používaných na vizualizáciu genómu SARS-CoV-2 v skôr opísaných metódach.
-Na rozdiel od webových prehľadávačov genómu, kde sa výpočty vykonávajú na strane servera, navrhovaný softvér všeobecne predstavuje jednoduchú samostatnú konzolovú aplikáciu.
+\section{Zostavenie softvéru}
+Softvér vyvinutý v priebehu tejto práce sa javí ako zhrnutie kodu použítého na vizualizáciu genómu SARS-CoV-2 v skôr opísaných metódach a je určený pre platformu Linux.
+
+Program bol vyvinutý a otestovaný na notebooke \textit{ASUS X556UQ}, ktorý ma nasledujúce charakteristiky:
+\begin{itemize}
+    \item \textit{RAM:} 8 GB
+    \item \textit{CPU:} Intel© Core™ i5-6198DU CPU @ 2.30GHz × 2
+    \item \textit{Grafická karta:} Nvidia Geforce 940MX
+    \item \textit{HDD:} 1 TB
+    \item \textit{OS:} Linux Mint 20 Cinnamon (kernel v. 5.4.0-66-generic)
+\end{itemize}
+
+Na rozdiel od webových prehľadávačov genómu, kde sa výpočty vykonávajú na strane servera, navrhovaný softvér všeobecne predstavuje samostatnú konzolovú aplikáciu.
 Nevykonávajú sa nijaké významné výpočty, a preto aplikácia nespĺňa náročné systémové požiadavky.
 
-Napriek skôr opísaným moderným riešeniam reprezentujúcim údaje o genóme sa tento softvér javí ako iba jednoduchý vizualizačný nástroj, ktorý nepodporuje rôzne vlastné vizualizačné stopy ani navigáciu.
+Napriek skôr opísaným moderným riešeniam reprezentujúcim údaje o genóme sa tento softvér javí ako jednoduchý vizualizačný nástroj, ktorý nepodporuje rôzne vlastné vizualizačné stopy ani grafické rozhranie.
 Nedostatok prispôsobenia možno vysvetliť extrémnou zložitosťou vytvárania plne funkčného prehľadávača genómu.
 
-Softvér sa píše hlavne pomocou balíka BioPython v Pythone 3.8.
+Vyvinutý softvér je napísaný podľa paradigmy funkčného programovania.
+Tento prístup k písaniu softvéru bol zabezpečený predovšetkým nízkou zložitosťou vyvinutého riešenia.
+
+Softvér je napísaný hlavne pomocou balíka BioPython v Pythone 3.8.
 Všetky požadované balíčky sú uvedené v projektovej dokumentácii.
 
 Hlavnou myšlienkou programu je umožniť používateľovi zvoliť si, ktoré informácie týkajúce sa genómu vírusu si chce zobraziť.
-Skladá sa z 9 modulov, ktoré majú vlastnú úlohu pri samotnom procese vizualizácie:
+Vyvinutý softvér podporuje dva režímy expluatácie: \textit{verbose} a \textit{quiet}.
+
+Počas prvého režímu používateľ visualizuje genomy pomocou konzolovej navigácie programu. 
+Tento režím poskytuje popis vykonávanych akcíi a umožňuje zadávať požiadované data počas behu programu.
+
+Počas druhého režímu sa ide o využitie programu pomocou argumentov príkazového riadku, čo umožnuje d'alšiu automatizáciu a presmerovanie vystupu.
+
+Program skladá sa z 8 modulov, ktoré majú vlastnú úlohu pri samotnom procese vizualizácie:
 \begin{enumerate}
     \item \textbf{Main Module} je jadrom programu. Zodpovedá za zabezpečenie navigácie v rámci programu používateľom.
     Zaoberá sa vstupom a výstupom z konzoly, navrhuje dostupné metódy vizualizácie a získava podrobnosti potrebné na ich výkon.
-    \item \textbf{Sequence Collector} je zodpovedný za stiahnutie všetkých požadovaných sekvencií a súborov anotácií z databázy NCBI.
+    \item \textbf{Sequence Collector} je zodpovedný za stiahnutie všetkých požadovaných sekvencií a súborov anotácií z databázy NCBI pre vizualizáciu genómu SARS-CoV-2.
     \item \textbf{Statistics Generator} získava štatistické údaje, ako je obsah GC a distribúcia nukleotidov / aminokyselín.
-    Užívateľ si môže zvoliť oblasť genómu, ktorá sa má štatisticky zhromažďovať, a zvoliť si, či chce, aby sa jeho údaje ukladali do konkrétneho súboru.
+    Užívateľ si môže zvoliť oblasť genómu, ktorá sa má štatisticky analyzovať, a zvoliť si, či chce, aby sa jeho údaje ukladali do konkrétneho súboru.
     \item \textbf{Gates Visualization} vykoná vizualizáciu pomocou Gatesovej metódy do súboru .png.
-    Užívateľ je schopný upraviť farebné závislosti.
+    Užívateľ je schopný vybrať oblasť genómu ktorú chce vizualizovať.
     \item \textbf{2D Matrix} modul vykreslí vybraný genóm do 2D matice do súboru .png. Veľkosť výstupného obrázka sa počíta automaticky.
-    \item \textbf{2D IMatrix} modul vykreslí genóm do 2D matice vybranej veľkosti pomocou algoritmu hash funkcie do súboru .png.
-    Čím väčšia veľkosť, tým viac pamäte RAM je potrebných.
-    \item \textbf{Protein Plotter} generuje proteínové sekvencie genómu podľa nukleotidovej sekvencie.
-    Užívateľ je schopný odstrániť tie, ktoré nespĺňajú dĺžkové podmienky a je schopný zvoliť si, či výsledky vytlačí alebo ich uloží do súboru .csv.
-    \item \textbf{ORF Plotter} generuje obraz ORF SARS-CoV-2 a pomeru obsahu GC v genóme.
-    \item \textbf{Comparsion} modul vykonáva porovnanie vybraných genómov. Percento podobnosti sa získa pomocou algoritmu pairwise2.
+    \item \textbf{2D HMatrix} modul vykreslí genóm do 2D matice vybranej veľkosti pomocou algoritmu hash funkcie do súboru .png.
+    \item \textbf{ORF Plotter} generuje obraz distribúcie ORF a pomeru obsahu GC v genóme.
+    \item \textbf{Comparison} modul vykonáva porovnanie vybraných genómov. Percento podobnosti sa získa na základe algoritmu pairwise2.
 \end{enumerate}
 
-Moduly nie sú schopné vzájomne interagovať, ale každý z nich je možné zavolať z hlavného.
+Moduly nie sú schopné vzájomne interagovať, ale každý z nich je využivány s hlavného počas visualizácie.
 
 Každý z modulov je popísaný v dokumentácii a je sprevádzaný príkladmi vstupu a výstupu.
-Každý modul navyše obsahuje rôzne testy za behu, ktoré zabraňujú neočakávanému správaniu programu.
+Každý modul navyše obsahuje rôzne run-time testy, ktoré zabraňujú neočakávanému správaniu programu.
 
-V súčasnosti všetky moduly okrem ORF Plotter podporujú spracovanie rôznych genómov, pretože výkon týchto metód nezávisí od konkrétnych vlastností genómu.
-Neodporúča sa však používať Proteínový plotter s genómami, ktoré kvôli svojej zložitosti obsahujú zložité intrón-exón štruktúry.
-V takom prípade sa výsledky môžu výrazne líšiť od skutočných charakteristík genómu.
+V súčasnosti všetky moduly podporujú spracovanie rôznych genómov, pretože výkon týchto metód nezávisí od konkrétnych vlastností genómu.
+Neodporúča sa však používať Proteínový plotter s genómami, ktoré kvôli svojej zložitosti obsahujú zložité intrón-exón štruktúry a sú väčšie ako 50000 nukleotidov kvôli extrémnej dĺžke a môžnym chýbam počas vyhľadavaní ORF.
+V takom prípade sa výsledky môžu výrazne líšiť od skutočných charakteristík genómu a program bude potrebováť náročné systémové požiadavky.
